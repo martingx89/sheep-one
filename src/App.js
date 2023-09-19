@@ -1,22 +1,16 @@
-import './App.css'
+import './App.css';
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Navbar from './components/features/Navbar';
+import { Route, Routes } from 'react-router';
 import Home from './components/pages/Home';
 import BlankPage from './components/pages/BlankPage';
 
-const App =()=> {
+const App = () => {
   return (
-    <div className='app'>
-      <Router>
-        <Navbar/>
-        <Switch>
-          <Route path='/' exact component={Home}/>
-          <Route path='/blank' exact component={BlankPage}/>
-        </Switch>
-      </Router>
-    </div>
-  )
-}
+    <Routes>
+      <Route path='/' element={<Home />}></Route>
+      <Route path='*' element={<BlankPage />}></Route>
+    </Routes>
+  );
+};
 
 export default App;
