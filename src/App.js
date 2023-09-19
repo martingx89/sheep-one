@@ -1,6 +1,9 @@
 import './App.css';
 import React from 'react';
 import { Route, Routes } from 'react-router';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchData } from './redux/dataRedux';
 import Home from './components/pages/Home';
 import News from './components/pages/News';
 import Catalog from './components/pages/Catalog';
@@ -9,6 +12,10 @@ import Contact from './components/pages/Contact';
 import BlankPage from './components/pages/BlankPage';
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => dispatch(fetchData(), [dispatch]));
+
   return (
     <Routes>
       <Route path='/' element={<Home />}></Route>
