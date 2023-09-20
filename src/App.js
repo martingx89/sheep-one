@@ -4,12 +4,12 @@ import { Route, Routes } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchData } from './redux/dataRedux';
-import Home from './components/pages/Home';
-import News from './components/pages/News';
-import Catalog from './components/pages/Catalog';
-import About from './components/pages/About';
-import Contact from './components/pages/Contact';
-import BlankPage from './components/pages/BlankPage';
+import Home from './components/pages/Home/Home';
+import News from './components/pages/News/News';
+import Catalog from './components/pages/Catalog/Catalog';
+import About from './components/pages/About/About';
+import Contact from './components/pages/Contact/Contact';
+import BlankPage from './components/pages/BlankPage/BlankPage';
 
 const App = () => {
   const dispatch = useDispatch();
