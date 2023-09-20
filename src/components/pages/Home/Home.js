@@ -1,7 +1,9 @@
+import PageTitle from '../../common/PageTitle/PageTitle';
+
 const Home = () => {
   return (
     <>
-      <h1>Home Page</h1>
+      <PageTitle>Home Page</PageTitle>
     </>
   );
 };
