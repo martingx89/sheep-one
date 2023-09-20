@@ -9,6 +9,8 @@ import Catalog from './components/pages/Catalog/Catalog';
 import About from './components/pages/About/About';
 import Contact from './components/pages/Contact/Contact';
 import BlankPage from './components/pages/BlankPage/BlankPage';
+import Navbar from './components/views/Navbar/Navbar';
+import Footer from './components/views/Footer/Footer';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -16,14 +18,18 @@ const App = () => {
   useEffect(() => dispatch(fetchData(), [dispatch]));
 
   return (
-    <Routes>
-      <Route path='/' element={<Home />}></Route>
-      <Route path='/news' element={<News />}></Route>
-      <Route path='/catalog' element={<Catalog />}></Route>
-      <Route path='/about' element={<About />}></Route>
-      <Route path='/contact' element={<Contact />}></Route>
-      <Route path='*' element={<BlankPage />}></Route>
-    </Routes>
+    <main>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/news' element={<News />}></Route>
+        <Route path='/catalog' element={<Catalog />}></Route>
+        <Route path='/about' element={<About />}></Route>
+        <Route path='/contact' element={<Contact />}></Route>
+        <Route path='*' element={<BlankPage />}></Route>
+      </Routes>
+      <Footer />
+    </main>
   );
 };
 
