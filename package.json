@@ -10,6 +10,7 @@
     "json-server": "^0.17.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-persist": "^1.0.2",
     "react-redux": "^8.1.2",
     "react-router": "^6.16.0",
     "react-scripts": "5.0.1",
@@ -23,7 +24,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "start": "npm-run-all -p start:*",
     "start:react": "react-scripts start",
     "start:server": "json-server --port 3131 --no-cors --delay 250 --watch public/db/app.json --routes public/db/routes.json"
   },
@@ -46,6 +46,6 @@
     ]
   },
   "devDependencies": {
-    "react-router-dom": "^6.15.0"
+    "react-router-dom": "^6.16.0"
   }
 }
