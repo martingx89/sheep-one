@@ -1,0 +1,13 @@
+@import '../../../styles/global.scss';
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-light;
+
+  .title {
+    font-size: 1.5rem;
+    margin: 1rem;
+  }
+}
