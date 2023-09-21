@@ -1,9 +1,18 @@
 import { Link, NavLink } from 'react-router-dom';
+import { useState } from 'react';
+import { FiMenu, FiX } from 'react-icons/fi';
 import styles from './Navbar.module.scss';
 
 const Navbar = () => {
+
+  const [open, setOpen] = useState(false);
+
   return (
-    <nav>
+    <>
+      <div onClick={() => setOpen(!open)} className="nav-icon">
+        {open ? <FiX /> : <FiMenu />}
+      </div>
+      <nav>
       <Link to='/' className={styles.title}>
         Website
       </Link>
@@ -22,6 +31,8 @@ const Navbar = () => {
         </li>
       </ul>
     </nav>
+    </>
+    
   );
 };
 
