@@ -19,7 +19,7 @@ const Navbar = () => {
       <Link to='/' className={styles.title}>
         Website
       </Link>
-      <div onClick={handleClick} className='nav-icon'>
+      <div onClick={handleClick} className={`${styles['nav-icon']}`}>
         {open ? <FiX /> : <FiMenu />}
       </div>
       <ul className={open ? `${styles['nav-links']} active` : `${styles['nav-links']}`}>

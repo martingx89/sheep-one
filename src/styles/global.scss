@@ -1,6 +1,8 @@
 @import './settings.scss';
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -14,14 +16,10 @@ body {
   letter-spacing: 0.5px;
 }
 
-.active {
-  color: $color-background;
-}
-
 :global(.container) {
   width: 90%;
   max-width: 1400px;
   margin: 0 auto;
 }
 
-@import "./typography.scss";
+@import './typography.scss';
