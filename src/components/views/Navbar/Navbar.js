@@ -17,16 +17,16 @@ const Navbar = () => {
         Website
         </Link>
         <ul className={open ? `${styles['nav-links']} active` : styles['nav-links']}>
-          <li>
+          <li className={styles['nav-item']}>
             <NavLink to='/news' onClick={() => setOpen(false)}>News</NavLink>
           </li>
-          <li>
+          <li className={styles['nav-item']}>
             <NavLink to='/catalog' onClick={() => setOpen(false)}>Catalog</NavLink>
           </li>
-          <li>
+          <li className={styles['nav-item']}>
             <NavLink to='/about' onClick={() => setOpen(false)}>About</NavLink>
           </li>
-          <li>
+          <li className={styles['nav-item']}>
             <NavLink to='contact' onClick={() => setOpen(false)}>Contact</NavLink>
           </li>
         </ul>
