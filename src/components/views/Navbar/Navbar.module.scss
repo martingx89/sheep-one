@@ -1,10 +1,14 @@
 @import '../../../styles/global.scss';
 
 nav {
+  height: 80px;
+  width: 100%;
+  background: $color-light;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: $color-light;
+  padding: 0 2rem;
+  font-size: 1.2rem;
   position: sticky;
   top: 0;
 
@@ -16,19 +20,19 @@ nav {
     color: $color-dark;
   }
 
-  ul {
-    display: flex;
+  .nav-links {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-gap: 20px;
+    list-style: none;
 
-    li {
+    .nav-item {
       list-style: none;
 
-      a {
-        display: block;
+      .nav-link {
         text-decoration: none;
         color: $color-dark;
-        padding: 0.5rem;
-        margin: 0 0.5rem;
-        border-radius: 0.5rem;
+        transition: 0.3s all;
 
         &:hover {
           font-weight: bold;
@@ -36,6 +40,12 @@ nav {
         }
       }
     }
+  }
+
+  .nav-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
   }
 }
 
