@@ -10,13 +10,13 @@ const Navbar = () => {
   return (
     <>
       <nav>
-        <div onClick={() => setOpen(!open)} className={styles.navicon}>
+        <div onClick={() => setOpen(!open)} className={styles['nav-icon']}>
           {open ? <FiX /> : <FiMenu />}
         </div>
         <Link to='/' className={styles.title} onClick={() => setOpen(false)}>
         Website
         </Link>
-        <ul>
+        <ul className={open ? `${styles['nav-links']} active` : styles['nav-links']}>
           <li>
             <NavLink to='/news' onClick={() => setOpen(false)}>News</NavLink>
           </li>
