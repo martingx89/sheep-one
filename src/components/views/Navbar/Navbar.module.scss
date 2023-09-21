@@ -1,9 +1,5 @@
 @import '../../../styles/global.scss';
 
-.nav-item {
-  font-size: larger;
-}
-
 nav {
   display: flex;
   justify-content: space-between;
@@ -37,10 +33,6 @@ nav {
         &:hover {
           font-weight: bold;
           color: $color-accent;
-        }
-
-        .active {
-          border: $color-success;
         }
       }
     }
