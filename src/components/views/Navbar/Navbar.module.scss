@@ -57,22 +57,21 @@ nav {
 @media only screen and (max-width: 500px) {
   nav {
     position: relative;
-  }
 
-  .nav-links {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    top: 80px;
-    left: -100%;
-    transition: 0.5s all;
-  }
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      text-align: center;
+      width: 100%;
+      top: 80px;
+      left: -100%;
+      transition: 0.5s all;
+    }
 
-  .nav-links.active {
-    background: blue;
-    left: 0;
+    .nav-icon {
+      display: block;
+    }
   }
 
   // .nav-item {
@@ -80,8 +79,4 @@ nav {
   //   border-top: 1px solid red;
   //   border-bottom: 1px solid red;
   // }
-
-  .nav-icon {
-    display: flex;
-  }
 }

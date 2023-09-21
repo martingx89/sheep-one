@@ -15,7 +15,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={styles.nav}>
+    <nav>
       <Link to='/' className={styles.title}>
         Website
       </Link>
