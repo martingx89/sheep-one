@@ -9,27 +9,27 @@ const Navbar = () => {
 
   return (
     <>
-      <div onClick={() => setOpen(!open)} className="nav-icon">
-        {open ? <FiX /> : <FiMenu />}
-      </div>
       <nav>
-      <Link to='/' className={styles.title}>
+        <div onClick={() => setOpen(!open)} className={styles.navicon}>
+          {open ? <FiX /> : <FiMenu />}
+        </div>
+        <Link to='/' className={styles.title} onClick={() => setOpen(false)}>
         Website
-      </Link>
-      <ul>
-        <li>
-          <NavLink to='/news'>News</NavLink>
-        </li>
-        <li>
-          <NavLink to='/catalog'>Catalog</NavLink>
-        </li>
-        <li>
-          <NavLink to='/about'>About</NavLink>
-        </li>
-        <li>
-          <NavLink to='contact'>Contact</NavLink>
-        </li>
-      </ul>
+        </Link>
+        <ul>
+          <li>
+            <NavLink to='/news' onClick={() => setOpen(false)}>News</NavLink>
+          </li>
+          <li>
+            <NavLink to='/catalog' onClick={() => setOpen(false)}>Catalog</NavLink>
+          </li>
+          <li>
+            <NavLink to='/about' onClick={() => setOpen(false)}>About</NavLink>
+          </li>
+          <li>
+            <NavLink to='contact' onClick={() => setOpen(false)}>Contact</NavLink>
+          </li>
+        </ul>
     </nav>
     </>
     
