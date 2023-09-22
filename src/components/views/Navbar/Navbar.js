@@ -10,10 +10,14 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav className={styles.nav}>
       <div className={styles.logo}>
-        <Link to='/'>Logo</Link>
+        <Link to='/'>Website</Link>
       </div>
 
       <div className={`${styles.menuToggle} ${isOpen ? styles.open : ''}`} onClick={toggleMenu}>
@@ -22,22 +26,22 @@ const Navbar = () => {
 
       <ul className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
         <li>
-          <NavLink to='/news' activeClassName={styles.active}>
+          <NavLink to='/news' activeClassName={styles.active} onClick={closeMenu}>
             News
           </NavLink>
         </li>
         <li>
-          <NavLink to='/catalog' activeClassName={styles.active}>
+          <NavLink to='/catalog' activeClassName={styles.active} onClick={closeMenu}>
             Catalog
           </NavLink>
         </li>
         <li>
-          <NavLink to='/about' activeClassName={styles.active}>
+          <NavLink to='/about' activeClassName={styles.active} onClick={closeMenu}>
             About
           </NavLink>
         </li>
         <li>
-          <NavLink to='/contact' activeClassName={styles.active}>
+          <NavLink to='/contact' activeClassName={styles.active} onClick={closeMenu}>
             Contact
           </NavLink>
         </li>

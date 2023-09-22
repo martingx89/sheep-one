@@ -1,22 +1,27 @@
+@import '../../../styles/typography.scss';
+
 .nav {
   display: flex;
+  height: 80px;
+  width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #333;
-  color: #fff;
+  padding: 0 2rem;
+  font-size: 1rem;
+  background-color: $color-light;
+  color: $color-dark;
 
   .logo {
     a {
       text-decoration: none;
-      color: #fff;
-      font-size: 24px;
+      color: $color-dark;
+      font-size: 1.2rem;
     }
   }
 
   .menuToggle {
     display: none;
-    font-size: 24px;
+    font-size: 1.5rem;
     cursor: pointer;
 
     &.open {
@@ -33,7 +38,7 @@
 
       a {
         text-decoration: none;
-        color: #fff;
+        color: $color-dark;
 
         &.active {
           font-weight: bold;
@@ -42,7 +47,7 @@
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: $screen-sm) {
     .menuToggle {
       display: block;
     }
@@ -53,7 +58,8 @@
       position: absolute;
       top: 80px;
       left: 0;
-      background-color: #333;
+      margin: 0;
+      background-color: $color-light;
       width: 100%;
       text-align: center;
       z-index: 1;
