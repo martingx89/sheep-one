@@ -43,6 +43,10 @@
         &.active {
           font-weight: bold;
         }
+
+        &:hover {
+          color: $color-accent;
+        }
       }
     }
   }
