@@ -1,13 +1,15 @@
 @import './settings.scss';
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background: $color-dark;
+  background: $color-background;
   font-family: $font-text;
   font-size: ($base-size * 1.1);
   color: $color-light;
@@ -20,4 +22,4 @@ body {
   margin: 0 auto;
 }
 
-@import "./typography.scss";
+@import './typography.scss';

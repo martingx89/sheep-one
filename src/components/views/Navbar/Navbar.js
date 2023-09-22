@@ -1,24 +1,49 @@
+import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import styles from './Navbar.module.scss';
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <nav>
-      <Link to='/' className={styles.title}>
-        Website
-      </Link>
-      <ul>
+    <nav className={styles.nav}>
+      <div className={styles.logo}>
+        <Link to='/'>Website</Link>
+      </div>
+
+      <div className={`${styles.menuToggle} ${isOpen ? styles.open : ''}`} onClick={toggleMenu}>
+        {isOpen ? <FaTimes /> : <FaBars />}
+      </div>
+
+      <ul className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
         <li>
-          <NavLink to='/news'>News</NavLink>
+          <NavLink to='/news' activeClassName={styles.active} onClick={closeMenu}>
+            News
+          </NavLink>
         </li>
         <li>
-          <NavLink to='/catalog'>Catalog</NavLink>
+          <NavLink to='/catalog' activeClassName={styles.active} onClick={closeMenu}>
+            Catalog
+          </NavLink>
         </li>
         <li>
-          <NavLink to='/about'>About</NavLink>
+          <NavLink to='/about' activeClassName={styles.active} onClick={closeMenu}>
+            About
+          </NavLink>
         </li>
         <li>
-          <NavLink to='contact'>Contact</NavLink>
+          <NavLink to='/contact' activeClassName={styles.active} onClick={closeMenu}>
+            Contact
+          </NavLink>
         </li>
       </ul>
     </nav>
