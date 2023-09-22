@@ -1,91 +1,74 @@
-@import '../../../styles/global.scss';
-
-nav {
-  height: 80px;
-  width: 100%;
-  background: $color-light;
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
-  font-size: 1.2rem;
-  position: sticky;
-  top: 0;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
 
-  .title {
-    font-size: 1.5rem;
-    margin: 1rem;
-    font-weight: bold;
-    text-decoration: none;
-    color: $color-dark;
+  .logo {
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 24px;
+    }
   }
 
-  .nav-links {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    grid-gap: 20px;
+  .menuToggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+
+    &.open {
+      display: block;
+    }
+  }
+
+  .menu {
     list-style: none;
+    display: flex;
 
-    .nav-item {
-      list-style: none;
+    li {
+      margin-right: 20px;
 
-      .nav-link {
+      a {
         text-decoration: none;
-        color: $color-dark;
-        // transition: 0.3s all;
+        color: #fff;
 
-        &:hover {
+        &.active {
           font-weight: bold;
-          color: $color-accent;
-        }
-
-        &:active {
-          color: $color-background;
         }
       }
     }
   }
 
-  .nav-icon {
-    display: none;
-    font-size: 2rem;
-    color: $color-dark;
-    cursor: pointer;
-  }
-}
+  @media (max-width: 768px) {
+    .menuToggle {
+      display: block;
+    }
 
-@media only screen and (max-width: 500px) {
-  nav {
-    position: relative;
-
-    .nav-links {
-      display: flex;
+    .menu {
+      display: none;
       flex-direction: column;
       position: absolute;
-      text-align: center;
-      width: 100%;
       top: 80px;
-      left: -100%;
-      transition: 0.5s all;
+      left: 0;
+      background-color: #333;
+      width: 100%;
+      text-align: center;
+      z-index: 1;
 
-      .nav-item {
-        padding: 10px 0;
-        border: 1px solid red;
+      &.open {
+        display: flex;
+      }
 
-        &:first-child {
-          border-top: none;
-        }
+      li {
+        margin: 10px 0;
 
-        &:last-child {
-          border-bottom: none;
+        a {
+          font-size: 18px;
         }
       }
     }
-
-    .nav-icon {
-      display: flex;
-    }
   }
 }
-
-
