@@ -40,10 +40,6 @@
         text-decoration: none;
         color: $color-dark;
 
-        &.active {
-          font-weight: bold;
-        }
-
         &:hover {
           color: $color-accent;
         }
