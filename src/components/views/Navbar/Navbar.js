@@ -26,22 +26,22 @@ const Navbar = () => {
 
       <ul className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
         <li>
-          <NavLink to='/news' activeClassName={styles.active} onClick={closeMenu}>
+          <NavLink to='/news' className={styles.active} onClick={closeMenu}>
             News
           </NavLink>
         </li>
         <li>
-          <NavLink to='/catalog' activeClassName={styles.active} onClick={closeMenu}>
+          <NavLink to='/catalog' className={styles.active} onClick={closeMenu}>
             Catalog
           </NavLink>
         </li>
         <li>
-          <NavLink to='/about' activeClassName={styles.active} onClick={closeMenu}>
+          <NavLink to='/about' className={styles.active} onClick={closeMenu}>
             About
           </NavLink>
         </li>
         <li>
-          <NavLink to='/contact' activeClassName={styles.active} onClick={closeMenu}>
+          <NavLink to='/contact' className={styles.active} onClick={closeMenu}>
             Contact
           </NavLink>
         </li>
