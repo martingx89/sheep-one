@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import styles from './Navbar.module.scss';
+import Container from '../Container/Container';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,38 +16,40 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={styles.nav}>
-      <div className={styles.logo}>
-        <Link to='/'>Website</Link>
-      </div>
+    <Container>
+      <nav className={styles.nav}>
+        <div className={styles.logo}>
+          <Link to='/'>Website</Link>
+        </div>
 
-      <div className={`${styles.menuToggle} ${isOpen ? styles.open : ''}`} onClick={toggleMenu}>
-        {isOpen ? <FaTimes /> : <FaBars />}
-      </div>
+        <div className={`${styles.menuToggle} ${isOpen ? styles.open : ''}`} onClick={toggleMenu}>
+          {isOpen ? <FaTimes /> : <FaBars />}
+        </div>
 
-      <ul className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
-        <li>
-          <NavLink to='/news' className={styles.active} onClick={closeMenu}>
-            News
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/catalog' className={styles.active} onClick={closeMenu}>
-            Catalog
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/about' className={styles.active} onClick={closeMenu}>
-            About
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/contact' className={styles.active} onClick={closeMenu}>
-            Contact
-          </NavLink>
-        </li>
-      </ul>
-    </nav>
+        <ul className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
+          <li>
+            <NavLink to='/news' className={styles.active} onClick={closeMenu}>
+              News
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to='/catalog' className={styles.active} onClick={closeMenu}>
+              Catalog
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to='/about' className={styles.active} onClick={closeMenu}>
+              About
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to='/contact' className={styles.active} onClick={closeMenu}>
+              Contact
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+    </Container>
   );
 };
 
