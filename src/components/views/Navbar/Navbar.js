@@ -16,40 +16,42 @@ const Navbar = () => {
   };
 
   return (
-    <Container>
-      <nav className={styles.nav}>
-        <div className={styles.logo}>
-          <Link to='/'>Website</Link>
-        </div>
+    <nav className={styles.navigation}>
+      <Container>
+        <div className={styles.container}>
+          <div className={styles.logo}>
+            <Link to='/'>Website</Link>
+          </div>
 
-        <div className={`${styles.menuToggle} ${isOpen ? styles.open : ''}`} onClick={toggleMenu}>
-          {isOpen ? <FaTimes /> : <FaBars />}
-        </div>
+          <div className={`${styles.menuToggle} ${isOpen ? styles.open : ''}`} onClick={toggleMenu}>
+            {isOpen ? <FaTimes /> : <FaBars />}
+          </div>
 
-        <ul className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
-          <li>
-            <NavLink to='/news' className={styles.active} onClick={closeMenu}>
-              News
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='/catalog' className={styles.active} onClick={closeMenu}>
-              Catalog
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='/about' className={styles.active} onClick={closeMenu}>
-              About
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to='/contact' className={styles.active} onClick={closeMenu}>
-              Contact
-            </NavLink>
-          </li>
-        </ul>
-      </nav>
-    </Container>
+          <ul className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
+            <li>
+              <NavLink to='/news' className={styles.active} onClick={closeMenu}>
+                News
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to='/catalog' className={styles.active} onClick={closeMenu}>
+                Catalog
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to='/about' className={styles.active} onClick={closeMenu}>
+                About
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to='/contact' className={styles.active} onClick={closeMenu}>
+                Contact
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+      </Container>
+    </nav>
   );
 };
 
