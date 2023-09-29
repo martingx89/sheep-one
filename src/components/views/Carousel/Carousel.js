@@ -2,13 +2,13 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import styles from './Carousel.module.scss'; // Import stylów
+import styles from './Carousel.module.scss';
 
 const Carousel = () => {
   // Konfiguracja karuzeli react-slick
   const settings = {
     dots: true,
-    arrows: true,
+    arrows: false, // Ustawienie arrows na false, aby usunąć strzałki
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -31,7 +31,6 @@ const Carousel = () => {
     ],
   };
 
-  // Dane do wyświetlenia w kafelkach
   const carouselData = [
     {
       image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
