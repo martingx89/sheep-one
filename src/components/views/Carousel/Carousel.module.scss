@@ -1,16 +1,17 @@
 .carousel {
   .carousel-tile {
+    display: flex;
+    vertical-align: top;
+    text-align: center;
     border: 1px solid #ccc;
     padding: 20px;
-    text-align: center;
     margin: 10px;
-    width: 280px;
-    display: inline-block;
-    vertical-align: top;
+    height: 640px;
+    width: auto;
 
     img {
       max-width: 100%;
-      height: auto;
+      max-height: 100%;
     }
 
     h3 {
@@ -22,12 +23,27 @@
       font-size: 14px;
       color: #666;
     }
+  }
 
-    a {
-      display: block;
-      margin-top: 10px;
-      text-decoration: none;
-      color: #007bff;
+  .slick-dots {
+    display: flex !important;
+    justify-content: center;
+    margin-top: 20px;
+
+    li {
+      margin: 0 5px;
+      button {
+        width: 10px;
+        height: 10px;
+        background-color: #007bff;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &.slick-active {
+          background-color: #ff0000; // Kolor aktywnej kropki
+        }
+      }
     }
   }
 }
