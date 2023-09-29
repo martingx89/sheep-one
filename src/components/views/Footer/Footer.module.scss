@@ -1,16 +1,12 @@
-/* Stylizacja dla stopki */
-/* Stylizacja stopki */
 .footer {
+  text-align: center;
   background-color: #333;
   color: #fff;
   padding: 20px 0;
-  text-align: center;
-  position: absolute; /* Ustaw pozycję na absolutną */
-  bottom: 0; /* Umieść stopkę na dole strony */
-  width: 100%; /* Ustaw szerokość na 100% */
+  width: 100%;
+  margin-top: 50px;
 }
 
-/* Stylizacja dla tekstu w stopce */
 .footer-text {
   font-size: 16px;
   font-weight: bold;
@@ -20,13 +16,11 @@
   align-items: center;
 }
 
-/* Stylizacja dla "martingx89" */
 .footer-text span {
-  color: #f39c12; /* Kolor akcentu */
+  color: #f39c12;
   font-size: 20px;
 }
 
-/* Stylizacja dla "All rights reserved" */
 .footer-text em {
   font-weight: normal;
   font-style: italic;
@@ -35,13 +29,11 @@
   margin-top: 4px;
 }
 
-/* Stylizacja dla widoku mobilnego */
 @media (max-width: 768px) {
   .footer-text {
     font-size: 14px;
   }
 
-  /* Zmniejsz rozmiar tekstu na małych ekranach */
   .footer-text span {
     font-size: 16px;
   }
