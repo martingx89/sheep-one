@@ -4,218 +4,171 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from './Carousel.module.scss';
 
+import MagicSliderDots from 'react-magic-slider-dots';
+import 'react-magic-slider-dots/dist/magic-dots.css';
+
+// Definicja danych kafelków
+const dataCarousel = [
+  {
+    id: 1,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/09/18/13/46/beach-8260614_1280.jpg',
+    title: 'Tytuł 1',
+    description: 'Opis 1',
+  },
+  {
+    id: 2,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/09/18/13/46/beach-8260614_1280.jpg',
+    title: 'Tytuł 2',
+    description: 'Opis 2',
+  },
+  {
+    id: 3,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/09/18/13/46/beach-8260614_1280.jpg',
+    title: 'Tytuł 3',
+    description: 'Opis 3',
+  },
+  {
+    id: 3,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/09/18/13/46/beach-8260614_1280.jpg',
+    title: 'Tytuł 3',
+    description: 'Opis 3',
+  },
+  {
+    id: 3,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/09/18/13/46/beach-8260614_1280.jpg',
+    title: 'Tytuł 3',
+    description: 'Opis 3',
+  },
+  {
+    id: 3,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/09/18/13/46/beach-8260614_1280.jpg',
+    title: 'Tytuł 3',
+    description: 'Opis 3',
+  },
+  {
+    id: 3,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/09/18/13/46/beach-8260614_1280.jpg',
+    title: 'Tytuł 3',
+    description: 'Opis 3',
+  },
+  {
+    id: 3,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/09/18/13/46/beach-8260614_1280.jpg',
+    title: 'Tytuł 3',
+    description: 'Opis 3',
+  },
+  {
+    id: 3,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/09/18/13/46/beach-8260614_1280.jpg',
+    title: 'Tytuł 3',
+    description: 'Opis 3',
+  },
+  {
+    id: 3,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/09/18/13/46/beach-8260614_1280.jpg',
+    title: 'Tytuł 3',
+    description: 'Opis 3',
+  },
+  {
+    id: 3,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/09/18/13/46/beach-8260614_1280.jpg',
+    title: 'Tytuł 3',
+    description: 'Opis 3',
+  },
+  {
+    id: 3,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/09/18/13/46/beach-8260614_1280.jpg',
+    title: 'Tytuł 3',
+    description: 'Opis 3',
+  },
+  {
+    id: 3,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/09/18/13/46/beach-8260614_1280.jpg',
+    title: 'Tytuł 3',
+    description: 'Opis 3',
+  },
+  {
+    id: 3,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/09/18/13/46/beach-8260614_1280.jpg',
+    title: 'Tytuł 3',
+    description: 'Opis 3',
+  },
+  {
+    id: 3,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/09/18/13/46/beach-8260614_1280.jpg',
+    title: 'Tytuł 3',
+    description: 'Opis 3',
+  },
+  {
+    id: 3,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/09/18/13/46/beach-8260614_1280.jpg',
+    title: 'Tytuł 3',
+    description: 'Opis 3',
+  },
+  {
+    id: 3,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/09/18/13/46/beach-8260614_1280.jpg',
+    title: 'Tytuł 3',
+    description: 'Opis 3',
+  },
+  {
+    id: 3,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/09/18/13/46/beach-8260614_1280.jpg',
+    title: 'Tytuł 3',
+    description: 'Opis 3',
+  },
+  {
+    id: 3,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/09/18/13/46/beach-8260614_1280.jpg',
+    title: 'Tytuł 3',
+    description: 'Opis 3',
+  },
+  {
+    id: 3,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/09/18/13/46/beach-8260614_1280.jpg',
+    title: 'Tytuł 3',
+    description: 'Opis 3',
+  },
+  {
+    id: 3,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/09/18/13/46/beach-8260614_1280.jpg',
+    title: 'Tytuł 3',
+    description: 'Opis 3',
+  },
+  {
+    id: 3,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/09/18/13/46/beach-8260614_1280.jpg',
+    title: 'Tytuł 3',
+    description: 'Opis 3',
+  },
+  {
+    id: 3,
+    imageUrl: 'https://cdn.pixabay.com/photo/2023/09/18/13/46/beach-8260614_1280.jpg',
+    title: 'Tytuł 3',
+    description: 'Opis 3',
+  },
+  // Dodaj więcej danych kafelków według potrzeb
+];
+
 const Carousel = () => {
   const settings = {
     dots: true,
-    arrows: true,
     infinite: true,
     speed: 500,
-    autoplay: true,
-    autoplaySpeed: 5000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    customPaging: function (i) {
-      // Wykorzystujemy funkcję customPaging do dostosowania kropek nawigacyjnych
-      return <button className={styles['custom-dot']} />;
+    appendDots: (dots) => {
+      return <MagicSliderDots dots={dots} numDotsToShow={4} dotWidth={30} />;
     },
-    appendDots: function (dots) {
-      // Ograniczamy liczbę kropek do 10
-      return (
-        <ul>
-          {dots.slice(0, 10).map((dot, index) => (
-            <li key={index}>{dot}</li>
-          ))}
-        </ul>
-      );
-    },
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-    ],
   };
 
-  const carouselData = [
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 1',
-      description: 'Krótki opis kafelka 1',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 2',
-      description: 'Krótki opis kafelka 2',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-    {
-      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
-      title: 'Tytuł Kafelka 3',
-      description: 'Krótki opis kafelka 3',
-    },
-  ];
-
   return (
-    <div className={styles['carousel-container']}>
+    <div>
       <Slider {...settings}>
-        {carouselData.map((item, index) => (
-          <div key={index} className={styles['carousel-tile']}>
-            <img src={item.image} alt={item.title} />
-            <h2>{item.title}</h2>
+        {dataCarousel.map((item) => (
+          <div className='carousel-tile' key={item.id}>
+            <img src={item.imageUrl} alt={`Opis obrazka ${item.id}`} />
+            <h3>{item.title}</h3>
             <p>{item.description}</p>
           </div>
         ))}
