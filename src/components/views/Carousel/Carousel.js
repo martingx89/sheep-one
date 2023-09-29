@@ -5,14 +5,29 @@ import 'slick-carousel/slick/slick-theme.css';
 import styles from './Carousel.module.scss';
 
 const Carousel = () => {
-  // Konfiguracja karuzeli react-slick
   const settings = {
     dots: true,
-    arrows: false, // Ustawienie arrows na false, aby usunąć strzałki
+    arrows: true,
     infinite: true,
     speed: 500,
+    autoplay: true,
+    autoplaySpeed: 5000,
     slidesToShow: 1,
     slidesToScroll: 1,
+    customPaging: function (i) {
+      // Wykorzystujemy funkcję customPaging do dostosowania kropek nawigacyjnych
+      return <button className={styles['custom-dot']} />;
+    },
+    appendDots: function (dots) {
+      // Ograniczamy liczbę kropek do 10
+      return (
+        <ul>
+          {dots.slice(0, 10).map((dot, index) => (
+            <li key={index}>{dot}</li>
+          ))}
+        </ul>
+      );
+    },
     responsive: [
       {
         breakpoint: 768,
@@ -41,6 +56,151 @@ const Carousel = () => {
       image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
       title: 'Tytuł Kafelka 2',
       description: 'Krótki opis kafelka 2',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
+    },
+    {
+      image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
+      title: 'Tytuł Kafelka 3',
+      description: 'Krótki opis kafelka 3',
     },
     {
       image: 'https://cdn.pixabay.com/photo/2014/12/08/02/59/benches-560435_1280.jpg',
