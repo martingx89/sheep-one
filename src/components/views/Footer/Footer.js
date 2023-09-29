@@ -1,8 +1,13 @@
+import React from 'react';
+import styles from './Footer.module.scss';
+
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <>
-      <p>martingx89</p>
-    </>
+    <footer className={styles.footer}>
+      <p className={styles['footer-text']}>&copy; {currentYear} martingx89. All rights reserved.</p>
+    </footer>
   );
 };
 
