@@ -63,6 +63,7 @@ const dataCarousel = [
 
 const Carousel = () => {
   const settings = {
+    arrows: true,
     dots: true,
     infinite: true,
     speed: 500,
@@ -92,9 +93,10 @@ const Carousel = () => {
       <Slider {...settings}>
         {dataCarousel.map((item, index) => (
           <div className={styles['carousel-tile']} key={index}>
-            {' '}
             {/* Użyj index jako klucza */}
-            <img src={item.imageUrl} alt={`Opis obrazka ${item.id}`} />
+            <div className={styles['image-container']}>
+              <img src={item.imageUrl} alt={`Opis obrazka ${item.id}`} />
+            </div>
             <h3>{item.title}</h3>
             <p>{item.description}</p>
           </div>
