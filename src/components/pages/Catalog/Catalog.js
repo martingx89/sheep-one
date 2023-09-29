@@ -1,9 +1,7 @@
+import Carousel from '../../views/Carousel/Carousel';
+
 const Catalog = () => {
-  return (
-    <>
-      <h1>Catalog Page</h1>
-    </>
-  );
+  return <Carousel />;
 };
 
 export default Catalog;
