@@ -2,44 +2,46 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import styles from './Carousel.module.scss';
+import styles from './Carousel.module.scss'; // Zaimportuj odpowiednie style, jeśli są wymagane.
 import MagicSliderDots from 'react-magic-slider-dots';
 import 'react-magic-slider-dots/dist/magic-dots.css';
 import { dataCarousel } from '../../../constants/dataCarousel';
 
 const Carousel = () => {
   const settings = {
-    arrows: true,
+    // Konfiguracja ustawień Carousel
+    arrows: false,
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3, // Wyświetlaj 3 slajdy na raz na większych ekranach
+    slidesToShow: 3,
     slidesToScroll: 1,
     appendDots: (dots) => {
       return <MagicSliderDots dots={dots} numDotsToShow={4} dotWidth={30} />;
     },
     responsive: [
       {
-        breakpoint: 768, // Na ekranach o szerokości 768px lub mniejszej
+        breakpoint: 768,
         settings: {
-          slidesToShow: 2, // Wyświetlaj 2 slajdy na raz
+          slidesToShow: 2,
         },
       },
       {
-        breakpoint: 576, // Na ekranach o szerokości 576px lub mniejszej
+        breakpoint: 576,
         settings: {
-          slidesToShow: 1, // Wyświetlaj 1 slajd na raz
+          slidesToShow: 1,
         },
       },
     ],
   };
 
   return (
-    <div>
+    <div className='center-carousel'>
+      {' '}
+      {/* Dodaj klasę center-carousel */}
       <Slider {...settings}>
         {dataCarousel.map((item, index) => (
           <div className={styles['carousel-tile']} key={index}>
-            {/* Użyj index jako klucza */}
             <div className={styles['image-container']}>
               <img src={item.imageUrl} alt={`Opis obrazka ${item.id}`} />
             </div>
