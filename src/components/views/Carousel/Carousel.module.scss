@@ -1,4 +1,5 @@
-/* Stylowanie kontenera Carousel */
+@import '../../../styles/settings.scss';
+
 .center-carousel {
   display: flex;
   justify-content: center;
@@ -45,29 +46,5 @@
       width: 100%;
       height: auto;
     }
-  }
-}
-
-/* Stylowanie dla kropek (dots) */
-.slick-dots {
-  bottom: 20px;
-}
-
-.slick-dots li {
-  margin: 0 5px;
-  display: inline-block;
-
-  button {
-    font-size: 0;
-    width: 20px;
-    height: 20px;
-    border: 1px solid #ddd;
-    border-radius: 50%;
-    background-color: transparent;
-    cursor: pointer;
-  }
-
-  &.slick-active button {
-    background-color: #007bff;
   }
 }
