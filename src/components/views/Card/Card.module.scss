@@ -1,12 +1,24 @@
-.wrapper {
+@import '../../../styles/settings.scss';
+
+.card-container {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  margin: 20px;
+  margin: 5px;
   min-height: 80px;
+  background-color: $color-dark;
+  border-radius: $radius;
 
   img {
-    height: 60px;
+    height: 65px;
+    padding: 2px;
+  }
+  .card-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 10px;
   }
 }

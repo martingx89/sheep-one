@@ -5,6 +5,18 @@ const Column = () => {
   return (
     <>
       <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
     </>
   );
 };
