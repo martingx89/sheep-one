@@ -1,7 +1,7 @@
 import React from 'react';
-import styles from './Row.module.scss';
+import styles from './Card.module.scss';
 
-function Row() {
+function Card() {
   return (
     <div className={styles.wrapper}>
       <img src='map.jpg' alt='map' />
@@ -10,4 +10,4 @@ function Row() {
   );
 }
 
-export default Row;
+export default Card;
