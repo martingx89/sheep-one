@@ -26,6 +26,11 @@ const Navbar = () => {
 
       <ul className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
         <li>
+          <NavLink to='/' className={styles.active} onClick={closeMenu}>
+            Home
+          </NavLink>
+        </li>
+        <li>
           <NavLink to='/news' className={styles.active} onClick={closeMenu}>
             News
           </NavLink>
