@@ -1,4 +1,6 @@
 @import './settings.scss';
+@import './plugins/leaflet.scss';
+@import './plugins/magic-dots.scss';
 
 *,
 *::before,
@@ -24,32 +26,6 @@ body {
   width: 90%;
   max-width: 1400px;
   margin: 0 auto;
-}
-
-/* Stylowanie dla kropek (dots) */
-.magic-dots.slick-dots ul {
-  padding: 0;
-  display: flex;
-  transition: all 0.2s;
-  position: relative;
-  margin: 0 0 20px;
-}
-.magic-dots.slick-dots li.slick-active button:before {
-  color: $color-accent;
-}
-.magic-dots.slick-dots li button:before {
-  transition: font-size 0.35s;
-  font-size: 12px;
-  content: '\2022';
-}
-.magic-dots.slick-dots li.small button:before {
-  font-size: 8px;
-  line-height: 20px;
-}
-
-.leaflet-container {
-  width: 300px;
-  height: 300px;
 }
 
 @import './typography.scss';
