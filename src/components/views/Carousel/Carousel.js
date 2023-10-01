@@ -13,9 +13,9 @@ const Carousel = () => {
     arrows: false,
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     autoplay: true,
-    autoplayinterval: 5000,
+    autoplaySpeed: 5000,
     slidesToShow: 3,
     slidesToScroll: 1,
     appendDots: (dots) => {
