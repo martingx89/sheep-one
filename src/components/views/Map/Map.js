@@ -30,7 +30,7 @@ const Map = () => {
 
   return (
     <div className={styles['map-wrapper']}>
-      <MapContainer center={userPosition} zoom={zoomLevel} scrollWheelZoom={false}>
+      <MapContainer center={userPosition || (49.4666648, 22.333332)} zoom={zoomLevel} scrollWheelZoom={false}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
