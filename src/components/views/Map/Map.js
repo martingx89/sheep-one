@@ -1,19 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+import { useDispatch, useSelector } from 'react-redux';
 import styles from './Map.module.scss';
 
 const Map = () => {
-  const [userPosition, setUserPosition] = useState(null);
+  const dispatch = useDispatch();
+  const userPosition = useSelector((state) => state.userPosition);
+
   const zoomLevel = 13;
 
   useEffect(() => {
-    // Function to get the user's current position using the Geolocation API
     const getUserLocation = () => {
       if ('geolocation' in navigator) {
         navigator.geolocation.getCurrentPosition(
           (position) => {
             const { latitude, longitude } = position.coords;
-            setUserPosition([latitude, longitude]);
+            dispatch({ type: 'SET_USER_LOCATION', payload: [latitude, longitude] });
           },
           (error) => {
             console.error('Error getting user location:', error);
@@ -23,10 +25,8 @@ const Map = () => {
         console.error('Geolocation is not available in this browser.');
       }
     };
-
-    // Call the function to get the user's location
     getUserLocation();
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className={styles['map-wrapper']}>
