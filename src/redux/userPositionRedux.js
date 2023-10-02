@@ -1,6 +1,6 @@
-const initialState = null;
+import { INITIAL_STATE } from '../constants/initialData';
 
-const userPositionReducer = (state = initialState, action) => {
+const userPositionReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case 'SET_USER_LOCATION':
       return action.payload;
