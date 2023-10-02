@@ -16,7 +16,6 @@ const Map = () => {
           (position) => {
             const { latitude, longitude } = position.coords;
             dispatch({ type: 'SET_USER_LOCATION', payload: [latitude, longitude] });
-            setMapCenter([latitude, longitude]); // Update the map center based on user's location
           },
           (error) => {
             console.error('Error getting user location:', error);
@@ -26,8 +25,16 @@ const Map = () => {
         console.error('Geolocation is not available in this browser.');
       }
     };
+
     getUserLocation();
   }, [dispatch]);
+
+  // Update map center whenever userPosition changes
+  useEffect(() => {
+    if (userPosition) {
+      setMapCenter(userPosition);
+    }
+  }, [userPosition]);
 
   return (
     <div className={styles['map-wrapper']}>
