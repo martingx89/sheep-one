@@ -1,44 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import { useDispatch, useSelector } from 'react-redux';
+import { INITIAL_COORDS } from '../../../constants/initialData';
 import styles from './Map.module.scss';
+import { fetchGPSData } from '../../../redux/userPositionRedux';
 
 const Map = () => {
   const dispatch = useDispatch();
   const userPosition = useSelector((state) => state.userPosition);
-  const [mapCenter, setMapCenter] = useState([49.4666648, 22.333332]); // Default center coordinates
   const zoomLevel = 13;
 
   useEffect(() => {
-    const getUserLocation = () => {
-      if ('geolocation' in navigator) {
-        navigator.geolocation.getCurrentPosition(
-          (position) => {
-            const { latitude, longitude } = position.coords;
-            dispatch({ type: 'SET_USER_LOCATION', payload: [latitude, longitude] });
-          },
-          (error) => {
-            console.error('Error getting user location:', error);
-          }
-        );
-      } else {
-        console.error('Geolocation is not available in this browser.');
-      }
-    };
-
-    getUserLocation();
+    dispatch(fetchGPSData());
   }, [dispatch]);
-
-  // Update map center whenever userPosition changes
-  useEffect(() => {
-    if (userPosition) {
-      setMapCenter(userPosition);
-    }
-  }, [userPosition]);
 
   return (
     <div className={styles['map-wrapper']}>
-      <MapContainer center={userPosition || mapCenter} zoom={zoomLevel} scrollWheelZoom={false}>
+      <MapContainer center={userPosition || INITIAL_COORDS} zoom={zoomLevel} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
