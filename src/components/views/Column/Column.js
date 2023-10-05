@@ -6,17 +6,6 @@ const Column = () => {
   return (
     <div className={styles.Column}>
       <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
     </div>
   );
 };

@@ -30,11 +30,11 @@ const Navbar = () => {
             Home
           </NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink to='/news' className={styles.active} onClick={closeMenu}>
             News
           </NavLink>
-        </li>
+        </li> */}
         <li>
           <NavLink to='/catalog' className={styles.active} onClick={closeMenu}>
             Catalog
