@@ -62,7 +62,7 @@
       background-color: $color-light;
       width: 100%;
       text-align: center;
-      z-index: 1;
+      z-index: 10000;
 
       &.open {
         display: flex;
