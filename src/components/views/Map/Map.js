@@ -10,28 +10,28 @@ const Map = () => {
   const userPosition = useSelector((state) => state.userPosition);
   const zoomLevel = 13;
   const [mapKey, setMapKey] = useState(0);
-
-  // Dodajemy nowy stan do przechowywania czasu odświeżania
-  const [refreshInterval, setRefreshInterval] = useState(1000); // 1 sekunda
+  const [refreshInterval, setRefreshInterval] = useState(null);
 
   useEffect(() => {
     dispatch(fetchGPSData());
   }, [dispatch]);
 
-  // Funkcja do rozpoczęcia odświeżania
   const startRefreshing = () => {
     const intervalId = setInterval(() => {
-      dispatch(fetchGPSData()); // Pobieramy najnowszą pozycję GPS
-    }, refreshInterval);
+      dispatch(fetchGPSData());
+    }, 1000); // Odświeżanie co 1 sekundę
 
-    // Zapisujemy identyfikator interwału w stanie komponentu
     setMapKey(mapKey + 1);
     setRefreshInterval(intervalId);
   };
 
-  // Funkcja do zatrzymania odświeżania
   const stopRefreshing = () => {
-    clearInterval(refreshInterval); // Zatrzymujemy interwał
+    clearInterval(refreshInterval);
+    setRefreshInterval(null);
+  };
+
+  const refreshMap = () => {
+    setMapKey(mapKey + 1);
   };
 
   return (
@@ -52,6 +52,9 @@ const Map = () => {
       </button>
       <button onClick={stopRefreshing} className={styles['locate-button']}>
         Zatrzymaj odświeżanie
+      </button>
+      <button onClick={refreshMap} className={styles['locate-button']}>
+        Zlokalizuj mnie
       </button>
     </div>
   );
