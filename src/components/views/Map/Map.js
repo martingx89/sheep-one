@@ -22,6 +22,7 @@ const Map = () => {
       setRefreshInterval(null);
     } else {
       const intervalId = setInterval(() => {
+        refreshMap();
         dispatch(fetchGPSData());
       }, 1000); // Odświeżanie co 1 sekundę
       setRefreshInterval(intervalId);
