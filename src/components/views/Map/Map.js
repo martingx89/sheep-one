@@ -16,18 +16,16 @@ const Map = () => {
     dispatch(fetchGPSData());
   }, [dispatch]);
 
-  const startRefreshing = () => {
-    const intervalId = setInterval(() => {
-      dispatch(fetchGPSData());
-    }, 1000); // Odświeżanie co 1 sekundę
-
-    setMapKey(mapKey + 1);
-    setRefreshInterval(intervalId);
-  };
-
-  const stopRefreshing = () => {
-    clearInterval(refreshInterval);
-    setRefreshInterval(null);
+  const toggleRefreshing = () => {
+    if (refreshInterval) {
+      clearInterval(refreshInterval);
+      setRefreshInterval(null);
+    } else {
+      const intervalId = setInterval(() => {
+        dispatch(fetchGPSData());
+      }, 1000); // Odświeżanie co 1 sekundę
+      setRefreshInterval(intervalId);
+    }
   };
 
   const refreshMap = () => {
@@ -47,11 +45,8 @@ const Map = () => {
           </Marker>
         )}
       </MapContainer>
-      <button onClick={startRefreshing} className={styles['locate-button']}>
-        Rozpocznij odświeżanie
-      </button>
-      <button onClick={stopRefreshing} className={styles['locate-button']}>
-        Zatrzymaj odświeżanie
+      <button onClick={toggleRefreshing} className={styles['locate-button']}>
+        {refreshInterval ? 'Zatrzymaj odświeżanie' : 'Rozpocznij odświeżanie'}
       </button>
       <button onClick={refreshMap} className={styles['locate-button']}>
         Zlokalizuj mnie
