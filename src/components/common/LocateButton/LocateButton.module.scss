@@ -1,6 +1,8 @@
+@import '../../../styles/settings.scss';
+
 .locate-button {
-  background-color: #4caf50; /* Green */
-  border: none;
+  background-color: $color-dark;
+  border: 1px solid $color-background;
   color: white;
   padding: 15px 32px;
   text-align: center;
@@ -8,9 +10,10 @@
   display: inline-block;
   font-size: 12px;
   margin: 5px;
-  transition: background-color 0.3s;
+  transition: (background-color, border) 0.3s;
 
   &:hover {
-    background-color: #4caf4fc5;
+    background-color: $color-light;
+    border: 1px solid $color-accent;
   }
 }
