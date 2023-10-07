@@ -35,7 +35,7 @@ const Map = () => {
   };
 
   return (
-    <div className={styles['map-container']}>
+    <div className={styles['map-wrapper']}>
       <MapContainer key={mapKey} center={userPosition || INITIAL_COORDS} zoom={zoomLevel} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
