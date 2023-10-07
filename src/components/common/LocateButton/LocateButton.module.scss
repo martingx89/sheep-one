@@ -1,0 +1,16 @@
+.locate-button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  margin: 5px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #4caf4fc5;
+  }
+}

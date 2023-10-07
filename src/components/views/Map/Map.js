@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import { useDispatch, useSelector } from 'react-redux';
-import { INITIAL_COORDS } from '../../../constants/initialData';
-import styles from './Map.module.scss';
 import { fetchGPSData } from '../../../redux/userPositionRedux';
+import { INITIAL_COORDS } from '../../../constants/initialData';
+import LocateButton from '../../common/LocateButton/LocateButton';
+import styles from './Map.module.scss';
 
 const Map = () => {
   const dispatch = useDispatch();
@@ -46,12 +47,10 @@ const Map = () => {
           </Marker>
         )}
       </MapContainer>
-      <button onClick={toggleRefreshing} className={styles['locate-button']}>
-        {refreshInterval ? 'Zatrzymaj odświeżanie' : 'Rozpocznij odświeżanie'}
-      </button>
-      <button onClick={refreshMap} className={styles['locate-button']}>
-        Zlokalizuj mnie
-      </button>
+      <div className={styles['map-controls']}>
+        <LocateButton onClick={toggleRefreshing}>{refreshInterval ? 'Stop following me' : 'Follow Me'}</LocateButton>
+        <LocateButton onClick={refreshMap}>Where I'm</LocateButton>
+      </div>
     </div>
   );
 };
