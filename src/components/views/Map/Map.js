@@ -11,24 +11,10 @@ const Map = () => {
   const userPosition = useSelector((state) => state.userPosition);
   const zoomLevel = 13;
   const [mapKey, setMapKey] = useState(0);
-  const [refreshInterval, setRefreshInterval] = useState(null);
 
   useEffect(() => {
     dispatch(fetchGPSData());
   }, [dispatch]);
-
-  const toggleRefreshing = () => {
-    if (refreshInterval) {
-      clearInterval(refreshInterval);
-      setRefreshInterval(null);
-    } else {
-      const intervalId = setInterval(() => {
-        refreshMap();
-        dispatch(fetchGPSData());
-      }, 1000); // Odświeżanie co 1 sekundę
-      setRefreshInterval(intervalId);
-    }
-  };
 
   const refreshMap = () => {
     setMapKey(mapKey + 1);
@@ -48,7 +34,6 @@ const Map = () => {
         )}
       </MapContainer>
       <div className={styles['map-controls']}>
-        <LocateButton onClick={toggleRefreshing}>{refreshInterval ? 'Stop following me' : 'Follow Me'}</LocateButton>
         <LocateButton onClick={refreshMap}>Where I'm</LocateButton>
       </div>
     </div>
