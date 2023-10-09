@@ -4,14 +4,14 @@ import L from 'leaflet';
 import { MdGpsFixed } from 'react-icons/md';
 import LocateButton from '../components/common/LocateButton/LocateButton';
 import { createRoot } from 'react-dom/client';
-import { TIME_TO_FLY } from '../constants/mapSettings';
+import { FLY_TO_SETUP } from '../constants/mapSettings';
 
 const FindUserPosition = ({ userPosition, ZOOM_LEVEL }) => {
   const map = useMap();
 
   useEffect(() => {
     const refreshMap = () => {
-      map.flyTo([userPosition[0], userPosition[1]], ZOOM_LEVEL, { duration: TIME_TO_FLY });
+      map.flyTo([userPosition[0], userPosition[1]], ZOOM_LEVEL, FLY_TO_SETUP);
     };
 
     if (!map) return;
