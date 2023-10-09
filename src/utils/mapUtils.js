@@ -1,17 +1,26 @@
 import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import { MdGpsFixed } from 'react-icons/md';
+import { fetchGPSData } from '../redux/userPositionRedux';
 import LocateButton from '../components/common/LocateButton/LocateButton';
 import { createRoot } from 'react-dom/client';
 import { FLY_TO_SETUP } from '../constants/mapSettings';
 
 const FindUserPosition = ({ userPosition, ZOOM_LEVEL }) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchGPSData());
+  }, [dispatch]);
+
   const map = useMap();
 
   useEffect(() => {
     const refreshMap = () => {
       map.flyTo([userPosition[0], userPosition[1]], ZOOM_LEVEL, FLY_TO_SETUP);
+      console.log(userPosition);
     };
 
     if (!map) return;
