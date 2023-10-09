@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import ReactDOM from 'react-dom';
 import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchGPSData } from '../../../redux/userPositionRedux';
@@ -7,8 +6,8 @@ import { INITIAL_COORDS } from '../../../constants/initialData';
 import { ZOOM_LEVEL } from '../../../constants/mapSettings';
 import LocateButton from '../../common/LocateButton/LocateButton';
 import styles from './Map.module.scss';
-import L from 'leaflet';
 import { MdGpsFixed } from 'react-icons/md';
+import FindUserPosition from '../../../utils/mapUtils';
 
 const Map = () => {
   const dispatch = useDispatch();
@@ -17,43 +16,6 @@ const Map = () => {
   useEffect(() => {
     dispatch(fetchGPSData());
   }, [dispatch]);
-
-  const CustomButtonControl = () => {
-    const map = useMap();
-
-    useEffect(() => {
-      const refreshMap = () => {
-        map.flyTo([userPosition[0], userPosition[1]], ZOOM_LEVEL);
-      };
-
-      if (!map) return;
-
-      const buttonControl = L.control({
-        position: 'bottomright',
-      });
-
-      buttonControl.onAdd = () => {
-        buttonControl._div = L.DomUtil.create('div', 'myControl');
-
-        const customButton = (
-          <LocateButton onClick={refreshMap}>
-            <MdGpsFixed />
-          </LocateButton>
-        );
-        ReactDOM.render(customButton, buttonControl._div);
-
-        return buttonControl._div;
-      };
-
-      buttonControl.addTo(map);
-
-      return () => {
-        map.removeControl(buttonControl);
-      };
-    }, [map]); // Removed unnecessary dependencies here
-
-    return null;
-  };
 
   return (
     <div className={styles['map-wrapper']}>
@@ -67,7 +29,12 @@ const Map = () => {
             A pretty CSS3 popup. <br /> Easily customizable.
           </Popup>
         </Marker>
-        <CustomButtonControl />
+        <FindUserPosition
+          userPosition={userPosition}
+          ZOOM_LEVEL={ZOOM_LEVEL}
+          LocateButton={LocateButton}
+          MdGpsFixed={MdGpsFixed}
+        />
       </MapContainer>
     </div>
   );
