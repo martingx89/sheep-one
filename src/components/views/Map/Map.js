@@ -4,6 +4,7 @@ import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchGPSData } from '../../../redux/userPositionRedux';
 import { INITIAL_COORDS } from '../../../constants/initialData';
+import { ZOOM_LEVEL } from '../../../constants/mapSettings';
 import LocateButton from '../../common/LocateButton/LocateButton';
 import styles from './Map.module.scss';
 import L from 'leaflet';
@@ -12,7 +13,6 @@ import { MdGpsFixed } from 'react-icons/md';
 const Map = () => {
   const dispatch = useDispatch();
   const userPosition = useSelector((state) => state.userPosition);
-  const zoomLevel = 15;
 
   useEffect(() => {
     dispatch(fetchGPSData());
@@ -23,7 +23,7 @@ const Map = () => {
 
     useEffect(() => {
       const refreshMap = () => {
-        map.flyTo([userPosition[0], userPosition[1]], zoomLevel);
+        map.flyTo([userPosition[0], userPosition[1]], ZOOM_LEVEL);
       };
 
       if (!map) return;
@@ -57,7 +57,7 @@ const Map = () => {
 
   return (
     <div className={styles['map-wrapper']}>
-      <MapContainer center={userPosition || INITIAL_COORDS} zoom={zoomLevel} scrollWheelZoom={true}>
+      <MapContainer center={userPosition || INITIAL_COORDS} zoom={ZOOM_LEVEL} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetmap</a> contributors'
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
