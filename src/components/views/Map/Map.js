@@ -12,7 +12,7 @@ import { MdGpsFixed } from 'react-icons/md';
 const Map = () => {
   const dispatch = useDispatch();
   const userPosition = useSelector((state) => state.userPosition);
-  const zoomLevel = 13;
+  const zoomLevel = 15;
 
   useEffect(() => {
     dispatch(fetchGPSData());
@@ -23,7 +23,7 @@ const Map = () => {
 
     useEffect(() => {
       const refreshMap = () => {
-        map.flyTo([userPosition[0], userPosition[1]]);
+        map.flyTo([userPosition[0], userPosition[1]], zoomLevel);
       };
 
       if (!map) return;
@@ -50,7 +50,7 @@ const Map = () => {
       return () => {
         map.removeControl(buttonControl);
       };
-    }, [map]);
+    }, [map]); // Removed unnecessary dependencies here
 
     return null;
   };
