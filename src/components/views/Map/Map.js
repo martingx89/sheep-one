@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet';
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,20 +13,19 @@ const Map = () => {
   const dispatch = useDispatch();
   const userPosition = useSelector((state) => state.userPosition);
   const zoomLevel = 13;
-  const [mapKey, setMapKey] = useState(0);
 
   useEffect(() => {
     dispatch(fetchGPSData());
   }, [dispatch]);
 
-  const refreshMap = () => {
-    setMapKey(mapKey + 1);
-  };
-
   const CustomButtonControl = () => {
     const map = useMap();
 
     useEffect(() => {
+      const refreshMap = () => {
+        map.flyTo([userPosition[0], userPosition[1]]);
+      };
+
       if (!map) return;
 
       const buttonControl = L.control({
@@ -58,9 +57,9 @@ const Map = () => {
 
   return (
     <div className={styles['map-wrapper']}>
-      <MapContainer key={mapKey} center={userPosition || INITIAL_COORDS} zoom={zoomLevel} scrollWheelZoom={true}>
+      <MapContainer center={userPosition || INITIAL_COORDS} zoom={zoomLevel} scrollWheelZoom={true}>
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetmap</a> contributors'
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
         />
         <Marker position={userPosition}>
