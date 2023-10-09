@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
-import { MapContainer, Marker, Popup, TileLayer, useMap } from 'react-leaflet';
+import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchGPSData } from '../../../redux/userPositionRedux';
+import FindUserPosition from '../../../utils/mapUtils';
 import { INITIAL_COORDS } from '../../../constants/initialData';
 import { ZOOM_LEVEL } from '../../../constants/mapSettings';
-import LocateButton from '../../common/LocateButton/LocateButton';
 import styles from './Map.module.scss';
-import { MdGpsFixed } from 'react-icons/md';
-import FindUserPosition from '../../../utils/mapUtils';
 
 const Map = () => {
   const dispatch = useDispatch();
@@ -29,12 +27,7 @@ const Map = () => {
             A pretty CSS3 popup. <br /> Easily customizable.
           </Popup>
         </Marker>
-        <FindUserPosition
-          userPosition={userPosition}
-          ZOOM_LEVEL={ZOOM_LEVEL}
-          LocateButton={LocateButton}
-          MdGpsFixed={MdGpsFixed}
-        />
+        <FindUserPosition userPosition={userPosition} ZOOM_LEVEL={ZOOM_LEVEL} />
       </MapContainer>
     </div>
   );

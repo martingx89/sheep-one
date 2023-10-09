@@ -2,8 +2,10 @@ import { useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
+import { MdGpsFixed } from 'react-icons/md';
+import LocateButton from '../components/common/LocateButton/LocateButton';
 
-const FindUserPosition = ({ userPosition, ZOOM_LEVEL, LocateButton, MdGpsFixed }) => {
+const FindUserPosition = ({ userPosition, ZOOM_LEVEL }) => {
   const map = useMap();
 
   useEffect(() => {
@@ -35,7 +37,7 @@ const FindUserPosition = ({ userPosition, ZOOM_LEVEL, LocateButton, MdGpsFixed }
     return () => {
       map.removeControl(buttonControl);
     };
-  }, [map, userPosition, ZOOM_LEVEL, LocateButton, MdGpsFixed]);
+  }, [map, userPosition, ZOOM_LEVEL]);
 
   return null;
 };
