@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import ReactDOM from 'react-dom';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
 import { MdGpsFixed } from 'react-icons/md';
 import LocateButton from '../components/common/LocateButton/LocateButton';
+import { createRoot } from 'react-dom/client';
 
 const FindUserPosition = ({ userPosition, ZOOM_LEVEL }) => {
   const map = useMap();
@@ -22,12 +22,14 @@ const FindUserPosition = ({ userPosition, ZOOM_LEVEL }) => {
     buttonControl.onAdd = () => {
       buttonControl._div = L.DomUtil.create('div', 'myControl');
 
-      const customButton = (
+      const button = (
         <LocateButton onClick={refreshMap}>
           <MdGpsFixed />
         </LocateButton>
       );
-      ReactDOM.render(customButton, buttonControl._div);
+
+      const root = createRoot(buttonControl._div);
+      root.render(button);
 
       return buttonControl._div;
     };
