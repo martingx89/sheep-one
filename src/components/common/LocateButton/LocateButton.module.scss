@@ -1,19 +1,23 @@
 @import '../../../styles/settings.scss';
 
 .locate-button {
-  background-color: $color-dark;
-  border: 1px solid $color-background;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-  margin: 5px;
-  transition: (background-color, border) 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-background;
+  border: none;
+  border-radius: 2px;
+  height: 30px;
+  width: 30px;
+  color: black;
+  font-size: 22px;
+  line-height: 30px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  background-clip: padding-box;
+  cursor: pointer;
 
   &:hover {
-    background-color: $color-light;
-    border: 1px solid $color-accent;
+    background-color: green; /* Kolor tła przy najechaniu */
+    color: white; /* Kolor tekstu przy najechaniu */
   }
 }

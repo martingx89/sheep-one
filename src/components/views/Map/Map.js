@@ -7,6 +7,7 @@ import { INITIAL_COORDS } from '../../../constants/initialData';
 import LocateButton from '../../common/LocateButton/LocateButton';
 import styles from './Map.module.scss';
 import L from 'leaflet';
+import { MdGpsFixed } from 'react-icons/md';
 
 const Map = () => {
   const dispatch = useDispatch();
@@ -35,7 +36,11 @@ const Map = () => {
       buttonControl.onAdd = () => {
         buttonControl._div = L.DomUtil.create('div', 'myControl');
 
-        const customButton = <LocateButton onClick={refreshMap}>Find me</LocateButton>;
+        const customButton = (
+          <LocateButton onClick={refreshMap}>
+            <MdGpsFixed />
+          </LocateButton>
+        );
         ReactDOM.render(customButton, buttonControl._div);
 
         return buttonControl._div;
