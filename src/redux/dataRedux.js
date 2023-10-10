@@ -1,11 +1,11 @@
 import { API_URL } from '../config';
+import { createTilesActionName } from '../utils/actionsUtility';
 
 //selectors
 export const getAllData = (state) => state.tilesData;
 
 //actions
-const createActionName = (actionName) => `app/tilesData/${actionName}`;
-export const GET_DATA = createActionName('GET_DATA');
+export const GET_DATA = createTilesActionName('GET_DATA');
 
 //action creators
 export const getData = (payload) => ({ type: GET_DATA, payload });
