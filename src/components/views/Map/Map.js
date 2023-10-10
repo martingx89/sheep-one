@@ -5,6 +5,7 @@ import FindUserPosition from '../../../utils/mapUtils';
 import { INITIAL_COORDS } from '../../../constants/initialData';
 import { ZOOM_LEVEL } from '../../../constants/mapSettings';
 import styles from './Map.module.scss';
+import { UserPosition } from '../../features/UserPosition';
 
 const Map = () => {
   const userPosition = useSelector((state) => state.userPosition);
@@ -23,6 +24,7 @@ const Map = () => {
         </Marker>
         <FindUserPosition userPosition={userPosition} ZOOM_LEVEL={ZOOM_LEVEL} />
       </MapContainer>
+      <UserPosition />
     </div>
   );
 };
