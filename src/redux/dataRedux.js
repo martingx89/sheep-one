@@ -1,10 +1,10 @@
 import { API_URL } from '../config';
 
 //selectors
-export const getAllData = (state) => state.data;
+export const getAllData = (state) => state.tilesData;
 
 //actions
-const createActionName = (actionName) => `app/data/${actionName}`;
+const createActionName = (actionName) => `app/tilesData/${actionName}`;
 export const GET_DATA = createActionName('GET_DATA');
 
 //action creators
@@ -13,7 +13,7 @@ export const getData = (payload) => ({ type: GET_DATA, payload });
 //fetch
 export const fetchData = () => {
   return (dispatch) => {
-    fetch(`${API_URL}/data`)
+    fetch(`${API_URL}/tilesData`)
       .then((res) => res.json())
       .then((data) => dispatch(getData(data)));
   };

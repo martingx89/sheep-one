@@ -3,8 +3,8 @@ import dataReducer from './dataRedux';
 import userPosition from './userPositionRedux';
 
 const rootReducer = combineReducers({
-  data: dataReducer,
-  userPosition: userPosition,
+  tilesData: dataReducer,
+  userData: userPosition,
 });
 
 export default rootReducer;

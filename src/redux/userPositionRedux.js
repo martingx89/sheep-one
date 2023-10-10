@@ -1,7 +1,7 @@
 import { INITIAL_STATE } from '../constants/initialData';
 
 // selectors
-export const getCoords = (state) => state.userPosition;
+export const getCoords = (state) => state.userData;
 
 // actions
 const createActionName = (actionName) => `app/data/${actionName}`;
