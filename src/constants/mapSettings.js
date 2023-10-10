@@ -1,6 +1,6 @@
 export const ZOOM_LEVEL = 15;
 export const FLY_TO_SETUP = {
-  duration: 1.5, // Animation duration in seconds
+  duration: 1, // Animation duration in seconds
   easeLinearity: 0.25, // Easing linearity (adjust as needed)
   noMoveStart: false, // Fire the move event at the start of the animation
   animate: true, // Smooth animation
