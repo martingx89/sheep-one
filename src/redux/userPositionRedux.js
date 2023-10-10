@@ -1,6 +1,5 @@
 import { INITIAL_STATE } from '../constants/initialData';
 import { createUserActionName } from '../utils/actionsUtility';
-import { usePosition } from 'use-position';
 
 // selectors
 export const getUserData = (state) => state.userData;
