@@ -1,28 +1,34 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useMap } from 'react-leaflet';
+import { useDispatch, useSelector } from 'react-redux';
 import L from 'leaflet';
 import { MdGpsFixed } from 'react-icons/md';
 import LocateButton from '../components/common/LocateButton/LocateButton';
 import { createRoot } from 'react-dom/client';
 import { usePosition } from 'use-position';
 import { FLY_TO_SETUP } from '../constants/mapSettings';
+import { setUserPosition } from '../redux/actions/mapActions'
 
-
-const FindUserPosition = ({ userPosition, ZOOM_LEVEL }) => {
-
+const FindUserPosition = ({ ZOOM_LEVEL }) => {
   const watch = true;
-  const { latitude, longitude, speed, timestamp, accuracy, heading, error } = usePosition(watch);
-
-  console.log(latitude, longitude);
+  const { latitude, longitude } = usePosition(watch);
 
   const map = useMap();
+  const dispatch = useDispatch();
+  const userPosition = useSelector((state) => state.map.userPosition);
 
   useEffect(() => {
-    const refreshMap = () => {
-      map.flyTo([latitude, longitude], ZOOM_LEVEL, FLY_TO_SETUP);
-    };
+    if (latitude && longitude) {
+      dispatch(setUserPosition({ latitude, longitude }));
+    }
+  }, [latitude, longitude, dispatch]);
 
+  useEffect(() => {
     if (!map) return;
+
+    const refreshMap = () => {
+      map.flyTo([userPosition.latitude, userPosition.longitude], ZOOM_LEVEL, FLY_TO_SETUP);
+    };
 
     const buttonControl = L.control({
       position: 'bottomright',
@@ -48,7 +54,7 @@ const FindUserPosition = ({ userPosition, ZOOM_LEVEL }) => {
     return () => {
       map.removeControl(buttonControl);
     };
-  }, [map, latitude, longitude, ZOOM_LEVEL]);
+  }, [map, userPosition, ZOOM_LEVEL]);
 
   return null;
 };

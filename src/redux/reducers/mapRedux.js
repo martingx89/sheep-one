@@ -1,12 +1,17 @@
-import { INITIAL_USER_STATE } from "../../constants/initialData";
+import { INITIAL_MAP_STATE } from "../../constants/initialData";
 
 //selectors
 export const getMapData = (state) => state.map;
 
-const mapReducer = (statePart = INITIAL_USER_STATE, action) => {
+const mapReducer = (state = INITIAL_MAP_STATE, action) => {
   switch (action.type) {
+    case 'SET_USER_POSITION':
+      return {
+        ...state,
+        userPosition: action.payload,
+      };
     default:
-      return statePart;
+      return state;
   }
 };
 
