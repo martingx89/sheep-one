@@ -24,7 +24,7 @@ const Map = () => {
             A pretty CSS3 popup. <br /> Easily customizable.
           </Popup>
         </Marker>
-        <FindUserPosition userPosition={INITIAL_COORDS}/>
+        <FindUserPosition userPosition={INITIAL_COORDS} ZOOM_LEVEL={ZOOM_LEVEL}/>
       </MapContainer>
     </div>
   );
