@@ -97,6 +97,7 @@ const Map = () => {
   return (
     <div className={styles['map-wrapper']}>
       <MapContainer center={center} zoom={ZOOM_LEVEL} scrollWheelZoom={true}>
+        <FindUserPosition ZOOM_LEVEL={ZOOM_LEVEL} />
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetmap</a> contributors'
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
@@ -106,7 +107,6 @@ const Map = () => {
             A pretty CSS3 popup. <br /> Easily customizable.
           </Popup>
         </Marker>
-        <FindUserPosition ZOOM_LEVEL={ZOOM_LEVEL} />
       </MapContainer>
     </div>
   );
