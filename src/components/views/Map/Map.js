@@ -7,11 +7,11 @@ import styles from './Map.module.scss';
 import { useMap } from 'react-leaflet';
 import { useDispatch, useSelector } from 'react-redux';
 import L from 'leaflet';
-import { MdGpsFixed } from 'react-icons/md';
 import LocateButton from '../../common/LocateButton/LocateButton';
-import { createRoot } from 'react-dom/client';
-import { FLY_TO_SETUP } from '../../../constants/mapSettings';
 import { setUserPosition } from '../../../redux/actions/mapActions';
+import { MdGpsFixed } from 'react-icons/md';
+import { createRoot } from 'react-dom/client';
+import { FLY_TO_SETUP } from '../../../constants/mapSettings'; // Import FLY_TO_SETUP
 
 const getGPSLocation = (successCallback, errorCallback) => {
   if ('geolocation' in navigator) {
@@ -41,7 +41,7 @@ const FindUserPosition = ({ ZOOM_LEVEL }) => {
       getGPSLocation(
         ({ latitude, longitude }) => {
           dispatch(setUserPosition({ latitude, longitude }));
-          map.flyTo([latitude, longitude], ZOOM_LEVEL, FLY_TO_SETUP);
+          map.flyTo([latitude, longitude], ZOOM_LEVEL, FLY_TO_SETUP); // Use FLY_TO_SETUP from constants
         },
         (error) => {
           setError(error);
@@ -88,11 +88,14 @@ const Map = () => {
   const map = useSelector(getMapData);
   console.log(map);
 
-  const coordinates = [map.userPosition.latitude, map.userPosition.longitude];
+  const coordinates = [
+    map.userPosition ? map.userPosition.latitude : INITIAL_COORDS[0],
+    map.userPosition ? map.userPosition.longitude : INITIAL_COORDS[1],
+  ];
 
   console.log(coordinates);
 
-  const center = coordinates || INITIAL_COORDS;
+  const center = coordinates;
 
   return (
     <div className={styles['map-wrapper']}>
