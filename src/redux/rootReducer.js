@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import tilesReducer from './tilesRedux';
-import userReducer from './userRedux';
+import tilesReducer from './reducers/tilesRedux';
+import userReducer from './reducers/userRedux';
 
 const rootReducer = combineReducers({
   tiles: tilesReducer,

@@ -1,5 +1,5 @@
-import { API_URL } from '../config';
-import { createTilesActionName } from '../utils/actionsUtility';
+import { API_URL } from '../../config';
+import { createTilesActionName } from '../../utils/actionsUtility';
 
 //selectors
 export const getAllTiles = (state) => state.tiles;
