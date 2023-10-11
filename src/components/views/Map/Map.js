@@ -3,14 +3,14 @@ import { useSelector } from 'react-redux';
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import { ZOOM_LEVEL } from '../../../constants/mapSettings';
 import { INITIAL_COORDS } from '../../../constants/initialData';
-import { getUserData } from '../../../redux/reducers/userRedux';
+import { getMapData } from '../../../redux/reducers/mapRedux';
 import FindUserPosition from '../../../utils/FindUserPosition';
 import styles from './Map.module.scss';
 
 const Map = () => {
 
-  const user = useSelector(getUserData);
-  console.log(user);
+  const map = useSelector(getMapData);
+  console.log(map);
 
   
   return (
