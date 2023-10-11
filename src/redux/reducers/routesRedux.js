@@ -2,15 +2,15 @@ import { API_URL } from '../../config';
 import { createRoutesActionName } from '../actions/actionsUtility';
 
 //selectors
-export const getAllRoutes = (state) => state.routes;
+export const getRoutesData = (state) => state.routes;
 
-//actions
+// actions
 export const GET_DATA = createRoutesActionName('GET_DATA');
 
-//action creators
+// action creators
 export const getRoutes = (payload) => ({ type: GET_DATA, payload });
 
-//fetch
+// fetch
 export const fetchData = () => {
   return (dispatch) => {
     fetch(`${API_URL}/routes`)
