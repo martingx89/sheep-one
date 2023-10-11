@@ -19,7 +19,7 @@ export const fetchData = () => {
   };
 };
 
-const dataReducer = (statePart = [], action) => {
+const tilesReducer = (statePart = [], action) => {
   switch (action.type) {
     case GET_DATA:
       return [...action.payload];
@@ -28,4 +28,4 @@ const dataReducer = (statePart = [], action) => {
   }
 };
 
-export default dataReducer;
+export default tilesReducer;
