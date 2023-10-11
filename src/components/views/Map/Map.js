@@ -5,6 +5,7 @@ import { ZOOM_LEVEL } from '../../../constants/mapSettings';
 import { INITIAL_COORDS } from '../../../constants/initialData';
 import { getUserData } from '../../../redux/reducers/userRedux';
 import styles from './Map.module.scss';
+import FindUserPosition from '../../../utils/FindUserPosition';
 
 const Map = () => {
 
@@ -23,6 +24,7 @@ const Map = () => {
             A pretty CSS3 popup. <br /> Easily customizable.
           </Popup>
         </Marker>
+        <FindUserPosition userPosition={INITIAL_COORDS}/>
       </MapContainer>
     </div>
   );
