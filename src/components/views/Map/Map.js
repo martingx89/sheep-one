@@ -12,6 +12,11 @@ const Map = () => {
   const map = useSelector(getMapData);
   console.log(map);
 
+  const coordinates = [map.userPosition.latitude, map.userPosition.longitude];
+
+  console.log(coordinates)
+
+  const center = coordinates || INITIAL_COORDS;
   
   return (
     <div className={styles['map-wrapper']}>
@@ -20,12 +25,12 @@ const Map = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetmap</a> contributors'
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
         />
-        <Marker position={INITIAL_COORDS}>
+        <Marker position={center}>
           <Popup>
             A pretty CSS3 popup. <br /> Easily customizable.
           </Popup>
         </Marker>
-        <FindUserPosition userPosition={INITIAL_COORDS} ZOOM_LEVEL={ZOOM_LEVEL}/>
+        <FindUserPosition ZOOM_LEVEL={ZOOM_LEVEL}/>
       </MapContainer>
     </div>
   );
