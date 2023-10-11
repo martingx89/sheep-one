@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
-import tilesReducer from './reducers/tilesRedux';
+import routesReducer from './reducers/routesRedux';
 import userReducer from './reducers/userRedux';
 import mapReducer from './reducers/mapRedux';
 
 const rootReducer = combineReducers({
-  tiles: tilesReducer,
+  routes: routesReducer,
   user: userReducer,
-  map: mapReducer
+  map: mapReducer,
 });
 
 export default rootReducer;

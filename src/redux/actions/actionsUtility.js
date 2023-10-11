@@ -1,2 +1,2 @@
-export const createTilesActionName = (actionName) => `app/tilesData/${actionName}`;
-export const createUserActionName = (actionName) => `app/userData/${actionName}`;
+export const createRoutesActionName = (actionName) => `app/routes/${actionName}`;
+export const createUserActionName = (actionName) => `app/user/${actionName}`;

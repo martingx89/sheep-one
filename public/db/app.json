@@ -1,11 +1,96 @@
 {
-  "tiles": [
+  "routes": [
     {
-      "id": 1,
-      "fullName": "Leskie źródełka",
-      "shortName": "LSK_t-01",
-      "description": "Trasa nr 1"
+      "route_name": "Route 1",
+      "distance": "15 km",
+      "duration": "1.5 hours",
+      "difficulty_level": "Easy",
+      "description": "A pleasant bike route around the city park.",
+      "gallery_paths": ["https://example.com/photo1.jpg", "https://example.com/photo2.jpg"],
+      "gpx_track": "GPX track for Route 1 in base64 format"
+    },
+    {
+      "route_name": "Route 2",
+      "distance": "25 km",
+      "duration": "2 hours",
+      "difficulty_level": "Moderate",
+      "description": "Bike route along the riverbank with a view of the mountains.",
+      "gallery_paths": ["https://example.com/photo3.jpg", "https://example.com/photo4.jpg"],
+      "gpx_track": "GPX track for Route 2 in base64 format"
+    },
+    {
+      "route_name": "Route 3",
+      "distance": "30 km",
+      "duration": "2.5 hours",
+      "difficulty_level": "Challenging",
+      "description": "An adventurous mountain bike trail through the forest.",
+      "gallery_paths": ["https://example.com/photo5.jpg", "https://example.com/photo6.jpg"],
+      "gpx_track": "GPX track for Route 3 in base64 format"
+    },
+    {
+      "route_name": "Route 4",
+      "distance": "20 km",
+      "duration": "2 hours",
+      "difficulty_level": "Moderate",
+      "description": "Scenic route through rolling hills and farmland.",
+      "gallery_paths": ["https://example.com/photo7.jpg", "https://example.com/photo8.jpg"],
+      "gpx_track": "GPX track for Route 4 in base64 format"
+    },
+    {
+      "route_name": "Route 5",
+      "distance": "35 km",
+      "duration": "3 hours",
+      "difficulty_level": "Difficult",
+      "description": "Challenging uphill and downhill trail in the mountains.",
+      "gallery_paths": ["https://example.com/photo9.jpg", "https://example.com/photo10.jpg"],
+      "gpx_track": "GPX track for Route 5 in base64 format"
+    },
+    {
+      "route_name": "Route 6",
+      "distance": "10 km",
+      "duration": "1 hour",
+      "difficulty_level": "Easy",
+      "description": "Short and easy city bike ride for beginners.",
+      "gallery_paths": ["https://example.com/photo11.jpg", "https://example.com/photo12.jpg"],
+      "gpx_track": "GPX track for Route 6 in base64 format"
+    },
+    {
+      "route_name": "Route 7",
+      "distance": "28 km",
+      "duration": "2.5 hours",
+      "difficulty_level": "Moderate",
+      "description": "Rural route with scenic views of farmlands and forests.",
+      "gallery_paths": ["https://example.com/photo13.jpg", "https://example.com/photo14.jpg"],
+      "gpx_track": "GPX track for Route 7 in base64 format"
+    },
+    {
+      "route_name": "Route 8",
+      "distance": "45 km",
+      "duration": "4 hours",
+      "difficulty_level": "Challenging",
+      "description": "Long-distance route through hilly terrain and woods.",
+      "gallery_paths": ["https://example.com/photo15.jpg", "https://example.com/photo16.jpg"],
+      "gpx_track": "GPX track for Route 8 in base64 format"
+    },
+    {
+      "route_name": "Route 9",
+      "distance": "22 km",
+      "duration": "2 hours",
+      "difficulty_level": "Moderate",
+      "description": "Urban bike trail with stops at historic landmarks.",
+      "gallery_paths": ["https://example.com/photo17.jpg", "https://example.com/photo18.jpg"],
+      "gpx_track": "GPX track for Route 9 in base64 format"
+    },
+    {
+      "route_name": "Route 10",
+      "distance": "40 km",
+      "duration": "3.5 hours",
+      "difficulty_level": "Challenging",
+      "description": "Mountain bike adventure with steep climbs and descents.",
+      "gallery_paths": ["https://example.com/photo19.jpg", "https://example.com/photo20.jpg"],
+      "gpx_track": "GPX track for Route 10 in base64 format"
     }
   ],
+
   "user": []
 }
