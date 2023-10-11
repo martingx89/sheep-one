@@ -2,20 +2,20 @@ import { API_URL } from '../config';
 import { createTilesActionName } from '../utils/actionsUtility';
 
 //selectors
-export const getAllData = (state) => state.tilesData;
+export const getAllTiles = (state) => state.tiles;
 
 //actions
 export const GET_DATA = createTilesActionName('GET_DATA');
 
 //action creators
-export const getData = (payload) => ({ type: GET_DATA, payload });
+export const getTiles = (payload) => ({ type: GET_DATA, payload });
 
 //fetch
 export const fetchData = () => {
   return (dispatch) => {
-    fetch(`${API_URL}/tilesData`)
+    fetch(`${API_URL}/tiles`)
       .then((res) => res.json())
-      .then((data) => dispatch(getData(data)));
+      .then((tiles) => dispatch(getTiles(tiles)));
   };
 };
 

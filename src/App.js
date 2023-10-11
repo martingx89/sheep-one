@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Routes } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchData } from './redux/dataRedux';
+import { fetchData } from './redux/tilesRedux';
 import Home from './components/pages/Home/Home';
 // import News from './components/pages/News/News';
 import Catalog from './components/pages/Catalog/Catalog';

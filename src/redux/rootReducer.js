@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import dataReducer from './dataRedux';
+import tilesReducer from './tilesRedux';
 
 const rootReducer = combineReducers({
-  tilesData: dataReducer,
+  tiles: tilesReducer,
 });
 
 export default rootReducer;

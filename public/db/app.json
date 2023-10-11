@@ -1,5 +1,5 @@
 {
-  "tilesData": [
+  "tiles": [
     {
       "id": 1,
       "fullName": "Leskie źródełka",
@@ -7,5 +7,5 @@
       "description": "Trasa nr 1"
     }
   ],
-  "userData": []
+  "user": []
 }
