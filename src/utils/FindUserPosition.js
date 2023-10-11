@@ -1,34 +1,50 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useMap } from 'react-leaflet';
 import { useDispatch, useSelector } from 'react-redux';
 import L from 'leaflet';
 import { MdGpsFixed } from 'react-icons/md';
 import LocateButton from '../components/common/LocateButton/LocateButton';
 import { createRoot } from 'react-dom/client';
-import { usePosition } from 'use-position';
 import { FLY_TO_SETUP } from '../constants/mapSettings';
-import { setUserPosition } from '../redux/actions/mapActions'
+import { setUserPosition } from '../redux/actions/mapActions';
+
+function getGPSLocation(successCallback, errorCallback) {
+  if ('geolocation' in navigator) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+        successCallback({ latitude, longitude });
+      },
+      (error) => {
+        errorCallback(error);
+      }
+    );
+  } else {
+    errorCallback({ message: 'Geolocation is not available' });
+  }
+}
 
 const FindUserPosition = ({ ZOOM_LEVEL }) => {
-  const watch = true;
-  const { latitude, longitude } = usePosition(watch);
-
+  const [error, setError] = useState(null);
   const map = useMap();
   const dispatch = useDispatch();
   const userPosition = useSelector((state) => state.map.userPosition);
 
   useEffect(() => {
-    if (latitude && longitude) {
-      dispatch(setUserPosition({ latitude, longitude }));
-    }
-  }, [latitude, longitude, dispatch]);
-
-  useEffect(() => {
-    if (!map) return;
-
     const refreshMap = () => {
-      map.flyTo([userPosition.latitude, userPosition.longitude], ZOOM_LEVEL, FLY_TO_SETUP);
+      getGPSLocation(
+        ({ latitude, longitude }) => {
+          dispatch(setUserPosition({ latitude, longitude }));
+          map.flyTo([latitude, longitude], ZOOM_LEVEL, FLY_TO_SETUP);
+        },
+        (error) => {
+          setError(error);
+        }
+      );
     };
+
+    if (!map) return;
 
     const buttonControl = L.control({
       position: 'bottomright',
@@ -54,7 +70,11 @@ const FindUserPosition = ({ ZOOM_LEVEL }) => {
     return () => {
       map.removeControl(buttonControl);
     };
-  }, [map, userPosition, ZOOM_LEVEL]);
+  }, [map, userPosition, ZOOM_LEVEL, dispatch]);
+
+  if (error) {
+    return console.log(error.message);
+  }
 
   return null;
 };
