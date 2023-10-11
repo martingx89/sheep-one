@@ -4,14 +4,22 @@ import L from 'leaflet';
 import { MdGpsFixed } from 'react-icons/md';
 import LocateButton from '../components/common/LocateButton/LocateButton';
 import { createRoot } from 'react-dom/client';
+import { usePosition } from 'use-position';
 import { FLY_TO_SETUP } from '../constants/mapSettings';
 
+
 const FindUserPosition = ({ userPosition, ZOOM_LEVEL }) => {
+
+  const watch = true;
+  const { latitude, longitude, speed, timestamp, accuracy, heading, error } = usePosition(watch);
+
+  console.log(latitude, longitude);
+
   const map = useMap();
 
   useEffect(() => {
     const refreshMap = () => {
-      map.flyTo([userPosition[0], userPosition[1]], ZOOM_LEVEL, FLY_TO_SETUP);
+      map.flyTo([latitude, longitude], ZOOM_LEVEL, FLY_TO_SETUP);
     };
 
     if (!map) return;
@@ -40,7 +48,7 @@ const FindUserPosition = ({ userPosition, ZOOM_LEVEL }) => {
     return () => {
       map.removeControl(buttonControl);
     };
-  }, [map, userPosition, ZOOM_LEVEL]);
+  }, [map, latitude, longitude, ZOOM_LEVEL]);
 
   return null;
 };

@@ -4,14 +4,15 @@ import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
 import { ZOOM_LEVEL } from '../../../constants/mapSettings';
 import { INITIAL_COORDS } from '../../../constants/initialData';
 import { getUserData } from '../../../redux/reducers/userRedux';
-import styles from './Map.module.scss';
 import FindUserPosition from '../../../utils/FindUserPosition';
+import styles from './Map.module.scss';
 
 const Map = () => {
 
   const user = useSelector(getUserData);
   console.log(user);
 
+  
   return (
     <div className={styles['map-wrapper']}>
       <MapContainer center={INITIAL_COORDS} zoom={ZOOM_LEVEL} scrollWheelZoom={true}>
