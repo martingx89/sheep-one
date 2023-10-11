@@ -20,7 +20,7 @@ const Map = () => {
   
   return (
     <div className={styles['map-wrapper']}>
-      <MapContainer center={INITIAL_COORDS} zoom={ZOOM_LEVEL} scrollWheelZoom={true}>
+      <MapContainer center={center} zoom={ZOOM_LEVEL} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetmap</a> contributors'
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
