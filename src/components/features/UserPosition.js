@@ -1,9 +1,10 @@
 import React from 'react';
 import { usePosition } from 'use-position';
+import { SET_WATCH } from '../../constants/mapSettings';
 
 export const UserPosition = () => {
-  const watch = true;
-  const { latitude, longitude, speed, timestamp, accuracy, heading, error } = usePosition(watch);
+
+  const { latitude, longitude, speed, timestamp, accuracy, heading, error } = usePosition(SET_WATCH);
 
   return (
     <code>
