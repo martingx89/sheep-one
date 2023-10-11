@@ -8,7 +8,7 @@ import { createRoot } from 'react-dom/client';
 import { FLY_TO_SETUP } from '../constants/mapSettings';
 import { setUserPosition } from '../redux/actions/mapActions';
 
-function getGPSLocation(successCallback, errorCallback) {
+const getGPSLocation = (successCallback, errorCallback) => {
   if ('geolocation' in navigator) {
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -23,7 +23,7 @@ function getGPSLocation(successCallback, errorCallback) {
   } else {
     errorCallback({ message: 'Geolocation is not available' });
   }
-}
+};
 
 const FindUserPosition = ({ ZOOM_LEVEL }) => {
   const [error, setError] = useState(null);
