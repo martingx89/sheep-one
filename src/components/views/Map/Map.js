@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { MapContainer, Marker, Popup, TileLayer, Polyline } from 'react-leaflet';
-import { ZOOM_LEVEL } from '../../../constants/mapSettings';
 import { INITIAL_COORDS } from '../../../constants/initialData';
 import { getMapData } from '../../../redux/reducers/mapRedux';
 import styles from './Map.module.scss';
@@ -11,11 +10,16 @@ import LocateButton from '../../common/LocateButton/LocateButton';
 import { setUserPosition } from '../../../redux/actions/mapActions';
 import { MdGpsFixed } from 'react-icons/md';
 import { createRoot } from 'react-dom/client';
-import { FLY_TO_SETUP } from '../../../constants/mapSettings'; // Import FLY_TO_SETUP
+import { FLY_TO_SETUP, HIGH_ACCURACY, TIMEOUT, ZOOM_LEVEL } from '../../../constants/mapSettings'; // Import FLY_TO_SETUP
 import { getRoutesData } from '../../../redux/reducers/routesRedux';
 
 const getGPSLocation = (successCallback, errorCallback) => {
   if ('geolocation' in navigator) {
+    const options = {
+      enableHighAccuracy: HIGH_ACCURACY,
+      timeout: TIMEOUT
+    };
+
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const latitude = position.coords.latitude;
@@ -24,7 +28,8 @@ const getGPSLocation = (successCallback, errorCallback) => {
       },
       (error) => {
         errorCallback(error);
-      }
+      },
+      options
     );
   } else {
     errorCallback({ message: 'Geolocation is not available' });

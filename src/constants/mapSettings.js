@@ -14,4 +14,5 @@ export const FLY_TO_SETUP = {
   paddingTopLeft: [0, 0], // Padding from the top-left corner of the map container
   paddingBottomRight: [0, 0], // Padding from the bottom-right corner of the map container
 };
-export const SET_WATCH = false;
+export const HIGH_ACCURACY= true;
+export const TIMEOUT= 1000;
