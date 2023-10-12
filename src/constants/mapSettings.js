@@ -15,4 +15,4 @@ export const FLY_TO_SETUP = {
   paddingBottomRight: [0, 0], // Padding from the bottom-right corner of the map container
 };
 export const HIGH_ACCURACY= true;
-export const TIMEOUT= 1000;
+export const TIMEOUT= 10000;
