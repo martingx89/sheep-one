@@ -10,31 +10,10 @@ import LocateButton from '../../common/LocateButton/LocateButton';
 import { setUserPosition } from '../../../redux/actions/mapActions';
 import { MdGpsFixed } from 'react-icons/md';
 import { createRoot } from 'react-dom/client';
-import { FLY_TO_SETUP, HIGH_ACCURACY, TIMEOUT, ZOOM_LEVEL } from '../../../constants/mapSettings'; // Import FLY_TO_SETUP
+import { FLY_TO_SETUP, ZOOM_LEVEL } from '../../../constants/mapSettings'; // Import FLY_TO_SETUP
 import { getRoutesData } from '../../../redux/reducers/routesRedux';
+import { getGPSLocation } from '../../../utils/locationReguest';
 
-const getGPSLocation = (successCallback, errorCallback) => {
-  if ('geolocation' in navigator) {
-    const options = {
-      enableHighAccuracy: HIGH_ACCURACY,
-      timeout: TIMEOUT
-    };
-
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const latitude = position.coords.latitude;
-        const longitude = position.coords.longitude;
-        successCallback({ latitude, longitude });
-      },
-      (error) => {
-        errorCallback(error);
-      },
-      options
-    );
-  } else {
-    errorCallback({ message: 'Geolocation is not available' });
-  }
-};
 
 const FindUserPosition = ({ ZOOM_LEVEL }) => {
   const [error, setError] = useState(null);
