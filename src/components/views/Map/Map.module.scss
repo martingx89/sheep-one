@@ -1,7 +1,10 @@
 .map-wrapper {
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  justify-content: center;
+  position: relative; 
+  height: 500px;
+  padding: 10px;
 }
 
 .map-controls {
