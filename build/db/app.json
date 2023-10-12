@@ -19,7 +19,7 @@
       "duration": "2 hours",
       "difficulty_level": "Moderate",
       "description": "Bike route along the riverbank with a view of the mountains.",
-      "gallery_paths": ["https://example.com/photo3.jpg", "https://example.com/photo4.jpg"],
+      "gallery_paths": "https://i.postimg.cc/J75q3t3t/LSK-01-01.jpg",
       "gpx_track": [
         [49.12425, 22.57201],
         [49.1, 22.6],
@@ -32,7 +32,7 @@
       "duration": "2.5 hours",
       "difficulty_level": "Challenging",
       "description": "An adventurous mountain bike trail through the forest.",
-      "gallery_paths": ["https://example.com/photo5.jpg", "https://example.com/photo6.jpg"],
+      "gallery_paths": "https://i.postimg.cc/cH2rwRDP/LSK_01_59.jpg",
       "gpx_track": [
         [49.12425, 22.57201],
         [49.1, 22.6],
@@ -45,7 +45,7 @@
       "duration": "2 hours",
       "difficulty_level": "Moderate",
       "description": "Scenic route through rolling hills and farmland.",
-      "gallery_paths": ["https://example.com/photo7.jpg", "https://example.com/photo8.jpg"],
+      "gallery_paths": "https://i.postimg.cc/9MMWxDRV/LSK-01-45.jpg",
       "gpx_track": [
         [49.12425, 22.57201],
         [49.1, 22.6],
@@ -58,7 +58,7 @@
       "duration": "3 hours",
       "difficulty_level": "Difficult",
       "description": "Challenging uphill and downhill trail in the mountains.",
-      "gallery_paths": ["https://example.com/photo9.jpg", "https://example.com/photo10.jpg"],
+      "gallery_paths": "https://i.postimg.cc/sg71SGSN/LSK-01-32.jpg",
       "gpx_track": [
         [49.12425, 22.57201],
         [49.1, 22.6],
@@ -71,7 +71,7 @@
       "duration": "1 hour",
       "difficulty_level": "Easy",
       "description": "Short and easy city bike ride for beginners.",
-      "gallery_paths": ["https://example.com/photo11.jpg", "https://example.com/photo12.jpg"],
+      "gallery_paths": "https://i.postimg.cc/qqWM6p7r/LSK-01-38.jpg",
       "gpx_track": [
         [49.12425, 22.57201],
         [49.1, 22.6],
@@ -84,7 +84,7 @@
       "duration": "2.5 hours",
       "difficulty_level": "Moderate",
       "description": "Rural route with scenic views of farmlands and forests.",
-      "gallery_paths": ["https://example.com/photo13.jpg", "https://example.com/photo14.jpg"],
+      "gallery_paths": "https://i.postimg.cc/zDxhXhSw/LSK-01-21.jpg",
       "gpx_track": [
         [49.12425, 22.57201],
         [49.1, 22.6],
@@ -110,7 +110,7 @@
       "duration": "2 hours",
       "difficulty_level": "Moderate",
       "description": "Urban bike trail with stops at historic landmarks.",
-      "gallery_paths": ["https://i.postimg.cc/pXVBsxkC/LSK-01-00.jpg", "https://i.postimg.cc/kgzFMSCY/LSK-01-03.jpg"],
+      "gallery_paths": "https://i.postimg.cc/zDxhXhSw/LSK-01-21.jpg",
       "gpx_track": [
         [49.469095, 22.350578],
         [49.4691, 22.350588],
@@ -242,7 +242,7 @@
       "duration": "3.5 hours",
       "difficulty_level": "Challenging",
       "description": "Mountain bike adventure with steep climbs and descents.",
-      "gallery_paths": ["https://example.com/photo19.jpg", "https://example.com/photo20.jpg"],
+      "gallery_paths": "https://i.postimg.cc/zDxhXhSw/LSK-01-21.jpg",
       "gpx_track": [
         [49.12425, 22.57201],
         [49.1, 22.6],
