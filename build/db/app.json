@@ -6,7 +6,7 @@
       "duration": "1.5 hours",
       "difficulty_level": "Easy",
       "description": "A pleasant bike route around the city park.",
-      "gallery_paths": ["https://example.com/photo1.jpg", "https://example.com/photo2.jpg"],
+      "gallery_paths": "https://i.postimg.cc/pXVBsxkC/LSK-01-00.jpg",
       "gpx_track": [
         [49.12425, 22.57201],
         [49.1, 22.6],
@@ -110,7 +110,7 @@
       "duration": "2 hours",
       "difficulty_level": "Moderate",
       "description": "Urban bike trail with stops at historic landmarks.",
-      "gallery_paths": ["https://example.com/photo17.jpg", "https://example.com/photo18.jpg"],
+      "gallery_paths": ["https://i.postimg.cc/pXVBsxkC/LSK-01-00.jpg", "https://i.postimg.cc/kgzFMSCY/LSK-01-03.jpg"],
       "gpx_track": [
         [49.469095, 22.350578],
         [49.4691, 22.350588],
