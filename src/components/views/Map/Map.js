@@ -71,6 +71,7 @@ const FindUserPosition = ({ ZOOM_LEVEL }) => {
 const Map = () => {
   const map = useSelector(getMapData);
   const routes = useSelector(getRoutesData);
+  console.log(routes);
 
   const coordinates = [
     map.userPosition ? map.userPosition.latitude : INITIAL_COORDS[0],
@@ -89,7 +90,9 @@ const Map = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetmap</a> contributors'
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
         />
-        <Polyline positions={routes[8].gpx_track} color='red' />
+        {routes.map((route, index) => (
+          <Polyline key={index} positions={route.gpx_track} color='red' />
+        ))}
         <Marker position={center}>
           <Popup>
             A pretty CSS3 popup. <br /> Easily customizable.
