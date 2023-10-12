@@ -12,19 +12,20 @@ const Carousel = () => {
   console.log(routes);
 
   return (
-    <div className='center-carousel'>
-      <Slider {...settings}>
-        {routes.map((route, index) => (
-          <div className={styles['carousel-tile']} key={index}>
-            <h3>{route.route_name}</h3>
-            <p>Distance: {route.distance}</p>
-            <p>Duration: {route.duration}</p>
-            <p>Difficulty: {route.difficulty_level}</p>
-            <p>{route.description}</p>
+    <Slider {...settings}>
+      {routes.map((route, index) => (
+        <div className={styles['carousel-tile']} key={index}>
+          <h3>{route.route_name}</h3>
+          <p>Distance: {route.distance}</p>
+          <p>Duration: {route.duration}</p>
+          <p>Difficulty: {route.difficulty_level}</p>
+          <p>{route.description}</p>
+          <div className={styles['image-container']}>
+            <img src={route.gallery_paths} alt='img' />
           </div>
-        ))}
-      </Slider>
-    </div>
+        </div>
+      ))}
+    </Slider>
   );
 };
 
