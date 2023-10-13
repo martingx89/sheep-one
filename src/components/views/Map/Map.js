@@ -11,14 +11,11 @@ import styles from './Map.module.scss';
 const Map = () => {
   const map = useSelector(getMapData);
   const routes = useSelector(getRoutesData);
-  console.log(routes);
 
   const coordinates = [
     map.userPosition ? map.userPosition.latitude : INITIAL_COORDS[0],
     map.userPosition ? map.userPosition.longitude : INITIAL_COORDS[1],
   ];
-
-  console.log(coordinates);
 
   const center = coordinates;
 
