@@ -1,0 +1,12 @@
+@import '../../../styles/settings.scss';
+
+.topright-status-gps {
+  .gps-status {
+    font-size: ($base-size * 1.05);
+    font-weight: bold;
+    text-shadow: 0px 0px 1px black;
+    color: $color-warning;
+    padding: 0;
+    margin: 0;
+  }
+}
