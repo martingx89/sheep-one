@@ -22,6 +22,7 @@ const MapControls = ({ ZOOM_LEVEL }) => {
         ({ latitude, longitude }) => {
           dispatch(setUserPosition({ latitude, longitude }));
           map.flyTo([latitude, longitude], ZOOM_LEVEL, FLY_TO_SETUP);
+          setError(null);
         },
         (error) => {
           setError(error);
@@ -37,7 +38,7 @@ const MapControls = ({ ZOOM_LEVEL }) => {
 
     statusGPSControl.onAdd = () => {
       statusGPSControl._div = L.DomUtil.create('div', 'status-gps-control');
-      const statusGPS = <StatusGPS message={error ? error.message : 'No error'} />;
+      const statusGPS = <StatusGPS message={error ? error.message : 'Status OK'} error={error} />;
       const root = createRoot(statusGPSControl._div);
       root.render(statusGPS);
       return statusGPSControl._div;
