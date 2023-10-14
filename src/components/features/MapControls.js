@@ -49,7 +49,7 @@ const MapControls = ({ ZOOM_LEVEL }) => {
     };
 
     buttonControl.onAdd = () => {
-      buttonControl._div = L.DomUtil.create('div', 'myControl');
+      buttonControl._div = L.DomUtil.create('div', 'locate-control');
       const button = (
         <LocateButton onClick={refreshMap}>
           <MdGpsFixed />
