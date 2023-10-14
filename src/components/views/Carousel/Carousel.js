@@ -19,9 +19,9 @@ const Carousel = () => {
             <img src={route.gallery_paths} alt='img' />
             <div className={styles['text-overlay']}>
               <h3>{route.route_name}</h3>
-              <p>Distance: {route.distance}</p>
-              <p>Duration: {route.duration}</p>
-              <p>Difficulty: {route.difficulty_level}</p>
+              <p>Dystans: {route.distance}</p>
+              <p>Czas: {route.duration}</p>
+              <p>Poziom: {route.difficulty_level}</p>
               <p>{route.description}</p>
             </div>
           </div>
