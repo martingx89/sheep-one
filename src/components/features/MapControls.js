@@ -3,12 +3,12 @@ import { createRoot } from 'react-dom/client';
 import { useDispatch, useSelector } from 'react-redux';
 import { useMap } from 'react-leaflet';
 import L from 'leaflet';
+import { MdGpsFixed } from 'react-icons/md';
 import { setUserPosition } from '../../redux/actions/mapActions';
 import { getGPSLocation } from '../../utils/locationReguest';
 import LocateButton from '../common/LocateButton/LocateButton';
-import { FLY_TO_SETUP } from '../../constants/mapSettings';
-import { MdGpsFixed } from 'react-icons/md';
 import StatusGPS from '../common/StatusGPS/StatusGPS';
+import { FLY_TO_SETUP } from '../../constants/mapSettings';
 
 const MapControls = ({ ZOOM_LEVEL }) => {
   const [error, setError] = useState(null);
@@ -36,6 +36,10 @@ const MapControls = ({ ZOOM_LEVEL }) => {
       position: 'topright',
     });
 
+    const buttonControl = L.control({
+      position: 'bottomright',
+    });
+
     statusGPSControl.onAdd = () => {
       statusGPSControl._div = L.DomUtil.create('div', 'status-gps-control');
       const statusGPS = <StatusGPS message={error ? error.message : 'Status OK'} error={error} />;
@@ -43,12 +47,6 @@ const MapControls = ({ ZOOM_LEVEL }) => {
       root.render(statusGPS);
       return statusGPSControl._div;
     };
-
-    statusGPSControl.addTo(map);
-
-    const buttonControl = L.control({
-      position: 'bottomright',
-    });
 
     buttonControl.onAdd = () => {
       buttonControl._div = L.DomUtil.create('div', 'myControl');
@@ -62,6 +60,7 @@ const MapControls = ({ ZOOM_LEVEL }) => {
       return buttonControl._div;
     };
 
+    statusGPSControl.addTo(map);
     buttonControl.addTo(map);
 
     return () => {
