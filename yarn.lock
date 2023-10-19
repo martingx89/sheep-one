@@ -8055,11 +8055,6 @@ react-leaflet@^4.2.1:
   dependencies:
     "@react-leaflet/core" "^2.1.0"
 
-react-magic-slider-dots@1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/react-magic-slider-dots/-/react-magic-slider-dots-1.2.2.tgz#9e37b424ca0058374dc97b56e4064da48a5244da"
-  integrity sha512-I2ZhKcQLJ4QG11AyJwRhKprl4lWa1I1FkJzvMDr26dypqIoe4WwqH/stWyROetgqw5jqslb1ocePp8STfQ0tPQ==
-
 react-persist@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npmjs.org/react-persist/-/react-persist-1.0.2.tgz"
