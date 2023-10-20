@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import styles from './Navbar.module.scss';
+import { PAGE_TITLE } from '../../../constants/pageSetup';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +18,7 @@ const Navbar = () => {
   return (
     <nav className={styles.nav}>
       <div className={styles.logo}>
-        <Link to='/'>Website</Link>
+        <Link to='/'>{PAGE_TITLE}</Link>
       </div>
 
       <div className={`${styles.menuToggle} ${isOpen ? styles.open : ''}`} onClick={toggleMenu}>
@@ -27,27 +28,22 @@ const Navbar = () => {
       <ul className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
         <li>
           <NavLink to='/' className={styles.active} onClick={closeMenu}>
-            Home
+            Strona domowa
           </NavLink>
         </li>
-        {/* <li>
-          <NavLink to='/news' className={styles.active} onClick={closeMenu}>
-            News
-          </NavLink>
-        </li> */}
         <li>
           <NavLink to='/catalog' className={styles.active} onClick={closeMenu}>
-            Catalog
+            Trasy
           </NavLink>
         </li>
         <li>
           <NavLink to='/about' className={styles.active} onClick={closeMenu}>
-            About
+            O nas
           </NavLink>
         </li>
         <li>
           <NavLink to='/contact' className={styles.active} onClick={closeMenu}>
-            Contact
+            Kontakt
           </NavLink>
         </li>
       </ul>
