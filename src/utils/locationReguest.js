@@ -1,4 +1,4 @@
-import { HIGH_ACCURACY, TIMEOUT } from '../constants/mapSettings';
+import { HIGH_ACCURACY, TIMEOUT } from '../constants/pageSetup';
 
 export const getGPSLocation = (successCallback, errorCallback) => {
   if ('geolocation' in navigator) {

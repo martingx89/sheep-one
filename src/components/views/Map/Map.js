@@ -4,8 +4,7 @@ import { MapContainer, Marker, Popup, TileLayer, Polyline } from 'react-leaflet'
 import MapControls from '../../features/MapControls';
 import { getMapData } from '../../../redux/reducers/mapRedux';
 import { getRoutesData } from '../../../redux/reducers/routesRedux';
-import { INITIAL_COORDS } from '../../../constants/initialData';
-import { ZOOM_LEVEL } from '../../../constants/mapSettings';
+import { INITIAL_COORDS, ZOOM_LEVEL } from '../../../constants/pageSetup';
 import styles from './Map.module.scss';
 
 const Map = () => {

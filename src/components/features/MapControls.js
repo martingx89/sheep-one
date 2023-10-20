@@ -8,7 +8,7 @@ import { setUserPosition } from '../../redux/actions/mapActions';
 import { getGPSLocation } from '../../utils/locationReguest';
 import LocateButton from '../common/LocateButton/LocateButton';
 import StatusGPS from '../common/StatusGPS/StatusGPS';
-import { FLY_TO_SETUP } from '../../constants/mapSettings';
+import { FLY_TO_SETUP } from '../../constants/pageSetup';
 
 const MapControls = ({ ZOOM_LEVEL }) => {
   const [error, setError] = useState(null);

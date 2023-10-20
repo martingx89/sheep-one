@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import styles from './Navbar.module.scss';
-import { PAGE_TITLE } from '../../../constants/pageSetup';
+import { PAGE_TITLE_LONG } from '../../../constants/pageSetup';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <nav className={styles.nav}>
       <div className={styles.logo}>
-        <Link to='/'>{PAGE_TITLE}</Link>
+        <Link to='/'>{PAGE_TITLE_LONG}</Link>
       </div>
 
       <div className={`${styles.menuToggle} ${isOpen ? styles.open : ''}`} onClick={toggleMenu}>

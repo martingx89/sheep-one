@@ -2,7 +2,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from './Carousel.module.scss';
-import { CAROUSEL_SET } from '../../../constants/carouselSettings';
+import { CAROUSEL_SET } from '../../../constants/pageSetup';
 import { getRoutesData } from '../../../redux/reducers/routesRedux';
 import { useSelector } from 'react-redux';
 
