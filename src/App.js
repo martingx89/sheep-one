@@ -2,7 +2,8 @@ import React from 'react';
 import { Route, Routes } from 'react-router';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchData } from './redux/reducers/routesRedux';
+import { fetchRoutes } from './redux/reducers/routesRedux';
+import { fetchBikes } from './redux/reducers/bikesRedux';
 import Home from './components/pages/Home/Home';
 // import News from './components/pages/News/News';
 import Catalog from './components/pages/Catalog/Catalog';
@@ -16,7 +17,8 @@ import Footer from './components/views/Footer/Footer';
 const App = () => {
   const dispatch = useDispatch();
 
-  useEffect(() => dispatch(fetchData(), [dispatch]));
+  useEffect(() => dispatch(fetchRoutes(), [dispatch]));
+  useEffect(() => dispatch(fetchBikes(), [dispatch]));
 
   return (
     <main>

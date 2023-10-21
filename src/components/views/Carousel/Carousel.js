@@ -9,7 +9,6 @@ import { useSelector } from 'react-redux';
 const Carousel = () => {
   const routes = useSelector(getRoutesData);
   const settings = CAROUSEL_SET;
-  console.log(routes);
 
   return (
     <Slider {...settings}>

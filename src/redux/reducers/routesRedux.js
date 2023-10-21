@@ -5,13 +5,13 @@ import { createRoutesActionName } from '../actions/actionsUtility';
 export const getRoutesData = (state) => state.routes;
 
 // actions
-export const GET_DATA = createRoutesActionName('GET_DATA');
+export const GET_ROUTES = createRoutesActionName('GET_ROUTES');
 
 // action creators
-export const getRoutes = (payload) => ({ type: GET_DATA, payload });
+export const getRoutes = (payload) => ({ type: GET_ROUTES, payload });
 
 // fetch
-export const fetchData = () => {
+export const fetchRoutes = () => {
   return (dispatch) => {
     fetch(`${API_URL}/routes`)
       .then((res) => res.json())
@@ -21,7 +21,7 @@ export const fetchData = () => {
 
 const routesReducer = (statePart = [], action) => {
   switch (action.type) {
-    case GET_DATA:
+    case GET_ROUTES:
       return [...action.payload];
     default:
       return statePart;

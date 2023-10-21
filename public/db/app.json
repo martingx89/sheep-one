@@ -1800,5 +1800,56 @@
   ],
 
   "user": [],
-  "bikes": []
+  "bikes": [
+    {
+      "id": 1,
+      "brand": "Trek",
+      "model": "FX 2",
+      "type": "Hybrid",
+      "frame_size": "M",
+      "wheel_size": 700,
+      "color": "Black",
+      "price": 599.99
+    },
+    {
+      "id": 2,
+      "brand": "Giant",
+      "model": "Defy Advanced Pro 1",
+      "type": "Road",
+      "frame_size": "L",
+      "wheel_size": 700,
+      "color": "Red",
+      "price": 3499.99
+    },
+    {
+      "id": 3,
+      "brand": "Cannondale",
+      "model": "Trail 5",
+      "type": "Mountain",
+      "frame_size": "S",
+      "wheel_size": 29,
+      "color": "Green",
+      "price": 749.99
+    },
+    {
+      "id": 4,
+      "brand": "Specialized",
+      "model": "Rockhopper Expert",
+      "type": "Mountain",
+      "frame_size": "M",
+      "wheel_size": 29,
+      "color": "Blue",
+      "price": 899.99
+    },
+    {
+      "id": 5,
+      "brand": "Trek",
+      "model": "Emonda SL 6",
+      "type": "Road",
+      "frame_size": "M",
+      "wheel_size": 700,
+      "color": "White",
+      "price": 2099.99
+    }
+  ]
 }
