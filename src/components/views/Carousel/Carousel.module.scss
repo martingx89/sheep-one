@@ -10,9 +10,9 @@
   display: flex;
   flex-direction: column;
   border: 1px solid rgba(0, 0, 0, 0.25);
-  border-radius: $radius;
+  border-radius: $radius; /* Assuming $radius is defined in your imported settings.scss */
   margin: 10px;
-  padding: 5px;
+  padding: 10px; /* Increased padding for consistency */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
   h2 {
@@ -21,29 +21,29 @@
   }
 
   h3 {
-    color: $color-accent;
+    color: $color-accent; /* Assuming $color-accent is defined in your imported settings.scss */
   }
 
   img {
     padding: 10px;
+    max-width: 100%; /* To ensure the image doesn't overflow the container */
+    height: auto; /* Maintain aspect ratio */
   }
 }
 
 .carousel-text-overlay {
   display: flex;
-  flex-direction: row;
   justify-content: space-around;
 }
 
 @media (max-width: $screen-sm) {
   .carousel-wrapper {
-    display: flex;
     flex-direction: column;
 
     img {
       padding: 10px;
-      height: 100%;
-      width: auto;
+      max-width: 100%;
+      height: auto;
     }
   }
 }
