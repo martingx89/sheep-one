@@ -1,27 +1,37 @@
 @import '../../../styles/settings.scss';
 
 .carousel-container {
-  height: 400px;
+  height: 500px;
+  margin: 0;
+  padding: 0;
 }
 
 .carousel-wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   border-radius: $radius;
   border: 1px solid rgba(0, 0, 0, 0.25);
   margin: 10px;
   padding: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  h3 {
-    align-items: center;
+
+  .carousel-text-overlay {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
+
+  h3 {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  h4 {
+    color: $color-accent;
+  }
+
   img {
     padding: 10px;
   }
-}
-
-.carousel-text-overlay {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
 }
