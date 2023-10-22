@@ -15,8 +15,8 @@ const Carousel = () => {
       {bikes.map((bike, index) => (
         <div className={styles['carousel-container']} key={index}>
           <div className={styles['carousel-wrapper']}>
-            <h3>{bike.brand}</h3>
-            <h4>{bike.model}</h4>
+            <h2>{bike.brand}</h2>
+            <h3>{bike.model}</h3>
             <img src={bike.image_small} alt='img' />
             <div className={styles['carousel-text-overlay']}>
               <p>Rodzaj: {bike.type}</p>

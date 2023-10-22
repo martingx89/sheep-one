@@ -9,29 +9,41 @@
 .carousel-wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  border-radius: $radius;
   border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: $radius;
   margin: 10px;
   padding: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
-  .carousel-text-overlay {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-  h3 {
+  h2 {
     text-transform: uppercase;
     margin-bottom: 10px;
   }
 
-  h4 {
+  h3 {
     color: $color-accent;
   }
 
   img {
     padding: 10px;
+  }
+}
+
+.carousel-text-overlay {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+@media (max-width: $screen-sm) {
+  .carousel-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    img {
+      padding: 10px;
+      height: 100%;
+      width: auto;
+    }
   }
 }
