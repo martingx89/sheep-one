@@ -3,25 +3,23 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import styles from './Carousel.module.scss';
 import { CAROUSEL_SET } from '../../../constants/pageSetup';
-import { getRoutesData } from '../../../redux/reducers/routesRedux';
+import { getBikesData } from '../../../redux/reducers/bikesRedux';
 import { useSelector } from 'react-redux';
 
 const Carousel = () => {
-  const routes = useSelector(getRoutesData);
+  const bikes = useSelector(getBikesData);
   const settings = CAROUSEL_SET;
 
   return (
     <Slider {...settings}>
-      {routes.map((route, index) => (
+      {bikes.map((bike, index) => (
         <div className={styles['carousel-tile']} key={index}>
           <div className={styles['image-container']}>
-            <img src={route.gallery_paths} alt='img' />
+            <h3>{`${bike.brand} ${bike.model}`}</h3>
+            <img src={bike.image_main} alt='img' />
             <div className={styles['text-overlay']}>
-              <h3>{route.route_name}</h3>
-              <p>Dystans: {route.distance}</p>
-              <p>Czas: {route.duration}</p>
-              <p>Poziom: {route.difficulty_level}</p>
-              <p>{route.description}</p>
+              <p>Rodzaj: {bike.type}</p>
+              <p>Rama: {bike.frame_size}</p>
             </div>
           </div>
         </div>

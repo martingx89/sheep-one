@@ -12,6 +12,7 @@ import Contact from './components/pages/Contact/Contact';
 import BlankPage from './components/pages/BlankPage/BlankPage';
 import Container from './components/views/Container/Container';
 import Navbar from './components/views/Navbar/Navbar';
+import Statue from './components/pages/Statue/Statue';
 import Footer from './components/views/Footer/Footer';
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
           <Route path='/catalog' element={<Catalog />}></Route>
           <Route path='/about' element={<About />}></Route>
           <Route path='/contact' element={<Contact />}></Route>
+          <Route path='/statue' element={<Statue />}></Route>
           <Route path='*' element={<BlankPage />}></Route>
         </Routes>
         {/* <Footer /> */}

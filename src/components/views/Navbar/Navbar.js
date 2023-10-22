@@ -28,7 +28,12 @@ const Navbar = () => {
       <ul className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
         <li>
           <NavLink to='/' className={styles.active} onClick={closeMenu}>
-            Strona domowa
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to='/statue' className={styles.active} onClick={closeMenu}>
+            Regulamin
           </NavLink>
         </li>
         <li>

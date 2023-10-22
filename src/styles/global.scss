@@ -1,6 +1,7 @@
 @import './settings.scss';
 @import './plugins/leaflet.scss';
 @import './plugins/magic-dots.scss';
+@import url(https://i.postimg.cc/Bvx3tfDc/background.jpg);
 
 *,
 *::before,
@@ -12,6 +13,7 @@ body {
   margin: 0;
   padding: 0;
   background: $color-background;
+  overflow: cover;
   font-family: $font-text;
   font-size: ($base-size * 1.1);
   color: $color-light;
