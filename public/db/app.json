@@ -1810,7 +1810,7 @@
       "wheel_size": 700,
       "color": "Black",
       "price": 599.99,
-      "image_small": "https://i.postimg.cc/J4TypW8m/vipergtsc-main-crop-small.jpg"
+      "image_small": "https://i.postimg.cc/s28sW9bR/bike-1.jpg"
     },
     {
       "id": 2,
@@ -1821,7 +1821,7 @@
       "wheel_size": 700,
       "color": "Red",
       "price": 3499.99,
-      "image_small": "https://i.postimg.cc/J4TypW8m/vipergtsc-main-crop-small.jpg"
+      "image_small": "https://i.postimg.cc/KYdhjcgG/bike-2.jpg"
     },
     {
       "id": 3,
@@ -1832,7 +1832,7 @@
       "wheel_size": 29,
       "color": "Green",
       "price": 749.99,
-      "image_small": "https://i.postimg.cc/J4TypW8m/vipergtsc-main-crop-small.jpg"
+      "image_small": "https://i.postimg.cc/4N8Mn4rD/bike-3.jpg"
     },
     {
       "id": 4,
@@ -1843,7 +1843,7 @@
       "wheel_size": 29,
       "color": "Blue",
       "price": 899.99,
-      "image_small": "https://i.postimg.cc/J4TypW8m/vipergtsc-main-crop-small.jpg"
+      "image_small": "https://i.postimg.cc/pXXWgTf4/bike-4.jpg"
     },
     {
       "id": 5,
@@ -1854,7 +1854,7 @@
       "wheel_size": 700,
       "color": "White",
       "price": 2099.99,
-      "image_small": "https://i.postimg.cc/J4TypW8m/vipergtsc-main-crop-small.jpg"
+      "image_small": "https://i.postimg.cc/JnLmK47T/bike-5.jpg"
     }
   ]
 }
