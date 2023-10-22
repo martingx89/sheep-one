@@ -1809,7 +1809,8 @@
       "frame_size": "M",
       "wheel_size": 700,
       "color": "Black",
-      "price": 599.99
+      "price": 599.99,
+      "image_small": "https://i.postimg.cc/J4TypW8m/vipergtsc-main-crop-small.jpg"
     },
     {
       "id": 2,
@@ -1819,7 +1820,8 @@
       "frame_size": "L",
       "wheel_size": 700,
       "color": "Red",
-      "price": 3499.99
+      "price": 3499.99,
+      "image_small": "https://i.postimg.cc/J4TypW8m/vipergtsc-main-crop-small.jpg"
     },
     {
       "id": 3,
@@ -1829,7 +1831,8 @@
       "frame_size": "S",
       "wheel_size": 29,
       "color": "Green",
-      "price": 749.99
+      "price": 749.99,
+      "image_small": "https://i.postimg.cc/J4TypW8m/vipergtsc-main-crop-small.jpg"
     },
     {
       "id": 4,
@@ -1839,7 +1842,8 @@
       "frame_size": "M",
       "wheel_size": 29,
       "color": "Blue",
-      "price": 899.99
+      "price": 899.99,
+      "image_small": "https://i.postimg.cc/J4TypW8m/vipergtsc-main-crop-small.jpg"
     },
     {
       "id": 5,
@@ -1849,7 +1853,8 @@
       "frame_size": "M",
       "wheel_size": 700,
       "color": "White",
-      "price": 2099.99
+      "price": 2099.99,
+      "image_small": "https://i.postimg.cc/J4TypW8m/vipergtsc-main-crop-small.jpg"
     }
   ]
 }

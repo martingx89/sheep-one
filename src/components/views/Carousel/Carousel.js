@@ -13,14 +13,14 @@ const Carousel = () => {
   return (
     <Slider {...settings}>
       {bikes.map((bike, index) => (
-        <div className={styles['carousel-tile']} key={index}>
-          <div className={styles['image-container']}>
+        <div className={styles['carousel-container']} key={index}>
+          <div className={styles['carousel-wrapper']}>
             <h3>{`${bike.brand} ${bike.model}`}</h3>
-            <img src={bike.image_main} alt='img' />
-            <div className={styles['text-overlay']}>
-              <p>Rodzaj: {bike.type}</p>
-              <p>Rama: {bike.frame_size}</p>
-            </div>
+            <img src={bike.image_small} alt='img' />
+          </div>
+          <div className={styles['carousel-text-overlay']}>
+            <p>Rodzaj: {bike.type}</p>
+            <p>Rama: {bike.frame_size}</p>
           </div>
         </div>
       ))}

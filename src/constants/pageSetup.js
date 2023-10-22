@@ -36,7 +36,7 @@ export const CAROUSEL_SET = {
   slidesToScroll: 1,
   responsive: [
     {
-      breakpoint: 768,
+      breakpoint: 992,
       settings: {
         slidesToShow: 2,
       },

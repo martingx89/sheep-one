@@ -5,7 +5,7 @@ import styles from './Home.module.scss';
 const Home = () => {
   return (
     <div className={styles['home-wrapper']}>
-      <PageTitle>Home Page</PageTitle>
+      <PageTitle>Oferta</PageTitle>
       <Carousel />
     </div>
   );
