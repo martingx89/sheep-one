@@ -8,10 +8,10 @@ import AppButton from '../../common/Button/AppButton';
 import { colorLight } from '../../../constants/colors';
 
 const ContactWrapper = styled(Container)`
-  margin-top: 90px;
-  background-color: ${colorLight};
   display: flex;
   justify-content: space-between;
+  margin-top: 50px;
+  background-color: ${colorLight};
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -19,7 +19,7 @@ const ContactWrapper = styled(Container)`
 `;
 
 const FormContainer = styled.div`
-  flex: 1;
+  flex: 2;
   padding: 20px;
 
   @media (max-width: 768px) {
@@ -29,6 +29,7 @@ const FormContainer = styled.div`
 
 const ListContainer = styled.div`
   flex: 1;
+  margin: 10px;
   padding: 20px;
   background-color: #f0f0f0;
 
@@ -38,35 +39,25 @@ const ListContainer = styled.div`
 `;
 
 const Contact = () => {
-  const handleSubmit = (values) => {
-    // Handle form data
-    console.log(values);
-  };
-
   const validationSchema = Yup.object().shape({
     name: Yup.string().required('Pole Imię jest wymagane').max(15, 'Must be 15 characters or less'),
     email: Yup.string().email('Nieprawidłowy adres email').required('Pole Email jest wymagane'),
     message: Yup.string().required('Pole Wiadomość jest wymagane'),
   });
 
-  return (
-    <ContactWrapper
-      sx={{
-        width: '100%',
+  const handleSubmit = (values) => {
+    // Handle form data
+    console.log(values);
+  };
 
-        '@media (max-width: 768px)': {
-          width: '90%',
-        },
-        '@media (min-width: 768px)': {
-          width: '80%',
-        },
-      }}>
-      <Formik
-        initialValues={{ name: '', email: '', message: '' }}
-        onSubmit={handleSubmit}
-        validationSchema={validationSchema}>
-        <Form>
-          <FormContainer>
+  return (
+    <ContactWrapper>
+      <FormContainer>
+        <Formik
+          initialValues={{ name: '', email: '', message: '' }}
+          onSubmit={handleSubmit}
+          validationSchema={validationSchema}>
+          <Form>
             <div className={styles['field-wrapper']}>
               <Field as={TextField} id='name' name='name' label='Imię' variant='outlined' fullWidth />
               <ErrorMessage name='name' component='div' className={styles.error} />
@@ -91,16 +82,16 @@ const Contact = () => {
               <ErrorMessage name='message' component='div' className={styles.error} />
             </div>
             <AppButton>Wyślij</AppButton>
-          </FormContainer>
+          </Form>
+        </Formik>
+      </FormContainer>
 
-          <ListContainer>
-            <ul>
-              <li>Adres</li>
-              <li>Numer</li>
-            </ul>
-          </ListContainer>
-        </Form>
-      </Formik>
+      <ListContainer>
+        <ul>
+          <li>Adres</li>
+          <li>Numer</li>
+        </ul>
+      </ListContainer>
     </ContactWrapper>
   );
 };
