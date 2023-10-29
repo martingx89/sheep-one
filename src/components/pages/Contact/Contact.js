@@ -2,10 +2,12 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { TextField, Container } from '@mui/material';
 import * as Yup from 'yup';
-import styles from './Contact.module.scss';
-import styled from '@emotion/styled';
+import emailjs from 'emailjs-com';
 import AppButton from '../../common/Button/AppButton';
 import { colorLight } from '../../../constants/colors';
+import { EMAIL_API_KEY, EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID } from '../../../constants/pageSetup';
+import styles from './Contact.module.scss';
+import styled from '@emotion/styled';
 
 const ContactWrapper = styled(Container)`
   display: flex;
@@ -45,9 +47,27 @@ const Contact = () => {
     message: Yup.string().required('Pole Wiadomość jest wymagane'),
   });
 
-  const handleSubmit = (values) => {
-    // Handle form data
-    console.log(values);
+  const handleSubmit = (values, actions) => {
+    const apiKey = EMAIL_API_KEY;
+
+    emailjs.init(apiKey); // Initialize emailjs with your API key
+
+    emailjs
+      .send(EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID, {
+        to_name: 'martingx89',
+        from_name: values.name,
+        message: values.message,
+        reply_to: values.email,
+      })
+      .then(
+        function (response) {
+          console.log('Email sent successfully:', response);
+          actions.resetForm();
+        },
+        function (error) {
+          console.log('Email send failed:', error);
+        }
+      );
   };
 
   return (
@@ -81,7 +101,7 @@ const Contact = () => {
               />
               <ErrorMessage name='message' component='div' className={styles.error} />
             </div>
-            <AppButton>Wyślij</AppButton>
+            <AppButton type='submit'>Wyślij</AppButton>
           </Form>
         </Formik>
       </FormContainer>

@@ -49,3 +49,6 @@ export const CAROUSEL_SET = {
     },
   ],
 };
+export const EMAIL_API_KEY = 't6P4kn3Rqaa1sHP6E';
+export const EMAIL_SERVICE_ID = 'service_pu8lf7y';
+export const EMAIL_TEMPLATE_ID = 'template_jqp0u9o';
