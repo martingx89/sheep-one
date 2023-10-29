@@ -55,7 +55,7 @@ const Contact = () => {
           <ErrorMessage name='message' component='div' className={styles.error} />
         </div>
 
-        <Button type='submit' variant='contained' color='primary'>
+        <Button type='submit' variant='contained' className={styles.button}>
           Wyślij
         </Button>
       </Form>
