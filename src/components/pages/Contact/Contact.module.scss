@@ -1,11 +1,10 @@
 @import '../../../styles/settings.scss';
 
+.field-wrapper {
+  margin-top: 15px;
+}
+
 .error {
   color: $color-warning;
   margin: 3px 3px;
-}
-
-.button {
-  background-color: $color-light;
-  color: $color-background;
 }

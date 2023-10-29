@@ -1,7 +1,9 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { TextField, Button } from '@mui/material';
+import { TextField } from '@mui/material';
 import * as Yup from 'yup';
+import styles from './Contact.module.scss';
+import AppButton from '../../common/Button/AppButton';
 
 const Contact = () => {
   const handleSubmit = (values) => {
@@ -23,17 +25,17 @@ const Contact = () => {
       validationSchema={validationSchema} // Przypisz schemat walidacji
     >
       <Form>
-        <div>
+        <div className={styles['field-wrapper']}>
           <Field as={TextField} id='name' name='name' label='Imię' variant='outlined' fullWidth />
-          <ErrorMessage name='name' component='div' className='error' />
+          <ErrorMessage name='name' component='div' className={styles.error} />
         </div>
 
-        <div>
+        <div className={styles['field-wrapper']}>
           <Field as={TextField} type='email' id='email' name='email' label='Email' variant='outlined' fullWidth />
-          <ErrorMessage name='email' component='div' className='error' />
+          <ErrorMessage name='email' component='div' className={styles.error} />
         </div>
 
-        <div>
+        <div className={styles['field-wrapper']}>
           <Field
             as={TextField}
             id='message'
@@ -44,12 +46,9 @@ const Contact = () => {
             multiline
             rows={4}
           />
-          <ErrorMessage name='message' component='div' className='error' />
+          <ErrorMessage name='message' component='div' className={styles.error} />
         </div>
-
-        <Button type='submit' variant='contained' color='primary'>
-          Wyślij
-        </Button>
+        <AppButton>Wyślij</AppButton>
       </Form>
     </Formik>
   );
