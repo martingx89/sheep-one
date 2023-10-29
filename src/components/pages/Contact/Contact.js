@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { TextField, Button } from '@mui/material';
+import styles from './Contact.module.scss';
 
 const Contact = () => {
   const handleSubmit = (values) => {
@@ -32,12 +33,12 @@ const Contact = () => {
       <Form>
         <div>
           <Field as={TextField} id='name' name='name' label='Imię' variant='outlined' fullWidth />
-          <ErrorMessage name='name' component='div' className='error' />
+          <ErrorMessage name='name' component='div' className={styles.error} />
         </div>
 
         <div>
           <Field as={TextField} type='email' id='email' name='email' label='Email' variant='outlined' fullWidth />
-          <ErrorMessage name='email' component='div' className='error' />
+          <ErrorMessage name='email' component='div' className={styles.error} />
         </div>
 
         <div>
@@ -51,7 +52,7 @@ const Contact = () => {
             multiline
             rows={4}
           />
-          <ErrorMessage name='message' component='div' className='error' />
+          <ErrorMessage name='message' component='div' className={styles.error} />
         </div>
 
         <Button type='submit' variant='contained' color='primary'>
