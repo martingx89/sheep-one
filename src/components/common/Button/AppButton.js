@@ -1,9 +1,9 @@
 import { Button } from '@mui/material';
-import styled from 'styled-components';
-import { colorDark, colorLight } from '../../../constants/colors';
+import styled from '@emotion/styled';
+import { colorAccent, colorDark } from '../../../constants/colors';
 
 const StyledButton = styled(Button)`
-  background-color: ${colorLight};
+  background-color: ${colorAccent};
   color: #fff;
   &:hover {
     background-color: ${colorDark};
