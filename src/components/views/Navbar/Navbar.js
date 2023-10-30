@@ -12,53 +12,51 @@ import AdbIcon from '@mui/icons-material/Adb';
 import Button from '@mui/material/Button';
 import { PAGE_TITLE_LONG, PAGE_TITLE_SHORT } from '../../../constants/pageSetup';
 import { NavLink, Link } from 'react-router-dom';
-import styled from 'styled-components';
-import { colorAccent, colorApp, colorDark, colorLight, colorWarning } from '../../../constants/colors';
+// import styled from 'styled-components';
+import { colorAccent, colorApp, colorDark, colorLight } from '../../../constants/colors';
+import { styled } from '@mui/styles';
 
 const pages = ['Home', 'Regulamin', 'Trasy', 'O nas', 'Kontakt'];
-const paths = ['/', 'statue', 'catalog', 'about', 'contact'];
+const paths = ['', 'statue', 'catalog', 'about', 'contact'];
 
-const StyledNavLink = styled(NavLink)`
-  text-decoration: none;
-  color: ${colorDark};
-  display: block;
-  margin: 2px;
-  &:hover {
-    color: ${colorLight};
-  }
+const StyledNavLink = styled(NavLink)({
+  textDecoration: 'none',
+  color: colorLight,
+  '&:hover': {
+    color: colorDark,
+  },
+  '&.active': {
+    fontWeight: 'bold',
+    color: colorAccent,
+  },
+});
 
-  &.active {
-    font-weight: bold;
-    color: ${colorAccent};
-  }
-`;
+const StyledLink = styled(Link)({
+  textDecoration: 'none',
+  color: 'black',
+  display: 'block',
+  margin: '2px',
+  '&:hover': {
+    color: colorLight,
+  },
+});
 
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: black;
-  display: block;
-  margin: 2px;
-  &:hover {
-    color: ${colorLight};
-  }
-`;
+const StyledLogo = styled(Link)({
+  textDecoration: 'none',
+  color: colorDark,
+  display: 'block',
+  margin: '2px',
+});
 
-const StyledLogo = styled(Link)`
-  text-decoration: none;
-  color: ${colorDark};
-  display: block;
-  margin: 2px;
-`;
+const StyledAppBar = styled(AppBar)({
+  backgroundColor: colorApp,
+  margin: '5px',
+});
 
-const StyledAppBar = styled(AppBar)`
-  background-color: ${colorApp};
-  margin: 5px;
-`;
-
-const StyledToolBar = styled(Toolbar)`
-  color: ${colorLight};
-  height: 50px;
-`;
+const StyledToolBar = styled(Toolbar)({
+  color: colorLight,
+  height: '50px',
+});
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -79,7 +77,7 @@ const Navbar = () => {
           <Typography
             variant='h6'
             noWrap
-            component='a'
+            component='div'
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -132,7 +130,7 @@ const Navbar = () => {
           <Typography
             variant='h5'
             noWrap
-            component='a'
+            component='div'
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },

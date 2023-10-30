@@ -34,7 +34,7 @@ const App = () => {
           <Route path='/statue' element={<Statue />}></Route>
           <Route path='*' element={<BlankPage />}></Route>
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </Container>
     </main>
   );
