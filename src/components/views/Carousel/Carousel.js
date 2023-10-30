@@ -5,6 +5,7 @@ import styles from './Carousel.module.scss';
 import { CAROUSEL_SET } from '../../../constants/pageSetup';
 import { getBikesData } from '../../../redux/reducers/bikesRedux';
 import { useSelector } from 'react-redux';
+import { Box } from '@mui/material';
 
 const Carousel = () => {
   const bikes = useSelector(getBikesData);
@@ -13,7 +14,7 @@ const Carousel = () => {
   return (
     <Slider {...settings}>
       {bikes.map((bike, index) => (
-        <div className={styles['carousel-container']} key={index}>
+        <Box className={styles['carousel-container']} key={index}>
           <div className={styles['carousel-wrapper']}>
             <h2>{bike.brand}</h2>
             <h3>{bike.model}</h3>
@@ -23,7 +24,7 @@ const Carousel = () => {
               <p>Rama: {bike.frame_size}</p>
             </div>
           </div>
-        </div>
+        </Box>
       ))}
     </Slider>
   );

@@ -1,13 +1,27 @@
+import React from 'react';
+import { Container, Grid, Typography } from '@mui/material';
 import PageTitle from '../../common/PageTitle/PageTitle';
 import Carousel from '../../views/Carousel/Carousel';
-import styles from './Home.module.scss';
 
 const Home = () => {
   return (
-    <div className={styles['home-wrapper']}>
+    <Container>
       <PageTitle>Oferta</PageTitle>
-      <Carousel />
-    </div>
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={6}>
+          <Carousel />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Typography>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos illum laudantium totam itaque mollitia
+              molestiae consequatur. Autem, obcaecati dolor vel voluptates, est sit, nam sint saepe veritatis ipsum
+              reiciendis esse?
+            </p>
+          </Typography>
+        </Grid>
+      </Grid>
+    </Container>
   );
 };
 

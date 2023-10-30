@@ -5,7 +5,6 @@ import { useEffect } from 'react';
 import { fetchRoutes } from './redux/reducers/routesRedux';
 import { fetchBikes } from './redux/reducers/bikesRedux';
 import Home from './components/pages/Home/Home';
-// import News from './components/pages/News/News';
 import Catalog from './components/pages/Catalog/Catalog';
 import About from './components/pages/About/About';
 import Contact from './components/pages/Contact/Contact';
@@ -27,7 +26,6 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />}></Route>
-          {/* <Route path='/news' element={<News />}></Route> */}
           <Route path='/catalog' element={<Catalog />}></Route>
           <Route path='/about' element={<About />}></Route>
           <Route path='/contact' element={<Contact />}></Route>
