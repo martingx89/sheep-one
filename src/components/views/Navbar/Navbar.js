@@ -13,15 +13,24 @@ import Button from '@mui/material/Button';
 import { PAGE_TITLE_LONG, PAGE_TITLE_SHORT } from '../../../constants/pageSetup';
 import { NavLink, Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { colorAccent, colorApp, colorDark, colorLight, colorWarning } from '../../../constants/colors';
 
 const pages = ['Home', 'Regulamin', 'Trasy', 'O nas', 'Kontakt'];
 const paths = ['/', 'statue', 'catalog', 'about', 'contact'];
 
 const StyledNavLink = styled(NavLink)`
   text-decoration: none;
-  color: white;
+  color: ${colorDark};
   display: block;
   margin: 2px;
+  &:hover {
+    color: ${colorLight};
+  }
+
+  &.active {
+    font-weight: bold;
+    color: ${colorAccent};
+  }
 `;
 
 const StyledLink = styled(Link)`
@@ -29,13 +38,26 @@ const StyledLink = styled(Link)`
   color: black;
   display: block;
   margin: 2px;
+  &:hover {
+    color: ${colorLight};
+  }
 `;
 
 const StyledLogo = styled(Link)`
   text-decoration: none;
-  color: white;
+  color: ${colorDark};
   display: block;
   margin: 2px;
+`;
+
+const StyledAppBar = styled(AppBar)`
+  background-color: ${colorApp};
+  margin: 5px;
+`;
+
+const StyledToolBar = styled(Toolbar)`
+  color: ${colorLight};
+  height: 50px;
 `;
 
 const Navbar = () => {
@@ -50,9 +72,9 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position='static'>
+    <StyledAppBar position='static'>
       <Container maxWidth='xl'>
-        <Toolbar disableGutters>
+        <StyledToolBar disableGutters variant='dense'>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant='h6'
@@ -130,9 +152,9 @@ const Navbar = () => {
               </Button>
             ))}
           </Box>
-        </Toolbar>
+        </StyledToolBar>
       </Container>
-    </AppBar>
+    </StyledAppBar>
   );
 };
 export default Navbar;
