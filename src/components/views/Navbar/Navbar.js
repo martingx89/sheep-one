@@ -1,59 +1,114 @@
-import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { FaBars, FaTimes } from 'react-icons/fa';
-import styles from './Navbar.module.scss';
-import { PAGE_TITLE_LONG } from '../../../constants/pageSetup';
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Button from '@mui/material/Button';
+import MenuItem from '@mui/material/MenuItem';
+import AdbIcon from '@mui/icons-material/Adb';
+import { PAGE_TITLE_LONG, PAGE_TITLE_SHORT } from '../../../constants/pageSetup';
+
+const pages = ['Home', 'Regulamin', 'Trasy', 'O nas', 'Kontakt'];
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
   };
 
-  const closeMenu = () => {
-    setIsOpen(false);
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
   };
 
   return (
-    <nav className={styles.nav}>
-      <div className={styles.logo}>
-        <Link to='/'>{PAGE_TITLE_LONG}</Link>
-      </div>
+    <AppBar position='static'>
+      <Container maxWidth='xl'>
+        <Toolbar disableGutters>
+          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <Typography
+            variant='h6'
+            noWrap
+            component='a'
+            href='#app-bar-with-responsive-menu'
+            sx={{
+              mr: 2,
+              display: { xs: 'none', md: 'flex' },
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}>
+            {PAGE_TITLE_LONG}
+          </Typography>
 
-      <div className={`${styles.menuToggle} ${isOpen ? styles.open : ''}`} onClick={toggleMenu}>
-        {isOpen ? <FaTimes /> : <FaBars />}
-      </div>
-
-      <ul className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
-        <li>
-          <NavLink to='/' className={styles.active} onClick={closeMenu}>
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/statue' className={styles.active} onClick={closeMenu}>
-            Regulamin
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/catalog' className={styles.active} onClick={closeMenu}>
-            Trasy
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/about' className={styles.active} onClick={closeMenu}>
-            O nas
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/contact' className={styles.active} onClick={closeMenu}>
-            Kontakt
-          </NavLink>
-        </li>
-      </ul>
-    </nav>
+          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+            <IconButton
+              size='large'
+              aria-label='account of current user'
+              aria-controls='menu-appbar'
+              aria-haspopup='true'
+              onClick={handleOpenNavMenu}
+              color='inherit'>
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id='menu-appbar'
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: 'block', md: 'none' },
+              }}>
+              {pages.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Typography textAlign='center'>{page}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <Typography
+            variant='h5'
+            noWrap
+            component='a'
+            href='#app-bar-with-responsive-menu'
+            sx={{
+              mr: 2,
+              display: { xs: 'flex', md: 'none' },
+              flexGrow: 1,
+              fontFamily: 'monospace',
+              fontWeight: 700,
+              letterSpacing: '.3rem',
+              color: 'inherit',
+              textDecoration: 'none',
+            }}>
+            {PAGE_TITLE_SHORT}
+          </Typography>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
+            {pages.map((page) => (
+              <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
+                {page}
+              </Button>
+            ))}
+          </Box>
+        </Toolbar>
+      </Container>
+    </AppBar>
   );
 };
-
 export default Navbar;
