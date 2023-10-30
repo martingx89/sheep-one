@@ -111,7 +111,6 @@ const Navbar = () => {
             variant='h5'
             noWrap
             component='a'
-            href='#app-bar-with-responsive-menu'
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none' },
@@ -122,7 +121,7 @@ const Navbar = () => {
               color: 'inherit',
               textDecoration: 'none',
             }}>
-            {PAGE_TITLE_SHORT}
+            <StyledLogo to={paths[0]}>{PAGE_TITLE_SHORT}</StyledLogo>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
             {pages.map((page, index) => (
