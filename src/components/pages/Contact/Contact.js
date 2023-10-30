@@ -48,9 +48,7 @@ const Contact = () => {
   });
 
   const handleSubmit = (values, actions) => {
-    const apiKey = EMAIL_API_KEY;
-
-    emailjs.init(apiKey); // Initialize emailjs with your API key
+    emailjs.init(EMAIL_API_KEY);
 
     emailjs
       .send(EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID, {
