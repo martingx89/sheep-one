@@ -8,15 +8,12 @@ import Container from '@mui/material/Container';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Button from '@mui/material/Button';
-import { PAGE_TITLE_LONG, PAGE_TITLE_SHORT } from '../../../constants/pageSetup';
+import { PAGE_TITLE_LONG, PAGE_TITLE_SHORT, PAGES, PATHS } from '../../../constants/pageSetup';
 import { NavItem } from '../../common/NavItem/NavItem';
-import { NavLink } from '../../common/NavItem/NavLink/NavLink';
+import { NavLink } from '../../common/NavLink/NavLink';
 import { Logo } from '../../common/Logo/Logo';
 import { AppToolbar } from '../../common/AppToolbar/AppToolbar';
 import { AppBar } from '../../common/AppBar/AppBar';
-
-const pages = ['Home', 'Regulamin', 'Trasy', 'O nas', 'Kontakt'];
-const paths = ['', 'statue', 'catalog', 'about', 'contact'];
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -47,7 +44,7 @@ const Navbar = () => {
               color: 'inherit',
               textDecoration: 'none',
             }}>
-            <Logo to={paths[0]}>{PAGE_TITLE_LONG}</Logo>
+            <Logo to={PATHS[0]}>{PAGE_TITLE_LONG}</Logo>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -77,10 +74,10 @@ const Navbar = () => {
               sx={{
                 display: { xs: 'block', md: 'none' },
               }}>
-              {pages.map((page, index) => (
+              {PAGES.map((page, index) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign='center'>
-                    <NavLink to={paths[index]}>{page}</NavLink>
+                    <NavLink to={PATHS[index]}>{page}</NavLink>
                   </Typography>
                 </MenuItem>
               ))}
@@ -101,12 +98,12 @@ const Navbar = () => {
               color: 'inherit',
               textDecoration: 'none',
             }}>
-            <Logo to={paths[0]}>{PAGE_TITLE_SHORT}</Logo>
+            <Logo to={PATHS[0]}>{PAGE_TITLE_SHORT}</Logo>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
-            {pages.map((page, index) => (
+            {PAGES.map((page, index) => (
               <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
-                <NavItem to={paths[index]}>{page}</NavItem>
+                <NavItem to={PATHS[index]}>{page}</NavItem>
               </Button>
             ))}
           </Box>
