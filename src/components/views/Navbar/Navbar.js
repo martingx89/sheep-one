@@ -1,7 +1,5 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
@@ -11,56 +9,14 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Button from '@mui/material/Button';
 import { PAGE_TITLE_LONG, PAGE_TITLE_SHORT } from '../../../constants/pageSetup';
-import { NavLink, Link } from 'react-router-dom';
-// import styled from 'styled-components';
-import { colorAccent, colorApp, colorDark, colorLight } from '../../../constants/colors';
-import { styled } from '@mui/styles';
+import { NavItem } from '../../common/NavItem/NavItem';
+import { NavLink } from '../../common/NavItem/NavLink/NavLink';
+import { Logo } from '../../common/Logo/Logo';
+import { AppToolbar } from '../../common/AppToolbar/AppToolbar';
+import { AppBar } from '../../common/AppBar/AppBar';
 
 const pages = ['Home', 'Regulamin', 'Trasy', 'O nas', 'Kontakt'];
 const paths = ['', 'statue', 'catalog', 'about', 'contact'];
-
-const StyledNavLink = styled(NavLink)({
-  textDecoration: 'none',
-  color: colorLight,
-  '&:hover': {
-    color: colorDark,
-  },
-  '&.active': {
-    fontWeight: 'bold',
-    color: colorAccent,
-  },
-});
-
-const StyledLink = styled(Link)({
-  textDecoration: 'none',
-  color: 'black',
-  display: 'block',
-  margin: '2px',
-  '&:hover': {
-    color: colorLight,
-  },
-});
-
-const StyledLogo = styled(Link)({
-  textDecoration: 'none',
-  color: colorDark,
-  display: 'block',
-  margin: '2px',
-});
-
-const StyledAppBar = styled('div')({
-  backgroundColor: colorApp,
-  borderBottom: '3px solid transparent',
-  borderRadius: '3px',
-  boxShadow: '0px 0px 5px rgba(0, 0, 0, 0.25)',
-  margin: '5px',
-  height: '50px',
-});
-
-const StyledToolBar = styled(Toolbar)({
-  color: colorLight,
-  height: '50px',
-});
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -74,9 +30,9 @@ const Navbar = () => {
   };
 
   return (
-    <StyledAppBar position='static'>
+    <AppBar position='static'>
       <Container maxWidth='xl'>
-        <StyledToolBar disableGutters variant='dense'>
+        <AppToolbar disableGutters variant='dense'>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant='h6'
@@ -91,7 +47,7 @@ const Navbar = () => {
               color: 'inherit',
               textDecoration: 'none',
             }}>
-            <StyledLogo to={paths[0]}>{PAGE_TITLE_LONG}</StyledLogo>
+            <Logo to={paths[0]}>{PAGE_TITLE_LONG}</Logo>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -124,7 +80,7 @@ const Navbar = () => {
               {pages.map((page, index) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign='center'>
-                    <StyledLink to={paths[index]}>{page}</StyledLink>
+                    <NavLink to={paths[index]}>{page}</NavLink>
                   </Typography>
                 </MenuItem>
               ))}
@@ -145,18 +101,18 @@ const Navbar = () => {
               color: 'inherit',
               textDecoration: 'none',
             }}>
-            <StyledLogo to={paths[0]}>{PAGE_TITLE_SHORT}</StyledLogo>
+            <Logo to={paths[0]}>{PAGE_TITLE_SHORT}</Logo>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
             {pages.map((page, index) => (
               <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
-                <StyledNavLink to={paths[index]}>{page}</StyledNavLink>
+                <NavItem to={paths[index]}>{page}</NavItem>
               </Button>
             ))}
           </Box>
-        </StyledToolBar>
+        </AppToolbar>
       </Container>
-    </StyledAppBar>
+    </AppBar>
   );
 };
 export default Navbar;
