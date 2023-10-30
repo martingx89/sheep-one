@@ -7,12 +7,36 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
+import Button from '@mui/material/Button';
 import { PAGE_TITLE_LONG, PAGE_TITLE_SHORT } from '../../../constants/pageSetup';
+import { NavLink, Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 const pages = ['Home', 'Regulamin', 'Trasy', 'O nas', 'Kontakt'];
+const paths = ['/', 'statue', 'catalog', 'about', 'contact'];
+
+const StyledNavLink = styled(NavLink)`
+  text-decoration: none;
+  color: white;
+  display: block;
+  margin: 2px;
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+  display: block;
+  margin: 2px;
+`;
+
+const StyledLogo = styled(Link)`
+  text-decoration: none;
+  color: white;
+  display: block;
+  margin: 2px;
+`;
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -34,7 +58,6 @@ const Navbar = () => {
             variant='h6'
             noWrap
             component='a'
-            href='#app-bar-with-responsive-menu'
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -44,7 +67,7 @@ const Navbar = () => {
               color: 'inherit',
               textDecoration: 'none',
             }}>
-            {PAGE_TITLE_LONG}
+            <StyledLogo to={paths[0]}>{PAGE_TITLE_LONG}</StyledLogo>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -74,9 +97,11 @@ const Navbar = () => {
               sx={{
                 display: { xs: 'block', md: 'none' },
               }}>
-              {pages.map((page) => (
+              {pages.map((page, index) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign='center'>{page}</Typography>
+                  <Typography textAlign='center'>
+                    <StyledLink to={paths[index]}>{page}</StyledLink>
+                  </Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -100,9 +125,9 @@ const Navbar = () => {
             {PAGE_TITLE_SHORT}
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
-            {pages.map((page) => (
+            {pages.map((page, index) => (
               <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
-                {page}
+                <StyledNavLink to={paths[index]}>{page}</StyledNavLink>
               </Button>
             ))}
           </Box>
