@@ -9,7 +9,7 @@ import Catalog from './components/pages/Catalog/Catalog';
 import About from './components/pages/About/About';
 import Contact from './components/pages/Contact/Contact';
 import BlankPage from './components/pages/BlankPage/BlankPage';
-import Container from './components/views/Container/Container';
+import { Container } from '@mui/material';
 import Navbar from './components/views/Navbar/Navbar';
 import Statue from './components/pages/Statue/Statue';
 import Footer from './components/views/Footer/Footer';
