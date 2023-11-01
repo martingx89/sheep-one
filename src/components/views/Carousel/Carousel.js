@@ -11,16 +11,15 @@ const Tile = styled(Box)({
   position: 'relative',
   height: '300px',
   width: 'auto',
-  margin: '2px',
-  padding: '10px',
-  borderRadius: '3px',
-  boxShadow: '0 1px 0 rgba(0, 0, 0, 0.25), 0 1px 3px rgba(0, 0, 0, 0.25)',
+  padding: '5px',
 });
 
 const Image = styled('img')({
   width: '100%',
   height: '100%',
   objectFit: 'cover',
+  borderRadius: '3px',
+  boxShadow: '0 1px 0 rgba(0, 0, 0, 0.25)',
 });
 
 const Content = styled('div')({
