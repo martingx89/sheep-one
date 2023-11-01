@@ -1,49 +1,47 @@
 @import '../../../styles/settings.scss';
 
-.carousel-container {
-  height: 500px;
+.carousel-item {
+  height: 400px; /* Default height for larger screens */
   margin: 0;
   padding: 0;
-}
 
-.carousel-wrapper {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  border-radius: $radius; /* Assuming $radius is defined in your imported settings.scss */
-  margin: 10px;
-  padding: 10px; /* Increased padding for consistency */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-
-  h2 {
-    text-transform: uppercase;
-    margin-bottom: 10px;
+  @media (max-width: $screen-sm) {
+    height: 300px; /* Adjust height for smaller screens */
   }
 
-  h3 {
-    color: $color-accent; /* Assuming $color-accent is defined in your imported settings.scss */
-  }
-
-  img {
-    padding: 10px;
-    max-width: 100%; /* To ensure the image doesn't overflow the container */
-    height: auto; /* Maintain aspect ratio */
-  }
-}
-
-.carousel-text-overlay {
-  display: flex;
-  justify-content: space-around;
-}
-
-@media (max-width: $screen-sm) {
   .carousel-wrapper {
+    display: flex;
     flex-direction: column;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: $radius;
+    margin: 3px;
+    padding: 3px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+
+    h2 {
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      color: $color-accent;
+    }
 
     img {
-      padding: 10px;
+      padding: 5px;
       max-width: 100%;
       height: auto;
+    }
+
+    @media (max-width: $screen-sm) {
+      flex-direction: column;
+      align-items: center;
+
+      img {
+        padding: 5px;
+        width: 200px; /* Adjust image width for smaller screens */
+        height: 200px; /* Adjust image height for smaller screens */
+      }
     }
   }
 }

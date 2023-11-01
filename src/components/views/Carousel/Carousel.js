@@ -1,11 +1,43 @@
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import styles from './Carousel.module.scss';
 import { CAROUSEL_SET } from '../../../constants/pageSetup';
 import { getBikesData } from '../../../redux/reducers/bikesRedux';
 import { useSelector } from 'react-redux';
 import { Box } from '@mui/material';
+import styled from 'styled-components';
+
+const Tile = styled(Box)({
+  position: 'relative',
+  height: '300px',
+  width: 'auto',
+  margin: '2px',
+  padding: '10px',
+  borderRadius: '3px',
+  boxShadow: '0 1px 0 rgba(0, 0, 0, 0.25), 0 1px 3px rgba(0, 0, 0, 0.25)',
+});
+
+const Image = styled('img')({
+  width: '100%',
+  height: '100%',
+  objectFit: 'cover',
+});
+
+const Content = styled('div')({
+  position: 'absolute',
+  top: '0',
+  left: '0',
+  right: '0',
+  bottom: '0',
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'flex-start',
+  alignItems: 'center',
+  padding: '20px',
+  // backgroundColor: 'rgba(0, 0, 0, 0.6)',
+  // color: 'white',
+  // zIndex: '1',
+});
 
 const Carousel = () => {
   const bikes = useSelector(getBikesData);
@@ -14,17 +46,13 @@ const Carousel = () => {
   return (
     <Slider {...settings}>
       {bikes.map((bike, index) => (
-        <Box className={styles['carousel-container']} key={index}>
-          <div className={styles['carousel-wrapper']}>
-            <h2>{bike.brand}</h2>
-            <h3>{bike.model}</h3>
-            <img src={bike.image_small} alt='img' />
-            <div className={styles['carousel-text-overlay']}>
-              <p>Rodzaj: {bike.type}</p>
-              <p>Rama: {bike.frame_size}</p>
-            </div>
-          </div>
-        </Box>
+        <Tile key={index}>
+          <Image src={bike.image_small} alt={`${bike.brand} ${bike.model}`} />
+          <Content>
+            <h3>{bike.brand}</h3>
+            <h4>{bike.model}</h4>
+          </Content>
+        </Tile>
       ))}
     </Slider>
   );

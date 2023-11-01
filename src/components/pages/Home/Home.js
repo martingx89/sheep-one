@@ -13,11 +13,11 @@ const Home = () => {
         </Grid>
         <Grid item xs={12} md={6} lg={6} xl={6}>
           <Typography>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos illum laudantium totam itaque mollitia
-              molestiae consequatur. Autem, obcaecati dolor vel voluptates, est sit, nam sint saepe veritatis ipsum
-              reiciendis esse?
-            </p>
+            Szukasz sposobu na aktywny wypoczynek w mieście? Skorzystaj z naszej oferty rowerów do wypożyczenia!
+            Oferujemy szeroki wybór rowerów miejskich, górskich i elektrycznych, które spełnią Twoje oczekiwania i
+            zapewnią komfortową jazdę. Wypożycz rower na godzinę, dzień lub tydzień i ciesz się wolnością poruszania się
+            po ulicach. Nasze rowery są sprawne, bezpieczne i łatwe w obsłudze. Zapraszamy do kontaktu z nami i
+            rezerwacji roweru już dziś!
           </Typography>
         </Grid>
       </Grid>

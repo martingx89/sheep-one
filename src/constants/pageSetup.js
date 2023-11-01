@@ -1,3 +1,5 @@
+import { sm, md, lg } from './breakpoints';
+
 export const PAGE_TITLE_SHORT = '2SB';
 export const PAGE_TITLE_LONG = '2sladybieszczady';
 export const ZOOM_LEVEL = 15;
@@ -32,17 +34,17 @@ export const CAROUSEL_SET = {
   speed: 1000,
   autoplay: true,
   autoplaySpeed: 5000,
-  slidesToShow: 4,
+  slidesToShow: 3,
   slidesToScroll: 1,
   responsive: [
     {
-      breakpoint: 992,
+      breakpoint: lg,
       settings: {
         slidesToShow: 2,
       },
     },
     {
-      breakpoint: 576,
+      breakpoint: sm,
       settings: {
         slidesToShow: 1,
       },
