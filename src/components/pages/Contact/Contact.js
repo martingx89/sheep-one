@@ -61,6 +61,7 @@ const Contact = () => {
         function (response) {
           console.log('Email sent successfully:', response);
           actions.resetForm();
+          alert('Email sent successfully');
         },
         function (error) {
           console.log('Email send failed:', error);
