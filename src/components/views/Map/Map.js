@@ -5,7 +5,15 @@ import MapControls from '../../features/MapControls';
 import { getMapData } from '../../../redux/reducers/mapRedux';
 import { getRoutesData } from '../../../redux/reducers/routesRedux';
 import { INITIAL_COORDS, ZOOM_LEVEL } from '../../../constants/pageSetup';
-import styles from './Map.module.scss';
+import styled from 'styled-components';
+
+const MapContainerWrapper = styled(MapContainer)`
+  height: 320px; // Domyślna wysokość dla ekranów o dowolnej szerokości
+
+  @media (min-width: 600px) {
+    height: 400px; // Wysokość dla ekranów o szerokości większej lub równej 600px
+  }
+`;
 
 const Map = () => {
   const map = useSelector(getMapData);
@@ -19,8 +27,8 @@ const Map = () => {
   const center = coordinates;
 
   return (
-    <div className={styles['map-wrapper']}>
-      <MapContainer center={center} zoom={ZOOM_LEVEL} scrollWheelZoom={false}>
+    <div>
+      <MapContainerWrapper center={center} zoom={ZOOM_LEVEL} scrollWheelZoom={false}>
         <MapControls ZOOM_LEVEL={ZOOM_LEVEL} />
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetmap</a> contributors'
@@ -34,7 +42,7 @@ const Map = () => {
             A pretty CSS3 popup. <br /> Easily customizable.
           </Popup>
         </Marker>
-      </MapContainer>
+      </MapContainerWrapper>
     </div>
   );
 };
