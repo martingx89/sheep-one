@@ -3,6 +3,7 @@ import { createRoutesActionName } from '../actions/actionsUtility';
 
 //selectors
 export const getRoutesData = (state) => state.routes;
+export const getRouteById = ({ routes }, route_id) => routes.find((route) => route.route_id === route_id);
 
 // actions
 export const GET_ROUTES = createRoutesActionName('GET_ROUTES');

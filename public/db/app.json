@@ -1,6 +1,7 @@
 {
   "routes": [
     {
+      "route_id": 1,
       "route_name": "Kirkut-Źródełka",
       "distance": "2 km",
       "duration": "20 min",
@@ -435,6 +436,7 @@
       ]
     },
     {
+      "route_id": 2,
       "route_name": "Źródełka-Kostryń asfalt",
       "distance": "3.1 km",
       "duration": "10 min",
@@ -987,6 +989,7 @@
       ]
     },
     {
+      "route_id": 3,
       "route_name": "Źródełka-Kostryń szlak",
       "distance": "3.50 km",
       "duration": "30 min",
