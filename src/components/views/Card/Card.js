@@ -8,17 +8,17 @@ function Card() {
   const routes = useSelector(getRoutesData);
   const dispatch = useDispatch();
 
-  const [selectedRoute, setSelectedRoute] = useState(0);
+  const [selectedRoute, setSelectedRoute] = useState(1);
 
   const handleIncrement = useCallback(() => {
-    if (selectedRoute < routes.length - 1) {
+    if (selectedRoute < routes.length) {
       setSelectedRoute(selectedRoute + 1);
       dispatch(incrementCounter());
     }
   }, [selectedRoute, routes, dispatch]);
 
   const handleDecrement = useCallback(() => {
-    if (selectedRoute > 0) {
+    if (selectedRoute > 1) {
       setSelectedRoute(selectedRoute - 1);
       dispatch(decrementCounter());
     }
@@ -27,7 +27,7 @@ function Card() {
   return (
     <div className={styles['card-container']}>
       <div className={styles['card-wrapper']}>
-        <h2>Route ID: {selectedRoute}</h2>
+        <h2>Numer trasy: {selectedRoute}</h2>
         <button onClick={handleIncrement}>Następna trasa</button>
         <button onClick={handleDecrement}>Poprzednia trasa</button>
       </div>
