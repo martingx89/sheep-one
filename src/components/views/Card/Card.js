@@ -33,8 +33,8 @@ function Card() {
         <FaArrowLeft />
       </Button>
       <Box>
-        <Typography variant='h2'>Numer trasy: {selectedRoute}</Typography>
-        <Typography variant='h3'>Tytuł trasy: {currentRoute ? currentRoute.route_name : ''}</Typography>
+        <Typography variant='h3'>Numer trasy: {selectedRoute}</Typography>
+        <Typography variant='h4'>Tytuł trasy: {currentRoute ? currentRoute.route_name : ''}</Typography>
       </Box>
       <Button onClick={handleIncrement} disabled={selectedRoute === routes.length}>
         <FaArrowRight />

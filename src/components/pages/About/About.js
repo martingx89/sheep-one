@@ -1,7 +1,9 @@
+import PageSubTitle from '../../common/PageSubTitle/PageSubTitle';
+
 const About = () => {
   return (
     <>
-      <h1>About Page</h1>
+      <PageSubTitle>About Page</PageSubTitle>
       <p>
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic dicta maxime, ab sint repellendus amet nesciunt
         eligendi perferendis iure sunt fuga repellat magni quibusdam alias dolore velit! Excepturi, maiores ex adipisci

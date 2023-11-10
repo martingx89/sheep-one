@@ -2,11 +2,13 @@ import React from 'react';
 import { Box, Grid, Typography } from '@mui/material';
 import PageTitle from '../../common/PageTitle/PageTitle';
 import Carousel from '../../views/Carousel/Carousel';
+import PageSubTitle from '../../common/PageSubTitle/PageSubTitle';
 
 const Home = () => {
   return (
     <Box component='section'>
       <PageTitle>Oferta</PageTitle>
+      <PageSubTitle>Rowery i wycieczki</PageSubTitle>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6} lg={6} xl={6}>
           <Carousel />

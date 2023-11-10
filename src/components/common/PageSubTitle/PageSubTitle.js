@@ -1,10 +1,10 @@
-import styles from './PageSubTitle.module.scss';
+import { Box, Typography } from '@mui/material';
 
 export const PageSubTitle = ({ children }) => {
   return (
-    <div>
-      <h2 className={styles['sub-title']}>{children}</h2>
-    </div>
+    <Box>
+      <Typography variant='h2'>{children}</Typography>
+    </Box>
   );
 };
 

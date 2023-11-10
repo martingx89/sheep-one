@@ -1,10 +1,10 @@
-import styles from './PageTitle.module.scss';
+import { Box, Typography } from '@mui/material';
 
 export const PageTitle = ({ children }) => {
   return (
-    <div>
-      <h1 className={styles.title}>{children}</h1>
-    </div>
+    <Box>
+      <Typography variant='h1'>{children}</Typography>
+    </Box>
   );
 };
 
