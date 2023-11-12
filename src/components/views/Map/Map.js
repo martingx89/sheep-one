@@ -8,10 +8,10 @@ import { INITIAL_COORDS, ZOOM_LEVEL } from '../../../constants/pageSetup';
 import styled from 'styled-components';
 
 const MapContainerWrapper = styled(MapContainer)`
-  height: 320px; // Domyślna wysokość dla ekranów o dowolnej szerokości
+  height: 320px;
 
   @media (min-width: 600px) {
-    height: 400px; // Wysokość dla ekranów o szerokości większej lub równej 600px
+    height: 400px;
   }
 `;
 
