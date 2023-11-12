@@ -38,8 +38,8 @@ const Map = ({ gpxTrack }) => {
           </Popup>
         </Marker>
 
-        {/* Check if gpxTrack exists before rendering Polyline */}
-        {gpxTrack && <Polyline positions={gpxTrack} color='red' weight={3} />}
+        {/* Check if gpxTrack exists and has a valid length before rendering Polyline */}
+        {gpxTrack && gpxTrack.length > 0 && <Polyline positions={gpxTrack} color='red' weight={3} />}
       </MapContainerWrapper>
     </div>
   );

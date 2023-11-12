@@ -7,17 +7,24 @@ import { getRouteById } from '../../../redux/reducers/routesRedux';
 import useCounter from '../../../hooks/useCounter';
 
 const Catalog = () => {
+  const routes = useSelector((state) => state.routes);
+  const maxCount = routes.length;
+
   const [selectedID, setSelectedID] = useState(1);
   const { count, increment, decrement } = useCounter();
 
   const handleIncrement = () => {
-    increment();
-    setSelectedID(count + 1);
+    if (count < maxCount) {
+      increment();
+      setSelectedID(count + 1);
+    }
   };
 
   const handleDecrement = () => {
-    decrement();
-    setSelectedID(count - 1);
+    if (count > 1) {
+      decrement();
+      setSelectedID(count - 1);
+    }
   };
 
   console.log(selectedID);
