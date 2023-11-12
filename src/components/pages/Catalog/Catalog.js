@@ -10,7 +10,7 @@ const Catalog = () => {
         <Map />
       </Grid>
       <Grid item xs={12} md={6}>
-        <Card />
+        <Card routeId={1} />
       </Grid>
     </Grid>
   );
