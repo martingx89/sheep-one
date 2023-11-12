@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { getRouteById } from '../../../redux/reducers/routesRedux';
 import { Box } from '@mui/material';
 
-function Card({ routeId }) {
+const Card = ({ routeId }) => {
   const route = useSelector((state) => getRouteById(state, routeId));
   console.log(route);
 
@@ -12,6 +12,6 @@ function Card({ routeId }) {
       {/* Render content based on the selected route */}
     </Box>
   );
-}
+};
 
 export default Card;
