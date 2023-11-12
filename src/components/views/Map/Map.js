@@ -14,9 +14,9 @@ const MapContainerWrapper = styled(MapContainer)`
   }
 `;
 
-const Map = () => {
+const Map = ({ gpxTrack }) => {
   const map = useSelector(getMapData);
-
+  console.log(gpxTrack);
   const coordinates = [
     map.userPosition ? map.userPosition.latitude : INITIAL_COORDS[0],
     map.userPosition ? map.userPosition.longitude : INITIAL_COORDS[1],
@@ -37,6 +37,9 @@ const Map = () => {
             A pretty CSS3 popup. <br /> Easily customizable.
           </Popup>
         </Marker>
+
+        {/* Check if gpxTrack exists before rendering Polyline */}
+        {gpxTrack && <Polyline positions={gpxTrack} color='red' weight={3} />}
       </MapContainerWrapper>
     </div>
   );
