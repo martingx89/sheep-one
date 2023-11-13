@@ -2,12 +2,17 @@ import React, { useState } from 'react';
 import Card from '../../views/Card/Card';
 import Map from '../../views/Map/Map';
 import { Grid, Button } from '@mui/material';
-import { useSelector } from 'react-redux';
-import { getRouteById } from '../../../redux/reducers/routesRedux';
+import { useSelector, useDispatch } from 'react-redux';
+import { getRouteById, getRoutesLength } from '../../../redux/reducers/routesRedux';
 import useCounter from '../../../hooks/useCounter';
 
 const Catalog = () => {
-  const maxCount = useSelector((state) => state.routes.length);
+  const dispatch = useDispatch();
+  const maxCount = useSelector((state) => {
+    dispatch(getRoutesLength(state.routes.length));
+    return state.routes.length;
+  });
+
   console.log(maxCount);
 
   const [selectedID, setSelectedID] = useState(1);
@@ -27,9 +32,7 @@ const Catalog = () => {
     }
   };
 
-  console.log(selectedID);
   const route = useSelector((state) => getRouteById(state, selectedID));
-  console.log(route);
 
   return (
     <Grid container spacing={2}>
