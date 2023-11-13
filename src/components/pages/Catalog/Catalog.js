@@ -7,8 +7,7 @@ import { getRouteById } from '../../../redux/reducers/routesRedux';
 import useCounter from '../../../hooks/useCounter';
 
 const Catalog = () => {
-  const routes = useSelector((state) => state.routes);
-  const maxCount = routes.length;
+  const maxCount = useSelector((state) => state.routes.length);
 
   const [selectedID, setSelectedID] = useState(1);
   const { count, increment, decrement } = useCounter();
@@ -27,9 +26,7 @@ const Catalog = () => {
     }
   };
 
-  console.log(selectedID);
   const route = useSelector((state) => getRouteById(state, selectedID));
-  console.log(route);
 
   return (
     <Grid container spacing={2}>
@@ -37,9 +34,9 @@ const Catalog = () => {
         <Map gpxTrack={route.gpx_track} />
       </Grid>
       <Grid item xs={12} md={6}>
-        <Card />
-        <Button onClick={handleIncrement}>Increment</Button>
-        <Button onClick={handleDecrement}>Decrement</Button>
+        <Card selectedRoute={route} />
+        <Button onClick={handleIncrement}>+</Button>
+        <Button onClick={handleDecrement}>-</Button>
       </Grid>
     </Grid>
   );
