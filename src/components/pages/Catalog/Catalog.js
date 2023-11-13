@@ -9,7 +9,6 @@ import useCounter from '../../../hooks/useCounter';
 const Catalog = () => {
   const maxCount = useSelector((state) => state.routes.length);
   console.log(maxCount);
-  debugger;
 
   const [selectedID, setSelectedID] = useState(1);
   const { count, increment, decrement } = useCounter();
