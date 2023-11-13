@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+import { MapContainer, Marker, Popup, TileLayer, Polyline } from 'react-leaflet';
 import MapControls from '../../features/MapControls';
 import { getMapData } from '../../../redux/reducers/mapRedux';
 import { INITIAL_COORDS, ZOOM_LEVEL } from '../../../constants/pageSetup';
@@ -37,6 +37,7 @@ const Map = ({ gpxTrack }) => {
             A pretty CSS3 popup. <br /> Easily customizable.
           </Popup>
         </Marker>
+        {gpxTrack && gpxTrack.length > 0 && <Polyline positions={gpxTrack} color='red' weight={3} />}
       </MapContainerWrapper>
     </div>
   );
