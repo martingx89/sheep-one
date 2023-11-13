@@ -7,8 +7,9 @@ import { getRouteById } from '../../../redux/reducers/routesRedux';
 import useCounter from '../../../hooks/useCounter';
 
 const Catalog = () => {
-  const routes = useSelector((state) => state.routes);
-  const maxCount = routes.length;
+  const maxCount = useSelector((state) => state.routes.length);
+  console.log(maxCount);
+  debugger;
 
   const [selectedID, setSelectedID] = useState(1);
   const { count, increment, decrement } = useCounter();
