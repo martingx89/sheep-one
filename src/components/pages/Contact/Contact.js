@@ -71,7 +71,7 @@ const Contact = () => {
 
   return (
     <ContactWrapper>
-      <FormContainer>
+      <FormContainer id='section1'>
         <Formik
           initialValues={{ name: '', email: '', message: '' }}
           onSubmit={handleSubmit}
