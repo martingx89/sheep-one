@@ -8,7 +8,6 @@ import Container from '@mui/material/Container';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Button from '@mui/material/Button';
-import { HashLink } from 'react-router-hash-link';
 import { PAGE_TITLE_LONG, PAGE_TITLE_SHORT, PAGES, PATHS } from '../../../constants/pageSetup';
 import { NavItem } from '../../common/NavItem/NavItem';
 import { NavLink } from '../../common/NavLink/NavLink';
@@ -23,8 +22,7 @@ const Navbar = () => {
     setAnchorElNav(event.currentTarget);
   };
 
-  const handleCloseNavMenu = (event) => {
-    // event.preventDefault();
+  const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
 
@@ -76,16 +74,13 @@ const Navbar = () => {
               sx={{
                 display: { xs: 'block', md: 'none' },
               }}>
-              {PAGES.map((page, index) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign='center'>
-                    <NavLink to={PATHS[index]}>{page}</NavLink>
-                  </Typography>
-                </MenuItem>
-              ))}
-              <HashLink smooth to='/#section1' onClick={handleCloseNavMenu}>
-                Kontakt
-              </HashLink>
+              <MenuItem>
+                <Typography>
+                  <NavLink smooth to='/#section1' onClick={handleCloseNavMenu}>
+                    Kontakt
+                  </NavLink>
+                </Typography>
+              </MenuItem>
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -111,16 +106,14 @@ const Navbar = () => {
               display: { xs: 'none', md: 'flex' },
               justifyContent: 'flex-end',
             }}>
-            {PAGES.map((page, index) => (
-              <Button key={page} onClick={handleCloseNavMenu} sx={{ my: 2, color: 'white', display: 'block' }}>
-                <NavItem to={PATHS[index]}>{page}</NavItem>
-              </Button>
-            ))}
+            <Button>
+              <MenuItem>
+                <NavItem smooth to='/#section1' onClick={handleCloseNavMenu}>
+                  Kontakt
+                </NavItem>
+              </MenuItem>
+            </Button>
           </Box>
-          <HashLink smooth to='/#section1'>
-            {' '}
-            Kontakt{' '}
-          </HashLink>
         </AppToolbar>
       </Container>
     </AppBar>
