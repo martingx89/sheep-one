@@ -54,5 +54,3 @@ export const CAROUSEL_SET = {
 export const EMAIL_API_KEY = 'Okrq-645seco624jb';
 export const EMAIL_SERVICE_ID = 'service_wne9ssc';
 export const EMAIL_TEMPLATE_ID = 'template_wjjfawn';
-export const PAGES = ['Home', 'Regulamin', 'Trasy', 'O nas', 'Kontakt'];
-export const PATHS = ['', 'statue', 'catalog', 'about', 'contact'];

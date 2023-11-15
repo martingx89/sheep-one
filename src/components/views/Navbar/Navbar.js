@@ -8,7 +8,7 @@ import Container from '@mui/material/Container';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import Button from '@mui/material/Button';
-import { PAGE_TITLE_LONG, PAGE_TITLE_SHORT, PAGES, PATHS } from '../../../constants/pageSetup';
+import { PAGE_TITLE_LONG, PAGE_TITLE_SHORT } from '../../../constants/pageSetup';
 import { NavItem } from '../../common/NavItem/NavItem';
 import { NavLink } from '../../common/NavLink/NavLink';
 import { Logo } from '../../common/Logo/Logo';
@@ -44,7 +44,7 @@ const Navbar = () => {
               color: 'inherit',
               textDecoration: 'none',
             }}>
-            <Logo to={PATHS[0]}>{PAGE_TITLE_LONG}</Logo>
+            <Logo>{PAGE_TITLE_LONG}</Logo>
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -98,7 +98,7 @@ const Navbar = () => {
               color: 'inherit',
               textDecoration: 'none',
             }}>
-            <Logo to={PATHS[0]}>{PAGE_TITLE_SHORT}</Logo>
+            <Logo>{PAGE_TITLE_SHORT}</Logo>
           </Typography>
           <Box
             sx={{
