@@ -33,9 +33,6 @@ const Content = styled('div')({
   justifyContent: 'flex-start',
   alignItems: 'center',
   padding: '20px',
-  // backgroundColor: 'rgba(0, 0, 0, 0.6)',
-  // color: 'white',
-  // zIndex: '1',
 });
 
 const Carousel = () => {

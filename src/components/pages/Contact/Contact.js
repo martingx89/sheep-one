@@ -6,7 +6,6 @@ import emailjs from 'emailjs-com';
 import AppButton from '../../common/Button/AppButton';
 import { colorLight } from '../../../constants/colors';
 import { EMAIL_API_KEY, EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID } from '../../../constants/pageSetup';
-import styles from './Contact.module.scss';
 import styled from '@emotion/styled';
 
 const ContactWrapper = styled(Container)`
@@ -77,17 +76,17 @@ const Contact = () => {
           onSubmit={handleSubmit}
           validationSchema={validationSchema}>
           <Form>
-            <div className={styles['field-wrapper']}>
+            <div>
               <Field as={TextField} id='name' name='name' label='Imię' variant='outlined' fullWidth />
-              <ErrorMessage name='name' component='div' className={styles.error} />
+              <ErrorMessage name='name' component='div' />
             </div>
 
-            <div className={styles['field-wrapper']}>
+            <div>
               <Field as={TextField} type='email' id='email' name='email' label='Email' variant='outlined' fullWidth />
-              <ErrorMessage name='email' component='div' className={styles.error} />
+              <ErrorMessage name='email' component='div' />
             </div>
 
-            <div className={styles['field-wrapper']}>
+            <div>
               <Field
                 as={TextField}
                 id='message'
@@ -98,7 +97,7 @@ const Contact = () => {
                 multiline
                 rows={4}
               />
-              <ErrorMessage name='message' component='div' className={styles.error} />
+              <ErrorMessage name='message' component='div' />
             </div>
             <AppButton type='submit'>Wyślij</AppButton>
           </Form>
