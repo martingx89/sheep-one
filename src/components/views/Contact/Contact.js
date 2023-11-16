@@ -1,6 +1,6 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { TextField, Container } from '@mui/material';
+import { TextField,  Box } from '@mui/material';
 import * as Yup from 'yup';
 import emailjs from 'emailjs-com';
 import AppButton from '../../common/Button/AppButton';
@@ -8,7 +8,7 @@ import { colorLight } from '../../../constants/colors';
 import { EMAIL_API_KEY, EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID } from '../../../constants/pageSetup';
 import styled from '@emotion/styled';
 
-const ContactWrapper = styled(Container)`
+const ContactWrapper = styled(Box)`
   display: flex;
   justify-content: space-between;
   margin-top: 50px;
@@ -69,8 +69,8 @@ const Contact = () => {
   };
 
   return (
-    <ContactWrapper>
-      <FormContainer id='section1'>
+    <ContactWrapper component={"section"}>
+      <FormContainer id='contact'>
         <Formik
           initialValues={{ name: '', email: '', message: '' }}
           onSubmit={handleSubmit}
@@ -103,7 +103,6 @@ const Contact = () => {
           </Form>
         </Formik>
       </FormContainer>
-
       <ListContainer>
         <ul>
           <li>Adres</li>

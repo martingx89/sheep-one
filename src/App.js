@@ -5,13 +5,11 @@ import { useEffect } from 'react';
 import { fetchRoutes } from './redux/reducers/routesRedux';
 import { fetchBikes } from './redux/reducers/bikesRedux';
 import Home from './components/pages/Home/Home';
-import Catalog from './components/pages/Catalog/Catalog';
 import About from './components/pages/About/About';
-import Contact from './components/pages/Contact/Contact';
 import BlankPage from './components/pages/BlankPage/BlankPage';
 import { Container } from '@mui/material';
 import Navbar from './components/views/Navbar/Navbar';
-import Statue from './components/pages/Statue/Statue';
+import Rules from './components/pages/Rules/Rules';
 import Footer from './components/views/Footer/Footer';
 
 const App = () => {
@@ -26,10 +24,8 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />}></Route>
-          <Route path='/catalog' element={<Catalog />}></Route>
           <Route path='/about' element={<About />}></Route>
-          <Route path='/contact' element={<Contact />}></Route>
-          <Route path='/statue' element={<Statue />}></Route>
+          <Route path='/rules' element={<Rules />}></Route>
           <Route path='*' element={<BlankPage />}></Route>
         </Routes>
         <Footer />

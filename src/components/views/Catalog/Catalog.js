@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Card from '../../views/Card/Card';
-import Map from '../../views/Map/Map';
+import Card from '../Card/Card';
+import Map from '../Map/Map';
 import { Grid, Button } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { getRouteById } from '../../../redux/reducers/routesRedux';

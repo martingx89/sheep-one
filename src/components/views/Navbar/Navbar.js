@@ -1,19 +1,22 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import Button from '@mui/material/Button';
-import { PAGE_TITLE_LONG, PAGE_TITLE_SHORT } from '../../../constants/pageSetup';
-import { NavItem } from '../../common/NavItem/NavItem';
-import { NavLink } from '../../common/NavLink/NavLink';
-import { Logo } from '../../common/Logo/Logo';
-import { AppToolbar } from '../../common/AppToolbar/AppToolbar';
-import { AppBar } from '../../common/AppBar/AppBar';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import Container from "@mui/material/Container";
+import MenuItem from "@mui/material/MenuItem";
+import AdbIcon from "@mui/icons-material/Adb";
+import Button from "@mui/material/Button";
+import {
+  PAGE_TITLE_LONG,
+  PAGE_TITLE_SHORT,
+} from "../../../constants/pageSetup";
+import { NavItem } from "../../common/NavItem/NavItem";
+import { NavLink } from "../../common/NavLink/NavLink";
+import { Logo } from "../../common/Logo/Logo";
+import { AppToolbar } from "../../common/AppToolbar/AppToolbar";
+import { AppBar } from "../../common/AppBar/AppBar";
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -27,88 +30,105 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position='static'>
-      <Container maxWidth='xl'>
-        <AppToolbar disableGutters variant='dense'>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+    <AppBar position="static">
+      <Container maxWidth="xl">
+        <AppToolbar disableGutters variant="dense">
+          <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
-            variant='h6'
+            variant="h6"
             noWrap
-            component='div'
+            component="div"
             sx={{
               mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
+              display: { xs: "none", md: "flex" },
+              fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}>
-            <Logo>{PAGE_TITLE_LONG}</Logo>
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
+            }}
+          >
+            <Logo to={"/"}>{PAGE_TITLE_LONG}</Logo>
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
-              size='large'
-              aria-label='account of current user'
-              aria-controls='menu-appbar'
-              aria-haspopup='true'
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color='inherit'>
+              color="inherit"
+            >
               <MenuIcon />
             </IconButton>
             <Menu
-              id='menu-appbar'
+              id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
+                vertical: "bottom",
+                horizontal: "left",
               }}
               keepMounted
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
+                vertical: "top",
+                horizontal: "left",
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
               sx={{
-                display: { xs: 'block', md: 'none' },
-              }}>
+                display: { xs: "block", md: "none" },
+              }}
+            >
               <MenuItem>
                 <Typography>
-                  <NavLink smooth to='/#section1' onClick={handleCloseNavMenu}>
+                  <NavLink to="/" onClick={handleCloseNavMenu}>
+                    Home
+                  </NavLink>
+                  <NavLink to="/rules" onClick={handleCloseNavMenu}>
+                    Regulamin
+                  </NavLink>
+                  <NavLink smooth to="/#contact" onClick={handleCloseNavMenu}>
                     Kontakt
                   </NavLink>
                 </Typography>
               </MenuItem>
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
-            variant='h5'
+            variant="h5"
             noWrap
-            component='div'
+            component="div"
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'none' },
+              display: { xs: "flex", md: "none" },
               flexGrow: 1,
-              fontFamily: 'monospace',
+              fontFamily: "monospace",
               fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}>
-            <Logo>{PAGE_TITLE_SHORT}</Logo>
+              letterSpacing: ".3rem",
+              color: "inherit",
+              textDecoration: "none",
+            }}
+          >
+            <Logo to={"/"}>{PAGE_TITLE_SHORT}</Logo>
           </Typography>
           <Box
             sx={{
               flexGrow: 1,
-              display: { xs: 'none', md: 'flex' },
-              justifyContent: 'flex-end',
-            }}>
+              display: { xs: "none", md: "flex" },
+              justifyContent: "flex-end",
+            }}
+          >
             <Button>
               <MenuItem>
-                <NavItem smooth to='/#section1' onClick={handleCloseNavMenu}>
+                <NavLink to="/" onClick={handleCloseNavMenu}>
+                  Home
+                </NavLink>
+                <NavLink to="/rules" onClick={handleCloseNavMenu}>
+                  Regulamin
+                </NavLink>
+                <NavItem smooth to="/#contact" onClick={handleCloseNavMenu}>
                   Kontakt
                 </NavItem>
               </MenuItem>

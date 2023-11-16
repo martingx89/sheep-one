@@ -1,8 +1,9 @@
 import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import Carousel from "../../views/Carousel/Carousel";
-import Intro from "../Intro/Intro";
-import Contact from "../Contact/Contact";
+import Intro from "../../views/Intro/Intro";
+// import Catalog from '../../views/Catalog/Catalog'
+import Contact from "../../views/Contact/Contact";
 
 const Home = () => {
   return (
@@ -24,6 +25,7 @@ const Home = () => {
           </Typography>
         </Grid>
       </Grid>
+      {/* <Catalog /> */}
       <Contact />
     </Box>
   );

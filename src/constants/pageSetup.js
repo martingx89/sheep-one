@@ -1,4 +1,4 @@
-import { sm, md, lg } from './breakpoints';
+import { sm, lg } from './breakpoints';
 
 export const PAGE_TITLE_SHORT = '2SB';
 export const PAGE_TITLE_LONG = '2sladybieszczady';
