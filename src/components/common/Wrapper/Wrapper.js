@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import styled from '@emotion/styled';
 
-export const ContactWrapper = styled(Box)({
+export const Wrapper = styled(Box)({
   display: 'flex',
   justifyContent: 'space-between',
   marginTop: '50px',

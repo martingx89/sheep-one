@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { TextField } from '@mui/material';
-import { ContactWrapper } from '../../common/ContactWrapper/ContactWrapper';
+import { Wrapper } from '../../common/Wrapper/Wrapper';
 import { FormContainer } from '../../common/FormContainer/FormContainer';
 import { ListContainer } from '../../common/ListContainer/ListContainer';
 import AppButton from '../../common/Button/AppButton';
@@ -39,7 +39,7 @@ const Contact = () => {
   };
 
   return (
-    <ContactWrapper component={"section"}>
+    <Wrapper component={'section'}>
       <FormContainer id='contact'>
         <Formik
           initialValues={{ name: '', email: '', message: '' }}
@@ -79,7 +79,7 @@ const Contact = () => {
           <li>Numer</li>
         </ul>
       </ListContainer>
-    </ContactWrapper>
+    </Wrapper>
   );
 };
 

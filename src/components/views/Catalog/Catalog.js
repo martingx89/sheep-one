@@ -5,6 +5,7 @@ import { Grid, Button } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { getRouteById } from '../../../redux/reducers/routesRedux';
 import useCounter from '../../../hooks/useCounter';
+import { Wrapper } from '../../common/Wrapper/Wrapper';
 
 const Catalog = () => {
   const maxCount = useSelector((state) => state.routes.length);
@@ -29,16 +30,18 @@ const Catalog = () => {
   const route = useSelector((state) => getRouteById(state, selectedID));
 
   return (
-    <Grid container spacing={2}>
-      <Grid item xs={12} md={6}>
-        <Map gpxTrack={route.gpx_track} />
+    <Wrapper component={'section'}>
+      <Grid container spacing={2}>
+        <Grid item xs={12} md={6}>
+          <Map gpxTrack={route.gpx_track} />
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Card selectedRoute={route} />
+          <Button onClick={handleIncrement}>+</Button>
+          <Button onClick={handleDecrement}>-</Button>
+        </Grid>
       </Grid>
-      <Grid item xs={12} md={6}>
-        <Card selectedRoute={route} />
-        <Button onClick={handleIncrement}>+</Button>
-        <Button onClick={handleDecrement}>-</Button>
-      </Grid>
-    </Grid>
+    </Wrapper>
   );
 };
 
