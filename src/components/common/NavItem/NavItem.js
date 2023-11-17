@@ -1,5 +1,5 @@
-import { HashLink } from 'react-router-hash-link';
-import { styled } from '@mui/styles';
+import { HashLink} from 'react-router-hash-link';
+import { styled } from '@mui/material/styles';
 
 export const NavItem = styled(HashLink)(({ theme }) => ({
   textDecoration: 'none',

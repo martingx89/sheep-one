@@ -78,19 +78,19 @@ const Navbar = () => {
             }}
           >
             <MenuItem>
-              <NavLink to="/" onClick={handleCloseNavMenu}>
+              <NavItem to="/" onClick={handleCloseNavMenu}>
                 Home
-              </NavLink>
+              </NavItem>
             </MenuItem>
             <MenuItem>
-              <NavLink to="/rules" onClick={handleCloseNavMenu}>
+              <NavItem to="/rules" onClick={handleCloseNavMenu}>
                 Regulamin
-              </NavLink>
+              </NavItem>
             </MenuItem>
             <MenuItem>
-              <NavLink smooth to="/#contact" onClick={handleCloseNavMenu}>
+              <NavItem smooth to="/#contact" onClick={handleCloseNavMenu}>
                 Kontakt
-              </NavLink>
+              </NavItem>
             </MenuItem>
           </Menu>
         </Box>
@@ -120,14 +120,14 @@ const Navbar = () => {
           }}
         >
           <MenuItem>
-            <NavLink to="/" onClick={handleCloseNavMenu}>
+            <NavItem to="/" onClick={handleCloseNavMenu}>
               Home
-            </NavLink>
+            </NavItem>
           </MenuItem>
           <MenuItem>
-            <NavLink to="/rules" onClick={handleCloseNavMenu}>
+            <NavItem to="/rules" onClick={handleCloseNavMenu}>
               Regulamin
-            </NavLink>
+            </NavItem>
           </MenuItem>
           <MenuItem>
             <NavItem smooth to="/#contact" onClick={handleCloseNavMenu}>

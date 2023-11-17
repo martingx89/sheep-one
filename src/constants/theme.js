@@ -8,7 +8,7 @@ export const theme = createTheme({
       main: "#55b7b3", // Główny kolor dla elementów interfejsu użytkownika.
     },
     secondary: {
-      main: "##0266c5", // Drugorzędny kolor dla elementów interfejsu użytkownika.
+      main: "#0266c5", // Drugorzędny kolor dla elementów interfejsu użytkownika.
     },
     error: {
       main: "#f44336", // Kolor używany do reprezentowania negatywnych akcji i stanów.
@@ -25,6 +25,9 @@ export const theme = createTheme({
     background: {
       default: "#fafafa", // Kolor tła aplikacji.
     },
+    common: {
+      main: '#b84a12',
+    }
   },
   // spacing: {},
   shape: {
