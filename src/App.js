@@ -11,33 +11,8 @@ import { Container } from "@mui/material";
 import Navbar from "./components/views/Navbar/Navbar";
 import Rules from "./components/pages/Rules/Rules";
 import Footer from "./components/views/Footer/Footer";
-import {ThemeProvider, createTheme } from '@mui/material/styles';
-
-export const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#55b7b3", // Główny kolor dla elementów interfejsu użytkownika.
-    },
-    secondary: {
-      main: "##0266c5", // Drugorzędny kolor dla elementów interfejsu użytkownika.
-    },
-    error: {
-      main: "#f44336", // Kolor używany do reprezentowania negatywnych akcji i stanów.
-    },
-    warning: {
-      main: "#ff9800", // Kolor używany do reprezentowania potencjalnie niebezpiecznych akcji lub ważnych wiadomości.
-    },
-    info: {
-      main: "#2196f3", // Kolor używany do reprezentowania informacji i ogłoszeń, które nie reprezentują stanu krytycznego.
-    },
-    success: {
-      main: "#4caf50", // Kolor używany do reprezentowania udanych operacji.
-    },
-    background: {
-      default: "#fafafa", // Kolor tła aplikacji.
-    },
-  },
-});
+import {ThemeProvider } from '@mui/material/styles';
+import { theme } from "./constants/theme";
 
 const App = () => {
   const dispatch = useDispatch();
