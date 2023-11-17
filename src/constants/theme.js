@@ -27,7 +27,9 @@ export const theme = createTheme({
     },
   },
   spacing: {},
-  shape: {},
+  shape: {
+    borderRadius: 4
+  },
   mixins: {},
   shadows: {},
   typography: {},
