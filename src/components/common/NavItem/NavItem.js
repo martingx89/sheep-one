@@ -1,15 +1,14 @@
 import { HashLink } from 'react-router-hash-link';
-import { colorAccent, colorDark, colorLight } from '../../../constants/colors';
 import { styled } from '@mui/styles';
 
-export const NavItem = styled(HashLink)({
+export const NavItem = styled(HashLink)(({ theme }) => ({
   textDecoration: 'none',
-  color: colorLight,
+  color: theme.palette.primary.main,
   '&:hover': {
-    color: colorDark,
+    color: theme.palette.secondary.main,
   },
   '&.active': {
     fontWeight: 'bold',
-    color: colorAccent,
+    color: theme.palette.primary.main,
   },
-});
+}));

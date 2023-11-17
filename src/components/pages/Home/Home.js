@@ -2,6 +2,7 @@ import React from "react";
 import { Box, Grid, Typography } from "@mui/material";
 import Carousel from "../../views/Carousel/Carousel";
 import Intro from "../../views/Intro/Intro";
+// eslint-disable-next-line
 import Catalog from '../../views/Catalog/Catalog'
 import Contact from "../../views/Contact/Contact";
 
