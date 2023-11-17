@@ -8,8 +8,4 @@ export const NavItem = styled(HashLink)(({ theme }) => ({
   '&:hover': {
     color: theme.palette.secondary.main,
   },
-  '&.active': {
-    fontWeight: 'bold',
-    color: theme.palette.primary.main,
-  },
 }));
