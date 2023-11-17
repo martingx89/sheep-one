@@ -18,8 +18,16 @@ export const getRoutes = (payload) => ({ type: GET_ROUTES, payload });
 export const fetchRoutes = () => {
   return (dispatch) => {
     fetch(`${API_URL}/routes`)
-      .then((res) => res.json())
-      .then((routes) => dispatch(getRoutes(routes)));
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(res.statusText);
+        }
+        return res.json();
+      })
+      .then((routes) => dispatch(getRoutes(routes)))
+      .catch((error) => {
+        console.error('Wystąpił błąd:', error);
+      });
   };
 };
 

@@ -16,10 +16,10 @@ import {ThemeProvider, createTheme } from '@mui/material/styles';
 export const theme = createTheme({
   palette: {
     primary: {
-      main: "#ff4400", // Główny kolor dla elementów interfejsu użytkownika.
+      main: "#55b7b3", // Główny kolor dla elementów interfejsu użytkownika.
     },
     secondary: {
-      main: "#f44336", // Drugorzędny kolor dla elementów interfejsu użytkownika.
+      main: "##0266c5", // Drugorzędny kolor dla elementów interfejsu użytkownika.
     },
     error: {
       main: "#f44336", // Kolor używany do reprezentowania negatywnych akcji i stanów.

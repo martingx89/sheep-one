@@ -14,8 +14,16 @@ export const getBikes = (payload) => ({ type: GET_BIKES, payload });
 export const fetchBikes = () => {
   return (dispatch) => {
     fetch(`${API_URL}/bikes`)
-      .then((res) => res.json())
-      .then((bikes) => dispatch(getBikes(bikes)));
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(res.statusText);
+        }
+        return res.json();
+      })
+      .then((bikes) => dispatch(getBikes(bikes)))
+      .catch((error) => {
+        console.error('Wystąpił błąd:', error);
+      });
   };
 };
 
