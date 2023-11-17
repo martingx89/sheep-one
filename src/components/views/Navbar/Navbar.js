@@ -79,17 +79,19 @@ const Navbar = () => {
             }}
           >
             <MenuItem>
-              <Typography>
-                <NavLink to="/" onClick={handleCloseNavMenu}>
-                  Home
-                </NavLink>
-                <NavLink to="/rules" onClick={handleCloseNavMenu}>
-                  Regulamin
-                </NavLink>
-                <NavLink smooth to="/#contact" onClick={handleCloseNavMenu}>
-                  Kontakt
-                </NavLink>
-              </Typography>
+              <NavLink to="/" onClick={handleCloseNavMenu}>
+                Home
+              </NavLink>
+            </MenuItem>
+            <MenuItem>
+              <NavLink to="/rules" onClick={handleCloseNavMenu}>
+                Regulamin
+              </NavLink>
+            </MenuItem>
+            <MenuItem>
+              <NavLink smooth to="/#contact" onClick={handleCloseNavMenu}>
+                Kontakt
+              </NavLink>
             </MenuItem>
           </Menu>
         </Box>

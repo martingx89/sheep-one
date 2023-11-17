@@ -2,7 +2,7 @@ import { createTheme } from '@mui/material/styles';
 
 
 export const theme = createTheme({
-  breakpoints: {},
+  // breakpoints: {},
   palette: {
     primary: {
       main: "#55b7b3", // Główny kolor dla elementów interfejsu użytkownika.
@@ -26,13 +26,13 @@ export const theme = createTheme({
       default: "#fafafa", // Kolor tła aplikacji.
     },
   },
-  spacing: {},
+  // spacing: {},
   shape: {
     borderRadius: 4
   },
-  mixins: {},
-  shadows: {},
-  typography: {},
-  transitions: {},
-  zIndex: {},
+  // mixins: {},
+  // shadows: {},
+  // typography: {},
+  // transitions: {},
+  // zIndex: {},
 });
