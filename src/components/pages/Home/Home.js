@@ -25,7 +25,7 @@ const Home = () => {
           </Typography>
         </Grid>
       </Grid>
-      <Catalog />
+      {/* <Catalog /> */}
       <Contact />
     </Box>
   );

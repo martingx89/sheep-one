@@ -1,43 +1,13 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { TextField,  Box } from '@mui/material';
 import * as Yup from 'yup';
-import emailjs from 'emailjs-com';
+import { TextField } from '@mui/material';
+import { ContactWrapper } from '../../common/ContactWrapper/ContactWrapper';
+import { FormContainer } from '../../common/FormContainer/FormContainer';
+import { ListContainer } from '../../common/ListContainer/ListContainer';
 import AppButton from '../../common/Button/AppButton';
-import { colorLight } from '../../../constants/colors';
+import emailjs from 'emailjs-com';
 import { EMAIL_API_KEY, EMAIL_SERVICE_ID, EMAIL_TEMPLATE_ID } from '../../../constants/pageSetup';
-import styled from '@emotion/styled';
-
-const ContactWrapper = styled(Box)`
-  display: flex;
-  justify-content: space-between;
-  margin-top: 50px;
-  background-color: ${colorLight};
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
-
-const FormContainer = styled.div`
-  flex: 2;
-  padding: 20px;
-
-  @media (max-width: 768px) {
-    padding: 0;
-  }
-`;
-
-const ListContainer = styled.div`
-  flex: 1;
-  margin: 10px;
-  padding: 20px;
-  background-color: #f0f0f0;
-
-  @media (max-width: 768px) {
-    padding: 20px;
-  }
-`;
 
 const Contact = () => {
   const validationSchema = Yup.object().shape({
