@@ -11,7 +11,7 @@ import { Container } from "@mui/material";
 import Navbar from "./components/views/Navbar/Navbar";
 import Rules from "./components/pages/Rules/Rules";
 import Footer from "./components/views/Footer/Footer";
-import { createTheme, ThemeProvider } from "@material-ui/core/styles";
+import {ThemeProvider, createTheme } from '@mui/material/styles';
 
 export const theme = createTheme({
   palette: {
@@ -43,17 +43,11 @@ const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchRoutes())
-      .catch(error => {
-        console.error("Failed to fetch routes:", error);
-      });
+    dispatch(fetchRoutes());
   }, [dispatch]);
   
   useEffect(() => {
-    dispatch(fetchBikes())
-      .catch(error => {
-        console.error("Failed to fetch bikes:", error);
-      });
+    dispatch(fetchBikes());
   }, [dispatch]);
 
   return (
