@@ -42,8 +42,19 @@ export const theme = createTheme({
 const App = () => {
   const dispatch = useDispatch();
 
-  useEffect(() => dispatch(fetchRoutes(), [dispatch]));
-  useEffect(() => dispatch(fetchBikes(), [dispatch]));
+  useEffect(() => {
+    dispatch(fetchRoutes())
+      .catch(error => {
+        console.error("Failed to fetch routes:", error);
+      });
+  }, [dispatch]);
+  
+  useEffect(() => {
+    dispatch(fetchBikes())
+      .catch(error => {
+        console.error("Failed to fetch bikes:", error);
+      });
+  }, [dispatch]);
 
   return (
     <ThemeProvider theme={theme}>
