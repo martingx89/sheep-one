@@ -6,7 +6,6 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
-import Button from "@mui/material/Button";
 import {
   PAGE_TITLE_LONG,
   PAGE_TITLE_SHORT,
@@ -120,27 +119,21 @@ const Navbar = () => {
             justifyContent: "flex-end",
           }}
         >
-          <Button>
-            <MenuItem>
-              <NavLink to="/" onClick={handleCloseNavMenu}>
-                Home
-              </NavLink>
-            </MenuItem>
-          </Button>
-          <Button>
-            <MenuItem>
-              <NavLink to="/rules" onClick={handleCloseNavMenu}>
-                Regulamin
-              </NavLink>
-            </MenuItem>
-          </Button>
-          <Button>
-            <MenuItem>
-              <NavItem smooth to="/#contact" onClick={handleCloseNavMenu}>
-                Kontakt
-              </NavItem>
-            </MenuItem>
-          </Button>
+          <MenuItem>
+            <NavLink to="/" onClick={handleCloseNavMenu}>
+              Home
+            </NavLink>
+          </MenuItem>
+          <MenuItem>
+            <NavLink to="/rules" onClick={handleCloseNavMenu}>
+              Regulamin
+            </NavLink>
+          </MenuItem>
+          <MenuItem>
+            <NavItem smooth to="/#contact" onClick={handleCloseNavMenu}>
+              Kontakt
+            </NavItem>
+          </MenuItem>
         </Box>
       </AppToolbar>
     </AppBar>
