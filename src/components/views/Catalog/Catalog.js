@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Card from '../Card/Card';
+import Card from '../../common/Card/Card';
 import Map from '../Map/Map';
 import { Grid, Button } from '@mui/material';
 import { useSelector } from 'react-redux';
