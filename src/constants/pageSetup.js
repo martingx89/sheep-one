@@ -1,4 +1,4 @@
-import { sm, lg } from './breakpoints';
+import { theme } from './theme';
 
 export const PAGE_TITLE_SHORT = '2SB';
 export const PAGE_TITLE_LONG = '2sladybieszczady';
@@ -29,7 +29,6 @@ export const INITIAL_MAP_STATE = {
 };
 export const CAROUSEL_SET = {
   arrows: false,
-  // dots: true,
   infinite: true,
   speed: 1000,
   autoplay: true,
@@ -38,13 +37,13 @@ export const CAROUSEL_SET = {
   slidesToScroll: 1,
   responsive: [
     {
-      breakpoint: lg,
+      breakpoint: theme.breakpoints.values.lg,
       settings: {
         slidesToShow: 2,
       },
     },
     {
-      breakpoint: sm,
+      breakpoint: theme.breakpoints.values.sm,
       settings: {
         slidesToShow: 1,
       },

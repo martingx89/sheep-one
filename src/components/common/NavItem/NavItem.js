@@ -1,4 +1,4 @@
-import { HashLink} from 'react-router-hash-link';
+import { HashLink } from 'react-router-hash-link';
 import { styled } from '@mui/material/styles';
 
 export const NavItem = styled(HashLink)(({ theme }) => ({
@@ -7,5 +7,8 @@ export const NavItem = styled(HashLink)(({ theme }) => ({
   borderRadius: theme.shape.borderRadius,
   '&:hover': {
     color: theme.palette.secondary.main,
+  },
+  '&.active': {
+    color: theme.palette.common.main,
   },
 }));

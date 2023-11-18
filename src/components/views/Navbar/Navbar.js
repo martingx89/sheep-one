@@ -1,20 +1,16 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
-import {
-  PAGE_TITLE_LONG,
-  PAGE_TITLE_SHORT,
-} from "../../../constants/pageSetup";
-import { NavItem } from "../../common/NavItem/NavItem";
-import { NavLink } from "../../common/NavLink/NavLink";
-import { Logo } from "../../common/Logo/Logo";
-import { AppToolbar } from "../../common/AppToolbar/AppToolbar";
-import { AppBar } from "../../common/AppBar/AppBar";
+import * as React from 'react';
+import Box from '@mui/material/Box';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import AdbIcon from '@mui/icons-material/Adb';
+import { PAGE_TITLE_LONG, PAGE_TITLE_SHORT } from '../../../constants/pageSetup';
+import { NavItem } from '../../common/NavItem/NavItem';
+import { Logo } from '../../common/Logo/Logo';
+import { AppToolbar } from '../../common/AppToolbar/AppToolbar';
+import { AppBar } from '../../common/AppBar/AppBar';
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -28,109 +24,104 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static">
-      <AppToolbar disableGutters variant="dense">
-        <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+    <AppBar position='static'>
+      <AppToolbar disableGutters variant='dense'>
+        <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
         <Typography
-          variant="h6"
+          variant='h6'
           noWrap
-          component="div"
+          component='div'
           sx={{
             mr: 2,
-            display: { xs: "none", md: "flex" },
-            fontFamily: "monospace",
+            display: { xs: 'none', md: 'flex' },
+            fontFamily: 'monospace',
             fontWeight: 700,
-            letterSpacing: ".3rem",
-            color: "inherit",
-            textDecoration: "none",
-          }}
-        >
-          <Logo to={"/"}>{PAGE_TITLE_LONG}</Logo>
+            letterSpacing: '.3rem',
+            color: 'inherit',
+            textDecoration: 'none',
+          }}>
+          <Logo to={'/'}>{PAGE_TITLE_LONG}</Logo>
         </Typography>
 
-        <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
+        <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
           <IconButton
-            size="large"
-            aria-label="account of current user"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
+            size='large'
+            aria-label='account of current user'
+            aria-controls='menu-appbar'
+            aria-haspopup='true'
             onClick={handleOpenNavMenu}
-            color="inherit"
-          >
+            color='inherit'>
             <MenuIcon />
           </IconButton>
           <Menu
-            id="menu-appbar"
+            id='menu-appbar'
             anchorEl={anchorElNav}
             anchorOrigin={{
-              vertical: "bottom",
-              horizontal: "left",
+              vertical: 'bottom',
+              horizontal: 'left',
             }}
             keepMounted
             transformOrigin={{
-              vertical: "top",
-              horizontal: "left",
+              vertical: 'top',
+              horizontal: 'left',
             }}
             open={Boolean(anchorElNav)}
             onClose={handleCloseNavMenu}
             sx={{
-              display: { xs: "block", md: "none" },
-            }}
-          >
+              display: { xs: 'block', md: 'none' },
+            }}>
             <MenuItem>
-              <NavItem to="/" onClick={handleCloseNavMenu}>
+              <NavItem to='/' onClick={handleCloseNavMenu}>
                 Home
               </NavItem>
             </MenuItem>
             <MenuItem>
-              <NavItem to="/rules" onClick={handleCloseNavMenu}>
+              <NavItem to='/rules' onClick={handleCloseNavMenu}>
                 Regulamin
               </NavItem>
             </MenuItem>
             <MenuItem>
-              <NavItem smooth to="/#contact" onClick={handleCloseNavMenu}>
+              <NavItem smooth to='/#contact' onClick={handleCloseNavMenu}>
                 Kontakt
               </NavItem>
             </MenuItem>
           </Menu>
         </Box>
-        <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+        <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
         <Typography
-          variant="h5"
+          variant='h5'
           noWrap
-          component="div"
+          component='div'
           sx={{
             mr: 2,
-            display: { xs: "flex", md: "none" },
+            display: { xs: 'flex', md: 'none' },
             flexGrow: 1,
-            fontFamily: "monospace",
+            fontFamily: 'monospace',
             fontWeight: 700,
-            letterSpacing: ".3rem",
-            color: "inherit",
-            textDecoration: "none",
-          }}
-        >
-          <Logo to={"/"}>{PAGE_TITLE_SHORT}</Logo>
+            letterSpacing: '.3rem',
+            color: 'inherit',
+            textDecoration: 'none',
+          }}>
+          <Logo to={'/'}>{PAGE_TITLE_SHORT}</Logo>
         </Typography>
         <Box
           sx={{
             flexGrow: 1,
-            display: { xs: "none", md: "flex" },
-            justifyContent: "flex-end",
-          }}
-        >
+            display: { xs: 'none', md: 'flex' },
+            justifyContent: 'flex-end',
+          }}>
           <MenuItem>
-            <NavItem to="/" onClick={handleCloseNavMenu}>
+            <NavItem to='/' onClick={handleCloseNavMenu}>
               Home
             </NavItem>
           </MenuItem>
           <MenuItem>
-            <NavItem to="/rules" onClick={handleCloseNavMenu}>
+            <NavItem to='/rules' onClick={handleCloseNavMenu}>
               Regulamin
             </NavItem>
           </MenuItem>
           <MenuItem>
-            <NavItem smooth to="/#contact" onClick={handleCloseNavMenu}>
+            <NavItem smooth to='/#contact' onClick={handleCloseNavMenu}>
               Kontakt
             </NavItem>
           </MenuItem>
