@@ -21,20 +21,16 @@ const Map = ({ gpxTrack }) => {
     map.userPosition ? map.userPosition.longitude : INITIAL_COORDS[1],
   ];
 
-  const center = coordinates;
-
   return (
     <div>
-      <MapContainerWrapper center={center} zoom={ZOOM_LEVEL} scrollWheelZoom={false}>
+      <MapContainerWrapper center={coordinates} zoom={ZOOM_LEVEL} scrollWheelZoom={false}>
         <MapControls ZOOM_LEVEL={ZOOM_LEVEL} />
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetmap</a> contributors'
           url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
         />
-        <Marker position={center}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
+        <Marker position={coordinates}>
+          <Popup>Tutaj jesteś</Popup>
         </Marker>
         {gpxTrack && gpxTrack.length > 0 && <Polyline positions={gpxTrack} color='red' weight={3} />}
       </MapContainerWrapper>
