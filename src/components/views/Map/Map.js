@@ -4,15 +4,14 @@ import { MapContainer, Marker, Popup, TileLayer, Polyline } from 'react-leaflet'
 import MapControls from '../../features/MapControls';
 import { getMapData } from '../../../redux/reducers/mapRedux';
 import { INITIAL_COORDS, ZOOM_LEVEL } from '../../../constants/pageSetup';
-import styled from 'styled-components';
+import { styled } from '@mui/material/styles';
 
-const MapContainerWrapper = styled(MapContainer)`
-  height: 320px;
-
-  @media (min-width: 600px) {
-    height: 400px;
-  }
-`;
+const MapContainerWrapper = styled(MapContainer)(({ theme }) => ({
+  height: '320px',
+  [theme.breakpoints.up('sm')]: {
+    height: '400px',
+  },
+}));
 
 const Map = ({ gpxTrack }) => {
   const map = useSelector(getMapData);
