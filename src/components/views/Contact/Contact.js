@@ -69,7 +69,9 @@ const Contact = () => {
               />
               <ErrorMessage name='message' component='div' />
             </div>
-            <AppButton type='submit'>Wyślij</AppButton>
+            <AppButton type='submit' variant='contained'>
+              Wyślij
+            </AppButton>
           </Form>
         </Formik>
       </FormContainer>

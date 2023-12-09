@@ -10,9 +10,9 @@ const StyledButton = styled(Button)`
   }
 `;
 
-const AppButton = ({ children }) => {
+const AppButton = ({ children, onClick, type, variant }) => {
   return (
-    <StyledButton type='submit' variant='contained'>
+    <StyledButton type={type} variant={variant} onClick={onClick}>
       {children}
     </StyledButton>
   );

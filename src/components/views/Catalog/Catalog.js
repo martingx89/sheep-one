@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import Card from '../../common/Card/Card';
 import Map from '../Map/Map';
-import { Grid, Button } from '@mui/material';
+import { Grid } from '@mui/material';
 import { useSelector } from 'react-redux';
 import { getRouteById } from '../../../redux/reducers/routesRedux';
 import useCounter from '../../../hooks/useCounter';
 import { Wrapper } from '../../common/Wrapper/Wrapper';
+import AppButton from '../../common/Button/AppButton';
 
 const Catalog = () => {
   const maxCount = useSelector((state) => state.routes.length);
 
   const [selectedID, setSelectedID] = useState(1);
-  const { count, increment, decrement } = useCounter();
+  const { count, increment, decrement } = useCounter(1);
 
   const handleIncrement = () => {
     if (count < maxCount) {
@@ -37,8 +38,8 @@ const Catalog = () => {
         </Grid>
         <Grid item xs={12} md={6}>
           <Card selectedRoute={route} />
-          <Button onClick={handleIncrement}>+</Button>
-          <Button onClick={handleDecrement}>-</Button>
+          <AppButton onClick={handleIncrement}>+</AppButton>
+          <AppButton onClick={handleDecrement}>-</AppButton>
         </Grid>
       </Grid>
     </Wrapper>
