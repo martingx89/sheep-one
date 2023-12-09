@@ -7,6 +7,7 @@ import { getRouteById } from '../../../redux/reducers/routesRedux';
 import useCounter from '../../../hooks/useCounter';
 import { Wrapper } from '../../common/Wrapper/Wrapper';
 import AppButton from '../../common/Button/AppButton';
+import { FaPlus, FaMinus } from 'react-icons/fa';
 
 const Catalog = () => {
   const maxCount = useSelector((state) => state.routes.length);
@@ -38,8 +39,12 @@ const Catalog = () => {
         </Grid>
         <Grid item xs={12} md={6}>
           <Card selectedRoute={route} />
-          <AppButton onClick={handleIncrement}>+</AppButton>
-          <AppButton onClick={handleDecrement}>-</AppButton>
+          <AppButton onClick={handleIncrement}>
+            <FaPlus />
+          </AppButton>
+          <AppButton onClick={handleDecrement}>
+            <FaMinus />
+          </AppButton>
         </Grid>
       </Grid>
     </Wrapper>
