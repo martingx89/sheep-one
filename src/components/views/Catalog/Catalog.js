@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from '../../common/Card/Card';
 import Map from '../Map/Map';
 import { Grid } from '@mui/material';
@@ -13,7 +13,25 @@ const Catalog = () => {
   const maxCount = useSelector((state) => state.routes.length);
 
   const [selectedID, setSelectedID] = useState(1);
+  const route = useSelector((state) => getRouteById(state, selectedID));
+
   const { count, increment, decrement } = useCounter(1);
+  const [middlePoint, setMiddlePoint] = useState(null);
+
+  useEffect(() => {
+    if (route && route.gpx_track && route.gpx_track.length > 0) {
+      const trackPoints = route.gpx_track;
+      const totalPoints = trackPoints.length;
+
+      const middleIndex = Math.floor(totalPoints / 2);
+
+      const middleCoordinates = [trackPoints[middleIndex][0], trackPoints[middleIndex][1]];
+
+      setMiddlePoint(middleCoordinates);
+    }
+  }, [route]);
+
+  console.log(middlePoint);
 
   const handleIncrement = () => {
     if (count < maxCount) {
@@ -28,8 +46,6 @@ const Catalog = () => {
       setSelectedID(count - 1);
     }
   };
-
-  const route = useSelector((state) => getRouteById(state, selectedID));
 
   return (
     <Wrapper component={'section'}>
